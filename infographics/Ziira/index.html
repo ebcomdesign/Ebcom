@@ -1,0 +1,2296 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      اینفوگرافیک راهبردی پلتفرم هوش مصنوعی زیرا (Ziira) | شرکت همراه
+      کسب‌وکارهای هوشمند (EBCOM)
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-base: #0b0e14;
+        --bg-surface: #121722;
+        --bg-card: #181e2c;
+        --bg-card-hover: #1f2738;
+        --bg-glass: rgba(24, 30, 44, 0.75);
+
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-light: rgba(255, 255, 255, 0.16);
+        --border-glow: rgba(0, 210, 255, 0.3);
+
+        --ziira-cyan: #00d2ff;
+        --ziira-cyan-glow: rgba(0, 210, 255, 0.4);
+        --ebcom-green: #99cc00;
+        --ebcom-green-glow: rgba(153, 204, 0, 0.4);
+        --mci-orange: #ff7a00;
+        --mci-orange-glow: rgba(255, 122, 0, 0.4);
+        --ai-purple: #a855f7;
+        --ai-purple-glow: rgba(168, 85, 247, 0.4);
+        --ai-pink: #ff2e93;
+        --ai-pink-glow: rgba(255, 46, 147, 0.4);
+
+        --grad-cyan: linear-gradient(
+          135deg,
+          #70e1ff 0%,
+          #00b4d8 50%,
+          #0077b6 100%
+        );
+        --grad-yellow: linear-gradient(
+          135deg,
+          #fff176 0%,
+          #ffd600 50%,
+          #ff9e00 100%
+        );
+        --grad-orange: linear-gradient(
+          135deg,
+          #ffa24a 0%,
+          #ff6f00 50%,
+          #e64a00 100%
+        );
+        --grad-purple: linear-gradient(
+          135deg,
+          #d47bff 0%,
+          #9924f2 50%,
+          #6811bc 100%
+        );
+        --grad-pink: linear-gradient(
+          135deg,
+          #ff6ea7 0%,
+          #ff1e7a 50%,
+          #c40055 100%
+        );
+        --grad-green: linear-gradient(
+          135deg,
+          #bce63d 0%,
+          #99cc00 50%,
+          #638500 100%
+        );
+
+        --text-white: #ffffff;
+        --text-dim: #9ea5b4;
+        --text-muted: #6b7280;
+
+        --font-family:
+          "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg-base);
+        font-family: var(--font-family);
+        color: var(--text-white);
+        line-height: 1.6;
+        padding: 30px 15px;
+        display: flex;
+        justify-content: center;
+        background-image:
+          radial-gradient(
+            circle at 15% 10%,
+            rgba(0, 210, 255, 0.09) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(153, 204, 0, 0.08) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 50% 65%,
+            rgba(168, 85, 247, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 90%,
+            rgba(255, 122, 0, 0.08) 0%,
+            transparent 45%
+          );
+        background-attachment: fixed;
+      }
+
+      .infographic-container {
+        width: 100%;
+        max-width: 1220px;
+        background: var(--bg-surface);
+        border-radius: 28px;
+        border: 1px solid var(--border-subtle);
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.75),
+          0 0 1px 1px rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* HEADER */
+      .header {
+        background: linear-gradient(180deg, #161c28 0%, #111520 100%);
+        padding: 36px 48px 28px 48px;
+        border-bottom: 1px solid var(--border-subtle);
+        position: relative;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 22px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .ebcom-logo-wrap {
+        display: flex;
+        align-items: center;
+      }
+
+      .ebcom-logo-img {
+        height: 46px;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+      }
+
+      .brand-divider {
+        width: 1px;
+        height: 36px;
+        background: var(--border-light);
+      }
+
+      /* Ziira Brand Badge */
+      .ziira-brand-badge {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(0, 210, 255, 0.06);
+        border: 1px solid rgba(0, 210, 255, 0.25);
+        padding: 6px 16px;
+        border-radius: 20px;
+      }
+
+      .ziira-logo-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        overflow: hidden;
+        padding: 5px;
+        background: transparent;
+        border: 2px solid var(--ziira-cyan);
+        box-shadow: 0 0 10px var(--ziira-cyan-glow);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .ziira-logo-circle:hover {
+        transform: scale(1.06);
+        box-shadow: 0 0 16px var(--ziira-cyan-glow);
+      }
+
+      .ziira-logo-img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+      /* ⬆️⬆️⬆️ پایان دایره‌ی لوگو ⬆️⬆️⬆️ */
+
+      .ziira-brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ziira-brand-name {
+        font-size: 15px;
+        font-weight: 900;
+        color: var(--ziira-cyan);
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+      }
+
+      .ziira-brand-sub {
+        font-size: 10px;
+        color: var(--text-dim);
+      }
+
+      .strategic-affiliation {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .affiliation-pill {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-subtle);
+        padding: 6px 14px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-dim);
+      }
+
+      .affiliation-pill strong {
+        color: var(--ebcom-green);
+      }
+
+      .affiliation-link {
+        background: rgba(0, 210, 255, 0.1);
+        border: 1px solid rgba(0, 210, 255, 0.3);
+        color: var(--ziira-cyan);
+        padding: 6px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+        box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+      }
+
+      .affiliation-link:hover {
+        background: rgba(0, 210, 255, 0.22);
+        transform: translateY(-1px);
+      }
+
+      .affiliation-link .live-dot {
+        width: 8px;
+        height: 8px;
+        background: #00e676;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #00e676;
+      }
+
+      .exec-badge {
+        background: var(--grad-green);
+        color: #111a00;
+        font-size: 12px;
+        font-weight: 900;
+        padding: 8px 18px;
+        border-radius: 30px;
+        box-shadow: 0 4px 16px var(--ebcom-green-glow);
+        letter-spacing: 0.5px;
+      }
+
+      .hero-title-area {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 12px;
+        background: linear-gradient(90deg, #ffffff 0%, #d0e4ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .hero-text h1 .badge-glow {
+        background: rgba(0, 210, 255, 0.15);
+        border: 1px solid var(--ziira-cyan);
+        -webkit-text-fill-color: var(--ziira-cyan);
+        font-size: 13px;
+        padding: 4px 14px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px var(--ziira-cyan-glow);
+      }
+
+      .hero-text p {
+        font-size: 14.5px;
+        color: var(--text-dim);
+        max-width: 840px;
+        line-height: 1.85;
+        font-weight: 400;
+      }
+
+      .hero-quick-kpi {
+        display: flex;
+        gap: 12px;
+      }
+
+      .quick-kpi-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
+        padding: 14px 18px;
+        text-align: center;
+        min-width: 125px;
+      }
+
+      .quick-kpi-num {
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--ziira-cyan);
+      }
+
+      .quick-kpi-label {
+        font-size: 11px;
+        color: var(--text-dim);
+        margin-top: 4px;
+      }
+
+      .strategic-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        padding: 22px 48px;
+        background: rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .strip-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s;
+      }
+
+      .strip-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .strip-card.c-green {
+        border-right: 4px solid var(--ebcom-green);
+      }
+      .strip-card.c-cyan {
+        border-right: 4px solid var(--ziira-cyan);
+      }
+      .strip-card.c-purple {
+        border-right: 4px solid var(--ai-purple);
+      }
+      .strip-card.c-orange {
+        border-right: 4px solid var(--mci-orange);
+      }
+
+      .strip-icon-sphere {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+        box-shadow:
+          0 6px 15px rgba(0, 0, 0, 0.4),
+          inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      }
+
+      .strip-card.c-green .strip-icon-sphere {
+        background: var(--grad-green);
+        color: #111a00;
+      }
+      .strip-card.c-cyan .strip-icon-sphere {
+        background: var(--grad-cyan);
+        color: #002233;
+      }
+      .strip-card.c-purple .strip-icon-sphere {
+        background: var(--grad-purple);
+        color: #fff;
+      }
+      .strip-card.c-orange .strip-icon-sphere {
+        background: var(--grad-orange);
+        color: #fff;
+      }
+
+      .strip-text-title {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--text-white);
+      }
+
+      .strip-text-desc {
+        font-size: 11px;
+        color: var(--text-dim);
+      }
+
+      .content {
+        padding: 38px 48px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .section-title-bar {
+        width: 5px;
+        height: 24px;
+        border-radius: 4px;
+      }
+
+      .bar-cyan {
+        background: var(--ziira-cyan);
+        box-shadow: 0 0 10px var(--ziira-cyan);
+      }
+      .bar-green {
+        background: var(--ebcom-green);
+        box-shadow: 0 0 10px var(--ebcom-green);
+      }
+      .bar-purple {
+        background: var(--ai-purple);
+        box-shadow: 0 0 10px var(--ai-purple);
+      }
+      .bar-pink {
+        background: var(--ai-pink);
+        box-shadow: 0 0 10px var(--ai-pink);
+      }
+      .bar-orange {
+        background: var(--mci-orange);
+        box-shadow: 0 0 10px var(--mci-orange);
+      }
+
+      .section-title h2 {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--text-white);
+      }
+
+      .section-subtitle {
+        font-size: 12px;
+        color: var(--text-dim);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 4px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border-subtle);
+      }
+
+      /* ARCH BOX */
+      .arch-redesign-box {
+        background: radial-gradient(
+          circle at 25% 45%,
+          #1b2232 0%,
+          #121622 100%
+        );
+        border: 1px solid var(--border-subtle);
+        border-radius: 24px;
+        padding: 32px 30px;
+        margin-bottom: 50px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      .arch-two-col {
+        display: grid;
+        grid-template-columns: 450px 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .pyramid-stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .pyramid-svg-clean {
+        width: 100%;
+        max-width: 440px;
+        height: auto;
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.65));
+        overflow: visible;
+      }
+
+      .pyramid-footer-note {
+        margin-top: 14px;
+        text-align: center;
+        font-size: 11.5px;
+        color: var(--text-dim);
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid var(--border-subtle);
+        padding: 6px 18px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .arch-cards-col {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .arch-capsule-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 18px;
+        padding: 16px 20px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 18px;
+        position: relative;
+        transition: all 0.25s ease;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      .arch-capsule-card:hover {
+        background: var(--bg-card-hover);
+        transform: translateX(-4px);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .arch-capsule-card.tier-1 {
+        border-right: 4px solid var(--ai-pink);
+      }
+      .arch-capsule-card.tier-2 {
+        border-right: 4px solid var(--ai-purple);
+      }
+      .arch-capsule-card.tier-3 {
+        border-right: 4px solid var(--mci-orange);
+      }
+      .arch-capsule-card.tier-4 {
+        border-right: 4px solid var(--ebcom-green);
+      }
+
+      .capsule-sphere {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+        box-shadow:
+          0 6px 16px rgba(0, 0, 0, 0.45),
+          inset 0 2px 5px rgba(255, 255, 255, 0.45);
+      }
+
+      .tier-1 .capsule-sphere {
+        background: var(--grad-pink);
+        color: #fff;
+      }
+      .tier-2 .capsule-sphere {
+        background: var(--grad-purple);
+        color: #fff;
+      }
+      .tier-3 .capsule-sphere {
+        background: var(--grad-orange);
+        color: #fff;
+      }
+      .tier-4 .capsule-sphere {
+        background: var(--grad-green);
+        color: #111a00;
+      }
+
+      .capsule-info h3 {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-white);
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .capsule-info p {
+        font-size: 12px;
+        color: var(--text-dim);
+        line-height: 1.55;
+      }
+
+      .capsule-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .capsule-tag {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-subtle);
+        font-size: 10.5px;
+        color: #d1d5db;
+        padding: 2px 10px;
+        border-radius: 8px;
+      }
+
+      .capsule-pct-pill {
+        font-size: 16px;
+        font-weight: 900;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border-subtle);
+        font-family: monospace;
+        letter-spacing: 0.5px;
+        text-align: center;
+        min-width: 68px;
+      }
+
+      .tier-1 .capsule-pct-pill {
+        color: var(--ai-pink);
+        border-color: rgba(255, 46, 147, 0.3);
+      }
+      .tier-2 .capsule-pct-pill {
+        color: var(--ai-purple);
+        border-color: rgba(168, 85, 247, 0.3);
+      }
+      .tier-3 .capsule-pct-pill {
+        color: var(--mci-orange);
+        border-color: rgba(255, 122, 0, 0.3);
+      }
+      .tier-4 .capsule-pct-pill {
+        color: var(--ebcom-green);
+        border-color: rgba(153, 204, 0, 0.3);
+      }
+
+      .dual-core-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 50px;
+      }
+
+      .dual-box {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 22px;
+        padding: 26px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dual-box.b2c {
+        border-top: 4px solid var(--ziira-cyan);
+      }
+      .dual-box.b2b {
+        border-top: 4px solid var(--ebcom-green);
+      }
+
+      .dual-box-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .dual-title-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .dual-icon-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+
+      .b2c .dual-icon-badge {
+        background: rgba(0, 210, 255, 0.15);
+        color: var(--ziira-cyan);
+      }
+      .b2b .dual-icon-badge {
+        background: rgba(153, 204, 0, 0.15);
+        color: var(--ebcom-green);
+      }
+
+      .dual-title-group h3 {
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .dual-tag {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 12px;
+      }
+
+      .b2c .dual-tag {
+        background: rgba(0, 210, 255, 0.12);
+        color: var(--ziira-cyan);
+      }
+      .b2b .dual-tag {
+        background: rgba(153, 204, 0, 0.12);
+        color: var(--ebcom-green);
+      }
+
+      .dual-feature-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .dual-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 12.5px;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+
+      .dual-feature-bullet {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+
+      .b2c .dual-feature-bullet {
+        background: var(--ziira-cyan);
+        box-shadow: 0 0 6px var(--ziira-cyan);
+      }
+      .b2b .dual-feature-bullet {
+        background: var(--ebcom-green);
+        box-shadow: 0 0 6px var(--ebcom-green);
+      }
+
+      .dual-feature-item strong {
+        color: var(--text-white);
+      }
+
+      .dual-bottom-note {
+        margin-top: 20px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px dashed var(--border-subtle);
+      }
+
+      .gauge-section {
+        margin-bottom: 50px;
+      }
+
+      .gauge-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .gauge-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 22px;
+        padding: 24px 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        transition: transform 0.2s;
+      }
+
+      .gauge-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .gauge-vis {
+        width: 140px;
+        height: 140px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+
+      .gauge-svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+
+      .gauge-bg-circle {
+        fill: none;
+        stroke: #252d3d;
+        stroke-width: 12;
+      }
+
+      .gauge-fill-circle {
+        fill: none;
+        stroke-width: 12;
+        stroke-linecap: round;
+        stroke-dasharray: 377;
+      }
+
+      .gauge-cyan .gauge-fill-circle {
+        stroke: url(#grad-cyan-svg);
+        filter: drop-shadow(0 0 6px rgba(0, 210, 255, 0.6));
+      }
+      .gauge-green .gauge-fill-circle {
+        stroke: url(#grad-green-svg);
+        filter: drop-shadow(0 0 6px rgba(153, 204, 0, 0.6));
+      }
+      .gauge-purple .gauge-fill-circle {
+        stroke: url(#grad-purple-svg);
+        filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.6));
+      }
+      .gauge-orange .gauge-fill-circle {
+        stroke: url(#grad-orange-svg);
+        filter: drop-shadow(0 0 6px rgba(255, 122, 0, 0.6));
+      }
+
+      .gauge-inner-sphere {
+        position: absolute;
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 35%,
+          #2b3447 0%,
+          #151924 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 4px 14px rgba(0, 0, 0, 0.6),
+          inset 0 2px 4px rgba(255, 255, 255, 0.25);
+      }
+
+      .gauge-inner-icon {
+        font-size: 24px;
+        color: var(--text-white);
+      }
+
+      .gauge-title {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-white);
+        margin-bottom: 6px;
+      }
+
+      .gauge-desc {
+        font-size: 11.5px;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-bottom: 50px;
+      }
+
+      .pillar-box {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 22px;
+        padding: 24px;
+      }
+
+      .pillar-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .pillar-sphere-sm {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        box-shadow:
+          0 4px 10px rgba(0, 0, 0, 0.4),
+          inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      }
+
+      .pillar-header h3 {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--text-white);
+      }
+
+      .feature-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .feature-tag {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-subtle);
+        padding: 6px 12px;
+        border-radius: 10px;
+        font-size: 11.5px;
+        color: var(--text-dim);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .feature-tag strong {
+        color: var(--text-white);
+      }
+
+      .omni-section {
+        background: radial-gradient(
+          circle at top right,
+          #1f2738 0%,
+          #131722 100%
+        );
+        border: 1px solid var(--border-subtle);
+        border-radius: 24px;
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+
+      .omni-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .channel-group-title {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--ziira-cyan);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .channels-flex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .channel-item {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .channel-item.active {
+        border-right: 3px solid var(--ziira-cyan);
+      }
+      .channel-item.pipeline {
+        border-right: 3px solid var(--ai-purple);
+        opacity: 0.85;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .status-dot.active {
+        background: #00e676;
+        box-shadow: 0 0 8px #00e676;
+      }
+      .status-dot.pipeline {
+        background: var(--ai-purple);
+        box-shadow: 0 0 8px var(--ai-purple);
+      }
+
+      .channel-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text-white);
+      }
+      .channel-meta {
+        font-size: 10px;
+        color: var(--text-muted);
+      }
+
+      .footer {
+        background: #090b10;
+        padding: 28px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--border-subtle);
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .footer-slogan {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-white);
+      }
+
+      .footer-slogan span {
+        background: var(--grad-cyan);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .footer-right {
+        font-size: 11px;
+        color: var(--text-muted);
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 960px) {
+        .header,
+        .content,
+        .strategic-strip,
+        .footer {
+          padding: 20px;
+        }
+        .arch-two-col,
+        .dual-core-grid,
+        .gauge-grid,
+        .pillars-grid,
+        .omni-layout,
+        .strategic-strip {
+          grid-template-columns: 1fr;
+        }
+        .hero-title-area {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: #0b0e14;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .infographic-container {
+          border: none;
+          box-shadow: none;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SVG Master Gradients -->
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <linearGradient id="grad-cyan-svg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#70E1FF" />
+          <stop offset="50%" stop-color="#00B4D8" />
+          <stop offset="100%" stop-color="#0077B6" />
+        </linearGradient>
+        <linearGradient id="grad-green-svg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#D4FF4D" />
+          <stop offset="50%" stop-color="#99CC00" />
+          <stop offset="100%" stop-color="#557300" />
+        </linearGradient>
+        <linearGradient
+          id="grad-orange-svg"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="#FFA24A" />
+          <stop offset="50%" stop-color="#FF6F00" />
+          <stop offset="100%" stop-color="#E64A00" />
+        </linearGradient>
+        <linearGradient
+          id="grad-purple-svg"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="#DC8CFF" />
+          <stop offset="50%" stop-color="#A838FF" />
+          <stop offset="100%" stop-color="#6B05D6" />
+        </linearGradient>
+        <linearGradient id="grad-pink-svg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FF6EA7" />
+          <stop offset="50%" stop-color="#FF1E7A" />
+          <stop offset="100%" stop-color="#BA004E" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="infographic-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-top">
+          <div class="brand-lockup">
+            <div class="ebcom-logo-wrap">
+              <img
+                src="/assets/images/EBCOM.png"
+                alt="EBCOM"
+                class="ebcom-logo-img"
+              />
+            </div>
+
+            <div class="brand-divider"></div>
+
+            <div class="ziira-brand-badge">
+              <div class="ziira-logo-circle">
+                <img
+                  src="/assets/images/zira - sign.png"
+                  alt="پلتفرم زیرا | Ziira AI"
+                  class="ziira-logo-img"
+                />
+              </div>
+              <div class="ziira-brand-text">
+                <span class="ziira-brand-name">پلتفرم زیرا | Ziira AI</span>
+                <span class="ziira-brand-sub">هوش مصنوعی یکپارچه سازمانی</span>
+              </div>
+            </div>
+
+            <div class="brand-divider"></div>
+
+            <div class="strategic-affiliation">
+              <div class="affiliation-pill">
+                هم‌پیمان راهبردی: <strong>همراه اول</strong>
+              </div>
+              <a
+                href="https://ziira.ir"
+                target="_blank"
+                class="affiliation-link"
+              >
+                <span class="live-dot"></span>
+                <span>ziira.ir</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="exec-badge">
+            گزارش راهبردی به مدیرعامل محترم همراه اول
+          </div>
+        </div>
+
+        <div class="hero-title-area">
+          <div class="hero-text">
+            <h1>
+              پلتفرم هوش مصنوعی «زیرا» (Ziira)
+              <span class="badge-glow">زیرساخت حاکمیتی AI</span>
+            </h1>
+            <p>
+              پلتفرم جامع، بومی و چندوجهی هوش مصنوعی شرکت همراه کسب‌وکارهای
+              هوشمند (EBCOM)؛ ارائه‌دهنده راهکارهای هوش مصنوعی یکپارچه با تمرکز
+              ویژه بر زبان فارسی، حاکمیت داده سازمانی و اتصال مستقیم به
+              سامانه‌های عملیاتی کشور در بستر ارتباطی همراه اول.
+            </p>
+          </div>
+
+          <div class="hero-quick-kpi">
+            <div class="quick-kpi-item">
+              <div class="quick-kpi-num">Omni-Channel</div>
+              <div class="quick-kpi-label">دسترسی چندرسانه‌ای</div>
+            </div>
+            <div class="quick-kpi-item">
+              <div class="quick-kpi-num">B2B & B2C</div>
+              <div class="quick-kpi-label">مدل درآمدی دوگانه</div>
+            </div>
+            <div class="quick-kpi-item">
+              <div class="quick-kpi-num">RAG بومی</div>
+              <div class="quick-kpi-label">پایگاه دانش سازمانی</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- STRATEGIC VALUE PILLARS -->
+      <div class="strategic-strip">
+        <div class="strip-card c-green">
+          <div class="strip-icon-sphere">🇮🇷</div>
+          <div>
+            <div class="strip-text-title">تمرکز عمیق بر زبان فارسی</div>
+            <div class="strip-text-desc">
+              درک بافت فرهنگی و نگارش تخصصی اداری و تجاری
+            </div>
+          </div>
+        </div>
+
+        <div class="strip-card c-cyan">
+          <div class="strip-icon-sphere">🏢</div>
+          <div>
+            <div class="strip-text-title">فضای اختصاصی سازمانی</div>
+            <div class="strip-text-desc">
+              ایزولاسیون کامل داده‌ها و امنیت در تراز Enterprise
+            </div>
+          </div>
+        </div>
+
+        <div class="strip-card c-purple">
+          <div class="strip-icon-sphere">🤖</div>
+          <div>
+            <div class="strip-text-title">دستیاران متصل به فرآیند</div>
+            <div class="strip-text-desc">
+              اتصال زنده به جیرا، تیکتینگ و ERP سازمان
+            </div>
+          </div>
+        </div>
+
+        <div class="strip-card c-orange">
+          <div class="strip-icon-sphere">💳</div>
+          <div>
+            <div class="strip-text-title">کیف پول متمرکز و سهمیه‌بندی</div>
+            <div class="strip-text-desc">
+              مدیریت مصرف تیم‌ها با مکانیزم Pay-per-Use
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN BODY -->
+      <div class="content">
+        <!-- SECTION 1 -->
+        <div class="section-header">
+          <div class="section-title">
+            <div class="section-title-bar bar-cyan"></div>
+            <h2>معماری ۴ سطحی پلتفرم زیرا (Layered AI Architecture)</h2>
+          </div>
+          <div class="section-subtitle">
+            تفکیک لایه‌های زیرساختی، دانشی، عاملیتی و رابط کاربری
+          </div>
+        </div>
+
+        <div class="arch-redesign-box">
+          <div class="arch-two-col">
+            <div class="pyramid-stage">
+              <svg
+                class="pyramid-svg-clean"
+                viewBox="0 0 540 480"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="p-cyl1-top"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#FFA0C5" />
+                    <stop offset="100%" stop-color="#FF1E7A" />
+                  </linearGradient>
+                  <linearGradient
+                    id="p-cyl1-side"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#FF1E7A" />
+                    <stop offset="30%" stop-color="#FF6AA2" />
+                    <stop offset="70%" stop-color="#D60057" />
+                    <stop offset="100%" stop-color="#800034" />
+                  </linearGradient>
+
+                  <linearGradient
+                    id="p-cyl2-top"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#E2A6FF" />
+                    <stop offset="100%" stop-color="#9C27B0" />
+                  </linearGradient>
+                  <linearGradient
+                    id="p-cyl2-side"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#9C27B0" />
+                    <stop offset="30%" stop-color="#BA68C8" />
+                    <stop offset="70%" stop-color="#7B1FA2" />
+                    <stop offset="100%" stop-color="#4A148C" />
+                  </linearGradient>
+
+                  <linearGradient
+                    id="p-cyl3-top"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#FFC588" />
+                    <stop offset="100%" stop-color="#FF6F00" />
+                  </linearGradient>
+                  <linearGradient
+                    id="p-cyl3-side"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#FF6F00" />
+                    <stop offset="30%" stop-color="#FFA040" />
+                    <stop offset="70%" stop-color="#E65100" />
+                    <stop offset="100%" stop-color="#8F3000" />
+                  </linearGradient>
+
+                  <linearGradient
+                    id="p-cyl4-top"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#EAFF85" />
+                    <stop offset="100%" stop-color="#99CC00" />
+                  </linearGradient>
+                  <linearGradient
+                    id="p-cyl4-side"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#99CC00" />
+                    <stop offset="30%" stop-color="#BEE838" />
+                    <stop offset="70%" stop-color="#739900" />
+                    <stop offset="100%" stop-color="#405500" />
+                  </linearGradient>
+
+                  <radialGradient id="p-shadow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="rgba(0,0,0,0.85)" />
+                    <stop offset="60%" stop-color="rgba(0,0,0,0.4)" />
+                    <stop offset="100%" stop-color="transparent" />
+                  </radialGradient>
+
+                  <filter
+                    id="badge-glow-pink"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                  >
+                    <feDropShadow
+                      dx="0"
+                      dy="4"
+                      stdDeviation="6"
+                      flood-color="rgba(255, 46, 147, 0.4)"
+                    />
+                  </filter>
+                  <filter
+                    id="badge-glow-purple"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                  >
+                    <feDropShadow
+                      dx="0"
+                      dy="4"
+                      stdDeviation="6"
+                      flood-color="rgba(168, 85, 247, 0.4)"
+                    />
+                  </filter>
+                  <filter
+                    id="badge-glow-orange"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                  >
+                    <feDropShadow
+                      dx="0"
+                      dy="4"
+                      stdDeviation="6"
+                      flood-color="rgba(255, 122, 0, 0.4)"
+                    />
+                  </filter>
+                  <filter
+                    id="badge-glow-green"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                  >
+                    <feDropShadow
+                      dx="0"
+                      dy="4"
+                      stdDeviation="6"
+                      flood-color="rgba(153, 204, 0, 0.4)"
+                    />
+                  </filter>
+                </defs>
+
+                <ellipse
+                  cx="280"
+                  cy="445"
+                  rx="200"
+                  ry="26"
+                  fill="url(#p-shadow)"
+                />
+
+                <g id="pyr-tier-4">
+                  <path
+                    d="M 90 340 A 190 38 0 0 0 470 340 L 470 405 A 190 38 0 0 1 90 405 Z"
+                    fill="url(#p-cyl4-side)"
+                  />
+                  <ellipse
+                    cx="280"
+                    cy="340"
+                    rx="190"
+                    ry="38"
+                    fill="url(#p-cyl4-top)"
+                  />
+                  <path
+                    d="M 100 340 A 180 34 0 0 0 460 340"
+                    stroke="rgba(255,255,255,0.4)"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </g>
+
+                <g id="pyr-tier-3">
+                  <path
+                    d="M 130 240 A 150 30 0 0 0 430 240 L 430 295 A 150 30 0 0 1 130 295 Z"
+                    fill="url(#p-cyl3-side)"
+                  />
+                  <ellipse
+                    cx="280"
+                    cy="240"
+                    rx="150"
+                    ry="30"
+                    fill="url(#p-cyl3-top)"
+                  />
+                  <path
+                    d="M 140 240 A 140 26 0 0 0 420 240"
+                    stroke="rgba(255,255,255,0.45)"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </g>
+
+                <g id="pyr-tier-2">
+                  <path
+                    d="M 170 150 A 110 24 0 0 0 390 150 L 390 198 A 110 24 0 0 1 170 198 Z"
+                    fill="url(#p-cyl2-side)"
+                  />
+                  <ellipse
+                    cx="280"
+                    cy="150"
+                    rx="110"
+                    ry="24"
+                    fill="url(#p-cyl2-top)"
+                  />
+                  <path
+                    d="M 178 150 A 102 20 0 0 0 382 150"
+                    stroke="rgba(255,255,255,0.45)"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </g>
+
+                <g id="pyr-tier-1">
+                  <path
+                    d="M 210 65 A 70 16 0 0 0 350 65 L 350 108 A 70 16 0 0 1 210 108 Z"
+                    fill="url(#p-cyl1-side)"
+                  />
+                  <ellipse
+                    cx="280"
+                    cy="65"
+                    rx="70"
+                    ry="16"
+                    fill="url(#p-cyl1-top)"
+                  />
+                  <path
+                    d="M 216 65 A 64 14 0 0 0 344 65"
+                    stroke="rgba(255,255,255,0.5)"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </g>
+
+                <g id="callout-tier-1">
+                  <circle
+                    cx="218"
+                    cy="87"
+                    r="4.5"
+                    fill="#FF1E7A"
+                    stroke="#FFFFFF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M 218 87 L 76 87"
+                    stroke="#FF1E7A"
+                    stroke-width="2"
+                    stroke-dasharray="4,3"
+                    opacity="0.85"
+                  />
+                  <rect
+                    x="12"
+                    y="66"
+                    width="64"
+                    height="42"
+                    rx="12"
+                    fill="#181E2C"
+                    stroke="#FF1E7A"
+                    stroke-width="2"
+                    filter="url(#badge-glow-pink)"
+                  />
+                  <text
+                    x="44"
+                    y="93"
+                    text-anchor="middle"
+                    font-family="'Vazirmatn', sans-serif"
+                    font-size="16"
+                    font-weight="900"
+                    fill="#FFA0C5"
+                  >
+                    ۲۵٪
+                  </text>
+                </g>
+
+                <g id="callout-tier-2">
+                  <circle
+                    cx="178"
+                    cy="174"
+                    r="4.5"
+                    fill="#9C27B0"
+                    stroke="#FFFFFF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M 178 174 L 76 174"
+                    stroke="#9C27B0"
+                    stroke-width="2"
+                    stroke-dasharray="4,3"
+                    opacity="0.85"
+                  />
+                  <rect
+                    x="12"
+                    y="153"
+                    width="64"
+                    height="42"
+                    rx="12"
+                    fill="#181E2C"
+                    stroke="#A855F7"
+                    stroke-width="2"
+                    filter="url(#badge-glow-purple)"
+                  />
+                  <text
+                    x="44"
+                    y="180"
+                    text-anchor="middle"
+                    font-family="'Vazirmatn', sans-serif"
+                    font-size="16"
+                    font-weight="900"
+                    fill="#E2A6FF"
+                  >
+                    ۵۰٪
+                  </text>
+                </g>
+
+                <g id="callout-tier-3">
+                  <circle
+                    cx="138"
+                    cy="268"
+                    r="4.5"
+                    fill="#FF6F00"
+                    stroke="#FFFFFF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M 138 268 L 76 268"
+                    stroke="#FF6F00"
+                    stroke-width="2"
+                    stroke-dasharray="4,3"
+                    opacity="0.85"
+                  />
+                  <rect
+                    x="12"
+                    y="247"
+                    width="64"
+                    height="42"
+                    rx="12"
+                    fill="#181E2C"
+                    stroke="#FF7A00"
+                    stroke-width="2"
+                    filter="url(#badge-glow-orange)"
+                  />
+                  <text
+                    x="44"
+                    y="274"
+                    text-anchor="middle"
+                    font-family="'Vazirmatn', sans-serif"
+                    font-size="16"
+                    font-weight="900"
+                    fill="#FFC588"
+                  >
+                    ۷۵٪
+                  </text>
+                </g>
+
+                <g id="callout-tier-4">
+                  <circle
+                    cx="98"
+                    cy="370"
+                    r="4.5"
+                    fill="#99CC00"
+                    stroke="#FFFFFF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M 98 370 L 76 370"
+                    stroke="#99CC00"
+                    stroke-width="2"
+                    stroke-dasharray="4,3"
+                    opacity="0.85"
+                  />
+                  <rect
+                    x="12"
+                    y="349"
+                    width="64"
+                    height="42"
+                    rx="12"
+                    fill="#181E2C"
+                    stroke="#99CC00"
+                    stroke-width="2"
+                    filter="url(#badge-glow-green)"
+                  />
+                  <text
+                    x="44"
+                    y="376"
+                    text-anchor="middle"
+                    font-family="'Vazirmatn', sans-serif"
+                    font-size="16"
+                    font-weight="900"
+                    fill="#EAFF85"
+                  >
+                    ۱۰۰٪
+                  </text>
+                </g>
+              </svg>
+
+              <div class="pyramid-footer-note">
+                <span>🎯</span>
+                <span>هرم توزیع کارکردی پلتفرم هوش مصنوعی زیرا</span>
+              </div>
+            </div>
+
+            <div class="arch-cards-col">
+              <div class="arch-capsule-card tier-1">
+                <div class="capsule-sphere">🌐</div>
+                <div class="capsule-info">
+                  <h3>
+                    لایه اول: کانال‌های دسترسی و تجربه یکپارچه (Omnichannel
+                    Experience)
+                  </h3>
+                  <p>
+                    دسترسی آسان و چندکاناله از طریق وب‌سایت، اپلیکیشن اندروید،
+                    افزونه کروم، پیامک، و به‌زودی بات‌های روبیکا، بله و تلفن
+                    گویا با شناسه هویتی واحد.
+                  </p>
+                  <div class="capsule-tags">
+                    <span class="capsule-tag">وب‌سایت ziira.ir</span>
+                    <span class="capsule-tag">اپلیکیشن اندروید</span>
+                    <span class="capsule-tag">سرشماره پیامکی</span>
+                    <span class="capsule-tag">افزونه Chrome</span>
+                    <span class="capsule-tag">روبیکا و بله</span>
+                    <span class="capsule-tag">IVR تلفن گویا</span>
+                  </div>
+                </div>
+                <div class="capsule-pct-pill">25%</div>
+              </div>
+
+              <div class="arch-capsule-card tier-2">
+                <div class="capsule-sphere">🤖</div>
+                <div class="capsule-info">
+                  <h3>
+                    لایه دوم: دستیاران تخصصی و یکپارچگی عملیاتی (Agentic AI &
+                    Integration)
+                  </h3>
+                  <p>
+                    مجموعه دستیاران هوشمند با قابلیت اتصال زنده به سامانه‌های
+                    داخلی سازمان (جیرا، CRM و...)، مدیریت اتوماتیک تسک‌ها،
+                    پشتیبانی ۲۴/۷ و پردازش چندوجهی تصویر و ویدیو.
+                  </p>
+                  <div class="capsule-tags">
+                    <span class="capsule-tag">دستیار مدیریت پروژه</span>
+                    <span class="capsule-tag">اتصال مستقیم به Jira</span>
+                    <span class="capsule-tag">ویجت پشتیبانی و CRM</span>
+                    <span class="capsule-tag">پردازش OCR و ویدیو</span>
+                  </div>
+                </div>
+                <div class="capsule-pct-pill">50%</div>
+              </div>
+
+              <div class="arch-capsule-card tier-3">
+                <div class="capsule-sphere">📚</div>
+                <div class="capsule-info">
+                  <h3>
+                    لایه سوم: پایگاه دانش سازمانی و RAG بومی (Enterprise
+                    Knowledge & Security)
+                  </h3>
+                  <p>
+                    ایجاد فضای کار اختصاصی (Tenant ایزوله)، بارگذاری امن مستندات
+                    پروژه، ماتریکس کنترل دسترسی تیم‌ها (RBAC) و پاسخگویی دقیق و
+                    مستند بدون توهم داده‌ای.
+                  </p>
+                  <div class="capsule-tags">
+                    <span class="capsule-tag">فضای کار اختصاصی</span>
+                    <span class="capsule-tag">موتور RAG بومی</span>
+                    <span class="capsule-tag">مدیریت سطوح دسترسی</span>
+                    <span class="capsule-tag">حاکمیت داده و امنیت</span>
+                  </div>
+                </div>
+                <div class="capsule-pct-pill">75%</div>
+              </div>
+
+              <div class="arch-capsule-card tier-4">
+                <div class="capsule-sphere">⚡</div>
+                <div class="capsule-info">
+                  <h3>
+                    لایه چهارم: زیرساخت تجمیعی مدل‌ها و کیف پول مرکزی
+                    (Foundational Model Hub)
+                  </h3>
+                  <p>
+                    محیط چندمدلی یکپارچه با تمرکز بر پردازش زبان فارسی، مدیریت
+                    متمرکز اعتبار و مصرف (Pay-as-you-go)، سهمیه‌بندی بودجه
+                    تیم‌ها و داشبورد تحلیل مصرف سازمان.
+                  </p>
+                  <div class="capsule-tags">
+                    <span class="capsule-tag">طیف متنوع LLMها</span>
+                    <span class="capsule-tag">پردازش عمیق زبان فارسی</span>
+                    <span class="capsule-tag">کیف پول متمرکز مصرف</span>
+                    <span class="capsule-tag">داشبورد مانیتورینگ</span>
+                  </div>
+                </div>
+                <div class="capsule-pct-pill">100%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section-header">
+          <div class="section-title">
+            <div class="section-title-bar bar-green"></div>
+            <h2>تفکیک راهبردی مخاطبان هدف (Dual Core Ecosystem)</h2>
+          </div>
+          <div class="section-subtitle">
+            پوشش هم‌زمان بازار خرد مشترکین و شرکت‌های بزرگ سازمانی
+          </div>
+        </div>
+
+        <div class="dual-core-grid">
+          <div class="dual-box b2c">
+            <div class="dual-box-header">
+              <div class="dual-title-group">
+                <div class="dual-icon-badge">👤</div>
+                <div>
+                  <h3>زیرا برای کاربران عمومی (B2C)</h3>
+                  <span style="font-size: 11.5px; color: var(--text-dim)"
+                    >مشترکین خرد، پژوهشگران، متخصصین و عموم شهروندان</span
+                  >
+                </div>
+              </div>
+              <span class="dual-tag">پایگاه مصرف انبوه</span>
+            </div>
+
+            <ul class="dual-feature-list">
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>دسترسی چندکاناله همه‌جا‌حاضر:</strong> تعامل روان از
+                  طریق وب‌سایت، اپلیکیشن، افزونه کروم و بات‌های پیام‌رسان بومی.
+                </div>
+              </li>
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>شناسه هویت واحد (Single Sign-On):</strong> حفظ تاریخچه
+                  مکالمات، پرامپت‌ها و داده‌ها با شماره تلفن همراه.
+                </div>
+              </li>
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>کیف پول خرد مرکزی (Micro-Wallet):</strong> شارژ آسان
+                  اعتباری و پرداخت منعطف متناسب با مصرف واقعی (Pay-As-You-Go).
+                </div>
+              </li>
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>تنوع خدمات چندرسانه‌ای:</strong> گفت‌وگو، تولید محتوای
+                  متنی، پردازش و ساخت تصاویر و خلاصه‌سازی هوشمند.
+                </div>
+              </li>
+            </ul>
+
+            <div class="dual-bottom-note">
+              <span style="color: var(--ziira-cyan); font-weight: 800"
+                >اهرم همراه اول:</span
+              >
+              <span
+                >امکان فعال‌سازی مستقیم روی بسته اینترنت، شارژ اعتباری و پرداخت
+                روی قبض سیم‌کارت</span
+              >
+            </div>
+          </div>
+
+          <div class="dual-box b2b">
+            <div class="dual-box-header">
+              <div class="dual-title-group">
+                <div class="dual-icon-badge">🏢</div>
+                <div>
+                  <h3>زیرا برای سازمان‌ها و کسب‌وکارها (B2B)</h3>
+                  <span style="font-size: 11.5px; color: var(--text-dim)"
+                    >هلدینگ‌ها، بانک‌ها، اپراتورها و شرکت‌های فناور کشور</span
+                  >
+                </div>
+              </div>
+              <span class="dual-tag">درآمدزایی پایدار سازمانی</span>
+            </div>
+
+            <ul class="dual-feature-list">
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>فضای کاری اختصاصی (Enterprise Tenant):</strong> محیط
+                  امن، رمزنگاری‌شده و کاملاً ایزوله مختص هر سازمان.
+                </div>
+              </li>
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>ماتریکس مدیریت دسترسی (RBAC):</strong> تعیین نقش‌ها،
+                  دسترسی تیم‌ها به مدل‌های مشخص و پایش امنیت داده‌ها.
+                </div>
+              </li>
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>کیف پول سازمانی و سهمیه‌بندی:</strong> تخصیص بودجه و
+                  سقف مصرف هوش مصنوعی برای هر دپارتمان یا واحد کاری.
+                </div>
+              </li>
+              <li class="dual-feature-item">
+                <span class="dual-feature-bullet"></span>
+                <div>
+                  <strong>ادغام عمیق در فرآیندهای کسب‌وکار:</strong> تبدیل هوش
+                  مصنوعی به بازوی اتوماسیون تصمیم‌گیری و اجرای وظایف.
+                </div>
+              </li>
+            </ul>
+
+            <div class="dual-bottom-note">
+              <span style="color: var(--ebcom-green); font-weight: 800"
+                >ارزش افزوده همراه اول:</span
+              >
+              <span
+                >بسته‌بندی در قالب بسته راهکارهای سازمانی همراه اول (B2B) برای
+                ۵۰۰ شرکت برتر کشور</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="gauge-section">
+          <div class="section-header">
+            <div class="section-title">
+              <div class="section-title-bar bar-purple"></div>
+              <h2>
+                ۴ موتور تمایز و ارزش‌آفرینی پلتفرم «زیرا» (Core Value Engines)
+              </h2>
+            </div>
+            <div class="section-subtitle">
+              مزیت رقابتی پایدار در صنعت هوش مصنوعی کشور
+            </div>
+          </div>
+
+          <div class="gauge-grid">
+            <div class="gauge-card gauge-cyan">
+              <div class="gauge-vis">
+                <svg class="gauge-svg" viewBox="0 0 140 140">
+                  <circle
+                    class="gauge-bg-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                  ></circle>
+                  <circle
+                    class="gauge-fill-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                    style="stroke-dashoffset: 75"
+                  ></circle>
+                </svg>
+                <div class="gauge-inner-sphere">
+                  <span class="gauge-inner-icon">🇮🇷</span>
+                </div>
+              </div>
+              <div class="gauge-title">بومی‌سازی عمیق فارسی</div>
+              <div class="gauge-desc">
+                درک دقیق تفاوت‌های زبانی، ادبیات تخصصی اداری، حقوقی و تجاری
+                ایران بدون افت کیفیت در مقایسه با ابزارهای غیربومی.
+              </div>
+            </div>
+
+            <div class="gauge-card gauge-green">
+              <div class="gauge-vis">
+                <svg class="gauge-svg" viewBox="0 0 140 140">
+                  <circle
+                    class="gauge-bg-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                  ></circle>
+                  <circle
+                    class="gauge-fill-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                    style="stroke-dashoffset: 95"
+                  ></circle>
+                </svg>
+                <div class="gauge-inner-sphere">
+                  <span class="gauge-inner-icon">🔗</span>
+                </div>
+              </div>
+              <div class="gauge-title">لایه اتصال سامانه‌ای</div>
+              <div class="gauge-desc">
+                یکپارچگی بی‌واسطه با جیرا، سیستم‌های مدیریت وظایف، CRM و
+                پایگاه‌های دانش داخلی به عنوان لایه هوشمند سازمان.
+              </div>
+            </div>
+
+            <div class="gauge-card gauge-purple">
+              <div class="gauge-vis">
+                <svg class="gauge-svg" viewBox="0 0 140 140">
+                  <circle
+                    class="gauge-bg-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                  ></circle>
+                  <circle
+                    class="gauge-fill-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                    style="stroke-dashoffset: 60"
+                  ></circle>
+                </svg>
+                <div class="gauge-inner-sphere">
+                  <span class="gauge-inner-icon">📊</span>
+                </div>
+              </div>
+              <div class="gauge-title">حاکمیت مصرف و هزینه</div>
+              <div class="gauge-desc">
+                داشبورد زنده پایش توکن، گزارش‌گیری دپارتمانی، سقف اعتباری تیم‌ها
+                و شفافیت کامل در مدل‌های پرداخت سازمانی و فردی.
+              </div>
+            </div>
+
+            <div class="gauge-card gauge-orange">
+              <div class="gauge-vis">
+                <svg class="gauge-svg" viewBox="0 0 140 140">
+                  <circle
+                    class="gauge-bg-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                  ></circle>
+                  <circle
+                    class="gauge-fill-circle"
+                    cx="70"
+                    cy="70"
+                    r="56"
+                    style="stroke-dashoffset: 110"
+                  ></circle>
+                </svg>
+                <div class="gauge-inner-sphere">
+                  <span class="gauge-inner-icon">👁️</span>
+                </div>
+              </div>
+              <div class="gauge-title">پردازش چندوجهی رسانه</div>
+              <div class="gauge-desc">
+                استخراج هوشمند متن از تصاویر، جستجوی ویژوال در کاتالوگ محصولات
+                دیجیتال و خلاصه‌سازی هوشمند محتوای ویدیویی.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="section-header">
+          <div class="section-title">
+            <div class="section-title-bar bar-orange"></div>
+            <h2>سبد راهکارهای تخصصی سازمانی (Enterprise AI Portfolio)</h2>
+          </div>
+          <div class="section-subtitle">
+            محصولات آماده به‌کار جهت ارتقای بهره‌وری عملیاتی
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-box">
+            <div class="pillar-header">
+              <div
+                class="pillar-sphere-sm"
+                style="background: var(--grad-green); color: #111a00"
+              >
+                🎯
+              </div>
+              <div>
+                <h3>دستیار مدیریت و عملیات پروژه (Project Ops AI)</h3>
+                <span style="font-size: 11px; color: var(--text-dim)"
+                  >کاهش محسوس اصطکاک پروژه‌های پیچیده سازمانی</span
+                >
+              </div>
+            </div>
+            <div class="feature-tags">
+              <div class="feature-tag">
+                📁 <strong>تحلیل اطلاعات و مستندات:</strong> استخراج آنی
+                پیش‌نیازها و شناسایی موانع
+              </div>
+              <div class="feature-tag">
+                ⚡ <strong>برنامه‌ریزی و اولویت‌بندی:</strong> چیدمان فعالیت‌ها
+                بر مبنای توان واقعی تیم
+              </div>
+              <div class="feature-tag">
+                🔗 <strong>اتصال به Jira و Task Manager:</strong> ثبت و تخصیص
+                مستقیم وظایف
+              </div>
+              <div class="feature-tag">
+                📈 <strong>گزارش‌های مدیریتی:</strong> سنجش وضعیت پیشرفت پروژه
+                بر اساس داده‌های زنده
+              </div>
+              <div class="feature-tag">
+                🛡️ <strong>رعایت سطح دسترسی:</strong> تفکیک دسترسی کاربران هنگام
+                فراخوانی اطلاعات پروژه
+              </div>
+            </div>
+          </div>
+
+          <div class="pillar-box">
+            <div class="pillar-header">
+              <div
+                class="pillar-sphere-sm"
+                style="background: var(--grad-purple); color: #fff"
+              >
+                🎧
+              </div>
+              <div>
+                <h3>دستیار هوشمند پشتیبانی و پاسخ‌گویی (Omni Support AI)</h3>
+                <span style="font-size: 11px; color: var(--text-dim)"
+                  >پاسخگویی ۲۴/۷ متناسب با محصولات و خدمات کسب‌وکار</span
+                >
+              </div>
+            </div>
+            <div class="feature-tags">
+              <div class="feature-tag">
+                💬 <strong>پاسخ‌گویی هوشمند:</strong> رفع سوالات مشتریان بدون صف
+                انتظار و خستگی
+              </div>
+              <div class="feature-tag">
+                📚 <strong>پایگاه دانش اختصاصی:</strong> تکیه بر اطلاعات و اسناد
+                رسمی کسب‌وکار
+              </div>
+              <div class="feature-tag">
+                🌐 <strong>ویجت وب‌سایت و اپلیکیشن:</strong> استقرار تجربه
+                گفتگو‌محور در چند دقیقه
+              </div>
+              <div class="feature-tag">
+                🔍 <strong>تحلیل رفتار و تعاملات:</strong> شناسایی موضوعات و
+                نیازهای پرتکرار مشتریان
+              </div>
+              <div class="feature-tag">
+                🔄 <strong>اتصال به سیستم‌های تیکتینگ:</strong> ارجاع هوشمند
+                موارد خاص به کارشناسان
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 5 -->
+        <div class="omni-section">
+          <div class="section-header" style="margin-bottom: 20px">
+            <div class="section-title">
+              <div class="section-title-bar bar-cyan"></div>
+              <h2>کانال‌های دسترسی و نقشه راه توسعه (Omnichannel Ecosystem)</h2>
+            </div>
+            <div class="section-subtitle">
+              دسترسی فراگیر در سراسر زیرساخت ارتباطی و پیام‌رسانی کشور
+            </div>
+          </div>
+
+          <div class="omni-layout">
+            <div>
+              <div class="channel-group-title">
+                <span class="status-dot active"></span>
+                <span>کانال‌های فعال و در دسترس کاربران (Active Channels)</span>
+              </div>
+              <div class="channels-flex">
+                <div class="channel-item active">
+                  <span style="font-size: 20px">🌐</span>
+                  <div>
+                    <div class="channel-name">وب‌سایت اختصاصی</div>
+                    <div class="channel-meta">ziira.ir (محیط ابری پرسرعت)</div>
+                  </div>
+                </div>
+                <div class="channel-item active">
+                  <span style="font-size: 20px">📱</span>
+                  <div>
+                    <div class="channel-name">اپلیکیشن اندروید</div>
+                    <div class="channel-meta">تجربه کاربری نیتیو موبایل</div>
+                  </div>
+                </div>
+                <div class="channel-item active">
+                  <span style="font-size: 20px">🧩</span>
+                  <div>
+                    <div class="channel-name">افزونه مرورگر Chrome</div>
+                    <div class="channel-meta">
+                      دستیار همراه وب‌گردی و مطالعه
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-item active">
+                  <span style="font-size: 20px">💬</span>
+                  <div>
+                    <div class="channel-name">سرشماره پیامکی (SMS)</div>
+                    <div class="channel-meta">
+                      هوش مصنوعی بدون نیاز به اینترنت
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="channel-group-title" style="color: var(--ai-purple)">
+                <span class="status-dot pipeline"></span>
+                <span>کانال‌های در آستانه راه‌اندازی (Upcoming Pipeline)</span>
+              </div>
+              <div class="channels-flex">
+                <div class="channel-item pipeline">
+                  <span style="font-size: 20px">💬</span>
+                  <div>
+                    <div class="channel-name">ربات پیام‌رسان بله</div>
+                    <div class="channel-meta">یکپارچگی با جامعه کسب‌وکاری</div>
+                  </div>
+                </div>
+                <div class="channel-item pipeline">
+                  <span style="font-size: 20px">⚡</span>
+                  <div>
+                    <div class="channel-name">ربات پیام‌رسان روبیکا</div>
+                    <div class="channel-meta">
+                      دسترسی به میلیون‌ها کاربر ملی
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-item pipeline">
+                  <span style="font-size: 20px">📞</span>
+                  <div>
+                    <div class="channel-name">خط تلفن گویا (Smart IVR)</div>
+                    <div class="channel-meta">
+                      تعامل صوتی هوشمند بر بستر شبکه همراه اول
+                    </div>
+                  </div>
+                </div>
+                <div class="channel-item pipeline">
+                  <span style="font-size: 20px">⚙️</span>
+                  <div>
+                    <div class="channel-name">سرویس‌های اختصاصی سازمانی</div>
+                    <div class="channel-meta">
+                      طراحی متناسب با سامانه‌های کلان هر شرکت
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-left">
+          <div class="footer-slogan">
+            پلتفرم زیرا؛ <span>هوش مصنوعی، یکپارچه و در دسترس</span>
+          </div>
+        </div>
+        <div class="footer-right">
+          شرکت همراه کسب‌وکارهای هوشمند (EBCOM) • بازوی نوآوری دیجیتال هلدینگ
+          همراه اول<br />
+          سند ارائه مدیریتی مصوب ۱۴۰۵ • منطبق بر آخرین استانداردهای هویت بصری
+          زیست‌بوم زیرا و EBCOM
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
