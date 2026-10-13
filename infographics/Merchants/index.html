@@ -1,0 +1,3092 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      اینفوگرافیک تحلیلی شبکه پذیرندگان و اکوسیستم فروشگاه اوانو | Ewano
+      Merchant Network
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <style>
+      :root {
+        --persian-green: #00d4b4;
+        --persian-green-dark: #00a88e;
+        --persian-green-light: rgba(0, 212, 180, 0.12);
+        --persian-green-subtle: #3dd598;
+        --persian-green-pastel: #76de77;
+
+        --persian-orange: #ff7722;
+        --persian-orange-light: rgba(255, 119, 34, 0.12);
+        --persian-orange-dark: #d95a0b;
+        --supernova-yellow: #ffdb04;
+
+        --outer-space: #444444;
+        --outer-space-dark: #1c1c1c;
+        --outer-space-card: #22252a;
+        --outer-space-muted: #6b7280;
+
+        --whiteout: #f9fbfc;
+        --white: #ffffff;
+        --border-color: #e2e8f0;
+        --border-dark: #2d3748;
+
+        --royal-purple: #6f59a9;
+        --royal-purple-light: rgba(111, 89, 169, 0.12);
+        --persian-rose: #f16273;
+        --persian-rose-light: rgba(241, 98, 115, 0.12);
+        --sky-blue: #0093dd;
+        --sky-blue-light: rgba(0, 147, 221, 0.12);
+
+        --font-family:
+          "IranYekanX", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma,
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        background-color: #f4f6f8;
+        font-family: var(--font-family);
+        color: var(--outer-space);
+        line-height: 1.6;
+        padding: 30px 15px;
+        display: flex;
+        justify-content: center;
+        background-image:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 212, 180, 0.06) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 40%,
+            rgba(255, 119, 34, 0.05) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 50% 85%,
+            rgba(0, 147, 221, 0.04) 0%,
+            transparent 45%
+          );
+        background-attachment: fixed;
+      }
+
+      .infographic-wrapper {
+        width: 100%;
+        max-width: 1200px;
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 20px 60px rgba(28, 28, 28, 0.08);
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* -------------------------------------------------------------
+       HEADER / BRAND LOCKUP
+       ------------------------------------------------------------- */
+      .header {
+        background: var(--outer-space-dark);
+        color: #ffffff;
+        padding: 40px 48px 32px 48px;
+        position: relative;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 24px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .dragonfly-badge {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(
+          135deg,
+          var(--persian-green),
+          var(--persian-green-dark)
+        );
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        box-shadow: 0 8px 20px rgba(0, 212, 180, 0.3);
+        flex-shrink: 0;
+      }
+
+      .dragonfly-svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .brand-name-en {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--persian-green);
+        letter-spacing: 0.5px;
+        font-family: sans-serif;
+      }
+
+      .co-divider {
+        width: 1px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .partner-logos {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #d1d5db;
+        flex-wrap: wrap;
+      }
+
+      .partner-pill {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 6px 14px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .partner-pill strong {
+        color: var(--persian-green);
+      }
+
+      .header-badge {
+        background: var(--persian-green);
+        color: var(--outer-space-dark);
+        font-weight: 900;
+        font-size: 12px;
+        padding: 7px 18px;
+        border-radius: 30px;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 15px rgba(0, 212, 180, 0.35);
+      }
+
+      /* ============================================================
+       لوگوی Ewano — بزرگ‌تر و واضح‌تر
+       ============================================================ */
+      .ewano-logo-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+        min-width: 180px;
+        height: 56px;
+        overflow: visible;
+        flex-shrink: 0;
+      }
+
+      .ewano-logo-full {
+        display: block;
+        height: 100%;
+        width: auto;
+        max-width: 280px;
+        object-fit: contain;
+        object-position: right center;
+      }
+
+      .hero-title-area {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        width: 100%;
+      }
+
+      .hero-text-block {
+        width: 100%;
+      }
+
+      .hero-text-block h1 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 14px;
+        line-height: 1.35;
+      }
+
+      .hero-text-block h1 .highlight-green {
+        color: var(--persian-green);
+      }
+
+      .hero-text-block h1 .highlight-orange {
+        color: var(--persian-orange);
+      }
+
+      .hero-text-block p {
+        font-size: 15px;
+        color: #d1d5db;
+        font-weight: 400;
+        line-height: 2.05;
+        text-align: justify;
+        text-justify: inter-word;
+        margin: 0;
+      }
+
+      .hero-stats-banner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 100%;
+        margin-top: 6px;
+      }
+
+      .hero-stat-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.09) 0%,
+          rgba(255, 255, 255, 0.03) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 20px;
+        padding: 24px 20px;
+        text-align: center;
+        backdrop-filter: blur(14px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--card-accent, var(--persian-green)),
+          transparent
+        );
+        opacity: 0.8;
+      }
+
+      .hero-stat-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--persian-green);
+        box-shadow: 0 16px 36px rgba(0, 212, 180, 0.22);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.14) 0%,
+          rgba(0, 212, 180, 0.06) 100%
+        );
+      }
+
+      .hero-stat-num {
+        font-size: 38px;
+        font-weight: 900;
+        color: var(--persian-green);
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 4px;
+        direction: ltr;
+      }
+
+      .hero-stat-unit {
+        font-size: 0.5em;
+        font-weight: 700;
+        color: var(--persian-orange);
+        margin-left: 2px;
+      }
+
+      .hero-stat-label {
+        font-size: 15px;
+        color: #e5e7eb;
+        margin-top: 8px;
+        font-weight: 800;
+      }
+
+      .hero-stat-subtitle {
+        font-size: 11.5px;
+        color: #9ca3af;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+
+      .interactive-tabs-bar {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        padding: 18px 48px;
+        background: #111520;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .nav-tab-btn {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #d1d5db;
+        padding: 10px 12px;
+        border-radius: 14px;
+        cursor: pointer;
+        font-family: var(--font-family);
+        transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        text-align: right;
+      }
+
+      .nav-tab-btn * {
+        pointer-events: none;
+      }
+
+      .nav-tab-icon {
+        font-size: 24px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .nav-tab-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.35;
+        text-align: right;
+      }
+
+      .nav-tab-main {
+        font-size: 12.5px;
+        font-weight: 800;
+        color: inherit;
+      }
+
+      .nav-tab-sub {
+        font-size: 10px;
+        font-weight: 600;
+        opacity: 0.8;
+        color: inherit;
+        margin-top: 1px;
+      }
+
+      .nav-tab-btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      .nav-tab-btn.active {
+        background: var(--persian-green);
+        color: var(--outer-space-dark);
+        border-color: var(--persian-green);
+        box-shadow: 0 6px 18px rgba(0, 212, 180, 0.35);
+      }
+
+      .nav-tab-btn.active .nav-tab-sub {
+        opacity: 0.95;
+        color: var(--outer-space-dark);
+      }
+
+      .pillars-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        padding: 22px 48px;
+        background: #f8faf9;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+      }
+
+      .pillar-card {
+        background: #ffffff;
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border-color);
+        border-right: 4px solid var(--persian-green);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        cursor: default;
+      }
+
+      .pillar-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      }
+
+      .pillar-num {
+        font-size: 11.5px;
+        font-weight: 900;
+        color: var(--persian-green-dark);
+      }
+
+      .pillar-text {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--outer-space-dark);
+        line-height: 1.5;
+      }
+
+      .content-body {
+        padding: 40px 48px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 24px;
+        margin-top: 10px;
+      }
+
+      .section-title .bar {
+        width: 6px;
+        height: 48px;
+        background: var(--persian-green);
+        border-radius: 4px;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      .section-title-headings {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .section-title h2 {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--outer-space-dark);
+        line-height: 1.25;
+        margin: 0;
+      }
+
+      .section-title-en {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #6b7280;
+        direction: ltr;
+        text-align: right;
+        letter-spacing: 0.2px;
+      }
+
+      .section-title .section-desc {
+        font-size: 13px;
+        color: var(--outer-space-muted);
+        font-weight: 500;
+        margin-right: auto;
+        align-self: center;
+      }
+
+      .channels-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        margin-bottom: 44px;
+        width: 100%;
+      }
+
+      .channel-box {
+        border-radius: 20px;
+        padding: 28px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .channel-box.online-box {
+        background: linear-gradient(
+          150deg,
+          #f0f9ff 0%,
+          #ffffff 60%,
+          #e6f5fc 100%
+        );
+        border: 1.5px solid rgba(0, 147, 221, 0.3);
+        box-shadow: 0 8px 26px rgba(0, 147, 221, 0.08);
+      }
+
+      .channel-box.offline-box {
+        background: linear-gradient(
+          150deg,
+          #fff7f2 0%,
+          #ffffff 60%,
+          #fff0e5 100%
+        );
+        border: 1.5px solid rgba(255, 119, 34, 0.3);
+        box-shadow: 0 8px 26px rgba(255, 119, 34, 0.08);
+      }
+
+      .channel-box:hover {
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+        transform: translateY(-3px);
+      }
+
+      .channel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #edf2f7;
+      }
+
+      .channel-title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .channel-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .channel-icon.online {
+        background-color: var(--sky-blue-light);
+        color: var(--sky-blue);
+      }
+
+      .channel-icon.offline {
+        background-color: var(--persian-orange-light);
+        color: var(--persian-orange);
+      }
+
+      .channel-title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--outer-space-dark);
+      }
+
+      .channel-stat-badge {
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: 900;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .channel-stat-badge.online {
+        background: var(--sky-blue-light);
+        color: var(--sky-blue);
+      }
+
+      .channel-stat-badge.offline {
+        background: var(--persian-orange-light);
+        color: var(--persian-orange);
+      }
+
+      .channel-features {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .channel-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--outer-space);
+      }
+
+      .channel-feature-item svg {
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .channel-gateways-list {
+        background: #f8faf9;
+        border-radius: 12px;
+        padding: 12px 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        border: 1px solid var(--border-color);
+      }
+
+      .channel-gateways-title {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--outer-space-muted);
+        width: 100%;
+        margin-bottom: 2px;
+      }
+
+      .gateway-pill {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--outer-space-dark);
+      }
+
+      .credit-simulator-box {
+        background: #f8faf9;
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 44px;
+      }
+
+      .credit-nav-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .credit-btn {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        color: var(--outer-space);
+        padding: 10px 18px;
+        border-radius: 14px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-family);
+        transition: all 0.2s ease;
+      }
+
+      .credit-btn:hover {
+        border-color: var(--persian-green);
+        color: var(--persian-green-dark);
+      }
+
+      .credit-btn.active {
+        background: var(--persian-green);
+        color: var(--outer-space-dark);
+        border-color: var(--persian-green);
+        box-shadow: 0 4px 14px rgba(0, 212, 180, 0.3);
+        font-weight: 900;
+      }
+
+      .credit-content-box {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        padding: 26px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .credit-info-pane h3 {
+        font-size: 20px;
+        font-weight: 900;
+        color: var(--outer-space-dark);
+        margin-bottom: 10px;
+      }
+
+      .credit-info-pane p {
+        font-size: 13.5px;
+        color: var(--outer-space);
+        line-height: 1.8;
+        margin-bottom: 18px;
+      }
+
+      .credit-chips-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .credit-chip {
+        background: var(--persian-green-light);
+        border: 1px solid rgba(0, 212, 180, 0.3);
+        border-radius: 20px;
+        padding: 5px 12px;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--persian-green-dark);
+      }
+
+      .credit-merchants-box {
+        background: #f8faf9;
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 18px;
+      }
+
+      .credit-merchants-title {
+        font-size: 12.5px;
+        font-weight: 800;
+        color: var(--outer-space-dark);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .merchants-pill-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .m-pill {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 4px 10px;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--outer-space-dark);
+      }
+
+      .charts-dashboard-box {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 44px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+      }
+
+      .charts-grid-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .chart-card {
+        background: #f8faf9;
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      .chart-card:hover {
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+        border-color: var(--persian-green);
+        background: #ffffff;
+      }
+
+      .chart-card.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .chart-top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .chart-heading-group h3 {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--outer-space-dark);
+        margin-bottom: 3px;
+      }
+
+      .chart-heading-group p {
+        font-size: 11.5px;
+        color: var(--outer-space-muted);
+      }
+
+      .chart-legend-pill {
+        font-size: 11px;
+        font-weight: 800;
+        padding: 4px 10px;
+        border-radius: 12px;
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        color: var(--outer-space);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .chart-canvas-wrap {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        height: 270px;
+        max-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      .chart-canvas-wrap canvas {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .donut-layout-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .donut-stats-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .donut-stat-item {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .donut-item-label {
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .donut-item-val {
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .legend-color-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .lifestyle-guide-bottom {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px 16px;
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px dashed var(--border-color);
+        text-align: center;
+      }
+
+      .lifestyle-guide-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--outer-space-dark);
+        background: #ffffff;
+        padding: 4px 10px;
+        border-radius: 14px;
+        border: 1px solid var(--border-color);
+      }
+
+      .lifestyle-guide-item .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+      }
+
+      .giants-card-container {
+        background: linear-gradient(150deg, #1c2024 0%, #15181b 100%);
+        border: 1px solid #2d3748;
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 44px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        color: #ffffff;
+      }
+
+      .giants-stats-banner {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 212, 180, 0.16) 0%,
+          rgba(26, 31, 36, 0.95) 100%
+        );
+        border: 1px solid rgba(0, 212, 180, 0.35);
+        border-radius: 16px;
+        padding: 20px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .giants-banner-text h4 {
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--persian-green);
+        margin-bottom: 4px;
+      }
+
+      .giants-banner-text p {
+        font-size: 12.5px;
+        color: #d1d5db;
+      }
+
+      .giants-banner-pill {
+        background: var(--persian-green);
+        color: #141718;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-weight: 900;
+        font-size: 14px;
+        box-shadow: 0 4px 14px rgba(0, 212, 180, 0.4);
+      }
+
+      .giants-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      .giant-item-card {
+        background: #23282d;
+        border: 1px solid #333a42;
+        border-radius: 14px;
+        padding: 16px;
+        transition: all 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .giant-item-card:hover {
+        background: #2a3138;
+        border-color: var(--persian-green);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      }
+
+      .giant-brand-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+      }
+
+      .giant-name {
+        font-weight: 800;
+        font-size: 14px;
+        color: #ffffff;
+      }
+
+      .giant-branch-count {
+        font-weight: 900;
+        font-size: 14.5px;
+        color: var(--persian-green);
+      }
+
+      .giant-category {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 12px;
+      }
+
+      .giant-bar-track {
+        background: #374151;
+        border-radius: 999px;
+        height: 5px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .giant-bar-fill {
+        background: linear-gradient(
+          90deg,
+          var(--persian-green-subtle),
+          var(--persian-green)
+        );
+        height: 100%;
+        border-radius: 999px;
+        transition: width 1s ease-out;
+      }
+
+      .categories-explorer-wrap {
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 44px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+      }
+
+      .categories-filter-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .filter-tabs-group {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .filter-tab {
+        background: #f8faf9;
+        border: 1px solid var(--border-color);
+        padding: 7px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        color: var(--outer-space);
+        font-family: var(--font-family);
+        transition: all 0.2s;
+      }
+
+      .filter-tab:hover {
+        border-color: var(--persian-green);
+        background: #ffffff;
+      }
+
+      .filter-tab.active {
+        background: var(--persian-green);
+        color: var(--outer-space-dark);
+        border-color: var(--persian-green);
+        font-weight: 800;
+      }
+
+      .category-search-input {
+        padding: 9px 16px;
+        border-radius: 12px;
+        border: 1.5px solid var(--border-color);
+        font-family: inherit;
+        font-size: 12.5px;
+        min-width: 250px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .category-search-input:focus {
+        border-color: var(--persian-green);
+      }
+
+      .categories-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        max-height: 520px;
+        overflow-y: auto;
+        padding-left: 4px;
+      }
+
+      .categories-cards-grid::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .categories-cards-grid::-webkit-scrollbar-thumb {
+        background: #cbd5e0;
+        border-radius: 999px;
+      }
+
+      .cat-item-card {
+        background: #f8faf9;
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.2s ease;
+      }
+
+      .cat-item-card:hover {
+        background: #ffffff;
+        border-color: var(--persian-green);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+        transform: translateY(-2px);
+      }
+
+      .cat-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .cat-name-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .cat-icon-circle {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+      }
+
+      .cat-card-name {
+        font-weight: 800;
+        font-size: 14px;
+        color: var(--outer-space-dark);
+      }
+
+      .cat-total-count {
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--outer-space-dark);
+      }
+
+      .cat-progress-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .cat-stacked-bar {
+        height: 7px;
+        border-radius: 999px;
+        background: #e2e8f0;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .cat-segment-online {
+        background: #38c7b4;
+        height: 100%;
+      }
+
+      .cat-segment-offline {
+        background: #f9a073;
+        height: 100%;
+      }
+
+      .cat-split-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10.5px;
+        color: var(--outer-space-muted);
+        font-weight: 600;
+      }
+
+      .app-experience-wrap {
+        background: linear-gradient(145deg, #1c2022 0%, #141718 100%);
+        color: #ffffff;
+        border-radius: 24px;
+        padding: 40px;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .app-exp-content h2 {
+        font-size: 26px;
+        font-weight: 900;
+        color: #ffffff;
+        margin-bottom: 14px;
+        line-height: 1.35;
+      }
+
+      .app-exp-content p {
+        font-size: 14px;
+        color: #a0aec0;
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+
+      .app-feature-badge {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 15px;
+        line-height: 1;
+      }
+
+      .phone-mockup-frame {
+        background: #000000;
+        border: 8px solid #2d3748;
+        border-radius: 36px;
+        padding: 14px;
+        max-width: 300px;
+        margin: 0 auto;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      }
+
+      .phone-screen {
+        background: #f8faf9;
+        border-radius: 24px;
+        padding: 14px;
+        color: var(--outer-space-dark);
+        font-size: 11.5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .app-notch {
+        width: 90px;
+        height: 12px;
+        background: #000000;
+        border-radius: 999px;
+        margin: 0 auto 6px auto;
+      }
+
+      .app-header-mockup {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .app-tabs-pill {
+        display: flex;
+        background: #e2e8f0;
+        border-radius: 999px;
+        padding: 2px;
+      }
+
+      .app-tab-btn {
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 10.5px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        color: var(--outer-space);
+        font-family: var(--font-family);
+        transition: all 0.2s;
+      }
+
+      .app-tab-btn.active {
+        background: var(--persian-green);
+        color: var(--outer-space-dark);
+      }
+
+      .app-merchants-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        max-height: 220px;
+        overflow-y: hidden;
+      }
+
+      .app-m-row {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 8px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #e2e8f0;
+      }
+
+      .app-m-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .app-m-avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        background: var(--persian-green-light);
+        color: var(--persian-green-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 9.5px;
+      }
+
+      .app-m-name {
+        font-weight: 700;
+        font-size: 11px;
+      }
+
+      .app-m-cat {
+        font-size: 9px;
+        color: var(--outer-space-muted);
+      }
+
+      .app-m-action {
+        background: var(--persian-orange-light);
+        color: var(--persian-orange);
+        padding: 2px 7px;
+        border-radius: 999px;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      .footer {
+        background: var(--outer-space-dark);
+        color: #ffffff;
+        padding: 32px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-slogan {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .slogan-highlight {
+        color: var(--persian-green);
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      .footer-meta {
+        font-size: 11.5px;
+        color: #9ca3af;
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .floating-nav {
+        position: fixed;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(28, 28, 28, 0.94);
+        backdrop-filter: blur(16px);
+        padding: 7px 16px;
+        border-radius: 30px;
+        display: flex;
+        gap: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        z-index: 999;
+      }
+
+      .floating-btn {
+        color: #d1d5db;
+        font-size: 11.5px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .floating-btn:hover,
+      .floating-btn.active {
+        color: var(--outer-space-dark);
+        background: var(--persian-green);
+      }
+
+      @media (max-width: 1024px) {
+        .hero-stats-banner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .interactive-tabs-bar {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 18px 24px;
+        }
+        .pillars-container {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 18px 24px;
+        }
+        .pillars-container > :nth-child(5) {
+          grid-column: 1 / -1;
+        }
+        .channels-grid {
+          grid-template-columns: 1fr;
+        }
+        .charts-grid-main {
+          grid-template-columns: 1fr;
+        }
+        .giants-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .credit-content-box {
+          grid-template-columns: 1fr;
+        }
+        .categories-cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .app-experience-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px 6px;
+        }
+        .header,
+        .content-body,
+        .footer {
+          padding: 24px 16px;
+        }
+        .hero-title-area {
+          gap: 16px;
+        }
+        .hero-text-block h1 {
+          font-size: 24px;
+        }
+        .hero-stats-banner {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .hero-stat-card {
+          padding: 18px 14px;
+        }
+        .hero-stat-num {
+          font-size: 32px;
+        }
+        .interactive-tabs-bar {
+          grid-template-columns: 1fr;
+          padding: 14px 16px;
+          gap: 8px;
+        }
+        .nav-tab-btn {
+          justify-content: flex-start;
+          padding: 12px 14px;
+        }
+        .pillars-container {
+          grid-template-columns: 1fr;
+          padding: 16px;
+          gap: 10px;
+        }
+        .pillars-container > :nth-child(5) {
+          grid-column: auto;
+        }
+        .channels-grid {
+          grid-template-columns: 1fr;
+        }
+        .channel-box {
+          padding: 20px 16px;
+        }
+        .credit-simulator-box,
+        .charts-dashboard-box,
+        .giants-card-container,
+        .categories-explorer-wrap {
+          padding: 20px 14px;
+        }
+        .giants-grid {
+          grid-template-columns: 1fr;
+        }
+        .categories-cards-grid {
+          grid-template-columns: 1fr;
+        }
+        .donut-layout-split {
+          grid-template-columns: 1fr;
+        }
+        .app-experience-wrap {
+          padding: 24px 16px;
+        }
+        .floating-nav {
+          display: none;
+        }
+        .ewano-logo-box {
+          min-width: 140px;
+          height: 56px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .ewano-logo-box {
+          min-width: 120px;
+          height: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="infographic-wrapper">
+      <header class="header">
+        <div class="header-top">
+          <div class="brand-lockup">
+            <div class="brand-names">
+              <div class="ewano-logo-box">
+                <img
+                  src="../../assets/images/Ewano-logo.png"
+                  alt="Ewano"
+                  class="ewano-logo-full"
+                />
+              </div>
+            </div>
+            <div class="co-divider"></div>
+            <div class="partner-logos">
+              <div class="partner-pill">
+                هم‌پیمان استراتژیک: <strong>همراه اول</strong>
+              </div>
+            </div>
+          </div>
+          <div class="header-badge">گزارش جامع شبکه پذیرندگان فروشگاهی</div>
+        </div>
+
+        <div class="hero-title-area">
+          <div class="hero-text-block">
+            <h1>
+              اکوسیستم جامع پذیرندگی ، فروشگاه‌ها و
+              <span class="highlight-green">نقاط فروش اوانو</span>
+            </h1>
+            <p>
+              در بخش «فروشگاه» سوپراپلیکیشن اوانو، مجموعه‌ای به وسعت
+              <strong>۹،۳۹۷ مرچنت و پذیرنده فعال</strong> سازمان‌دهی شده است.
+              کاربران اوانو در سراسر کشور می‌توانند انواع اعتبار مالی شامل
+              <strong
+                >اعتبار سازمانی رفاهی، اعتبار اقساطی BNPL، اعتبار قبوض سیم‌کارت
+                دائمی همراه اول و کیف پول ریالی</strong
+              >
+              را چه به صورت آنلاین در برترین وب‌سایت‌های کشور و چه به صورت حضوری
+              در بیش از <strong>۸،۲۰۰ شعبه زنجیره‌ای فیزیکی</strong> از طریق
+              اسکن سریع کد QR بدون نیاز به کارت بانکی یا نقدینگی مصرف کنند.
+            </p>
+          </div>
+
+          <div class="hero-stats-banner">
+            <div
+              class="hero-stat-card"
+              style="--card-accent: var(--persian-green)"
+            >
+              <div class="hero-stat-num" data-count="9397" data-suffix="">
+                ۰
+              </div>
+              <div class="hero-stat-label">کل پذیرندگان فعال شبکه</div>
+              <div class="hero-stat-subtitle">
+                پوشش سراسری در ۳۰ صنف تجاری و خدماتی
+              </div>
+            </div>
+            <div class="hero-stat-card" style="--card-accent: var(--sky-blue)">
+              <div
+                class="hero-stat-num"
+                data-count="6189"
+                data-suffix=" (۶۵.۹٪)"
+              >
+                ۰<span class="hero-stat-unit"> (۶۵.۹٪)</span>
+              </div>
+              <div class="hero-stat-label">پذیرندگان آنلاین (Web & In-App)</div>
+              <div class="hero-stat-subtitle">
+                درگاه‌های اعتباری اوانو، زرین‌پلاس، اسنپ‌پی و ترب‌پی
+              </div>
+            </div>
+            <div
+              class="hero-stat-card"
+              style="--card-accent: var(--persian-orange)"
+            >
+              <div
+                class="hero-stat-num"
+                data-count="3208"
+                data-suffix=" (۳۴.۱٪)"
+              >
+                ۰<span class="hero-stat-unit"> (۳۴.۱٪)</span>
+              </div>
+              <div class="hero-stat-label">پذیرندگان حضوری (صندوق و QR)</div>
+              <div class="hero-stat-subtitle">
+                به همراه بیش از ۷،۴۶۶ شعبه زنجیره‌ای قطعی در سراسر کشور
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="interactive-tabs-bar" id="view-tabs">
+        <button class="nav-tab-btn active" onclick="switchView('all', this)">
+          <span class="nav-tab-icon">🎯</span>
+          <div class="nav-tab-text">
+            <div class="nav-tab-main">نمایش جامع شبکه</div>
+            <div class="nav-tab-sub">(All Ecosystem)</div>
+          </div>
+        </button>
+        <button class="nav-tab-btn" onclick="switchView('channels', this)">
+          <span class="nav-tab-icon">🌐</span>
+          <div class="nav-tab-text">
+            <div class="nav-tab-main">کانال‌های خرید</div>
+            <div class="nav-tab-sub">(Online & QR In-Store)</div>
+          </div>
+        </button>
+        <button class="nav-tab-btn" onclick="switchView('charts', this)">
+          <span class="nav-tab-icon">📊</span>
+          <div class="nav-tab-text">
+            <div class="nav-tab-main">نمودارهای تحلیلی</div>
+            <div class="nav-tab-sub">(Visual Analytics)</div>
+          </div>
+        </button>
+        <button class="nav-tab-btn" onclick="switchView('credit', this)">
+          <span class="nav-tab-icon">💳</span>
+          <div class="nav-tab-text">
+            <div class="nav-tab-main">شبیه‌ساز انواع اعتبار</div>
+            <div class="nav-tab-sub">(Credit Simulator)</div>
+          </div>
+        </button>
+        <button class="nav-tab-btn" onclick="switchView('giants', this)">
+          <span class="nav-tab-icon">🏬</span>
+          <div class="nav-tab-text">
+            <div class="nav-tab-main">غول‌های زنجیره‌ای</div>
+            <div class="nav-tab-sub">(Retail Giants)</div>
+          </div>
+        </button>
+        <button class="nav-tab-btn" onclick="switchView('categories', this)">
+          <span class="nav-tab-icon">🏷️</span>
+          <div class="nav-tab-text">
+            <div class="nav-tab-main">کاوشگر ۳۰ صنف</div>
+            <div class="nav-tab-sub">(30 Categories Explorer)</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="pillars-container" id="pillars-sec">
+        <div class="pillar-card">
+          <span class="pillar-num">۰۱. خرید چندکاناله</span>
+          <span class="pillar-text"
+            >پوشش همزمان خرید آنلاین در وب‌سایت‌ها و پرداخت حضوری در صندوق
+            پایانه‌ها</span
+          >
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">۰۲. تنوع منابع اعتباری</span>
+          <span class="pillar-text"
+            >امکان مصرف اعتبار سازمانی، اقساط ماهانه BNPL، قبوض همراه اول و کیف
+            پول</span
+          >
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">۰۳. پرداخت سریع بدون کارت</span>
+          <span class="pillar-text"
+            >اسکن کد QR صندوق فروشگاه در کمتر از ۳ ثانیه بدون نیاز به لمس پول
+            نقد یا پوز</span
+          >
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">۰۴. اهرم مشترکین همراه اول</span>
+          <span class="pillar-text"
+            >هدایت مستقیم تقاضای خرید میلیون‌ها کاربر خطوط دائمی به سمت
+            پذیرندگان شبکه</span
+          >
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">۰۵. تسویه تضمین‌شده و شفاف</span>
+          <span class="pillar-text"
+            >تسویه منظم بانکی شاپرکی و پایا بدون دغدغه یا ریسک بازپرداخت برای
+            فروشندگان</span
+          >
+        </div>
+      </div>
+
+      <div class="content-body">
+        <!-- SECTION 1: CHANNELS -->
+        <div id="channels-sec">
+          <div class="section-title">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>دو بال خرید در فروشگاه اوانو؛ آنلاین و حضوری</h2>
+              <div class="section-title-en">
+                (Omnichannel Shopping Infrastructure)
+              </div>
+            </div>
+            <span class="section-desc"
+              >انعطاف‌پذیری کامل در مصرف اعتبار بدون وابستگی به کارت فیزیکی
+              بانکی</span
+            >
+          </div>
+
+          <div class="channels-grid">
+            <div class="channel-box online-box">
+              <div>
+                <div class="channel-header">
+                  <div class="channel-title-wrap">
+                    <div class="channel-icon online">
+                      <svg
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                          d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="channel-title">
+                        فروشگاه‌های آنلاین (Web & In-App)
+                      </div>
+                      <div
+                        style="
+                          font-size: 11.5px;
+                          color: var(--outer-space-muted);
+                        "
+                      >
+                        خرید اینترنتی با انتخاب درگاه اعتباری اوانو
+                      </div>
+                    </div>
+                  </div>
+                  <div class="channel-stat-badge online">
+                    ۶،۱۸۹ <span style="font-size: 12px">(۶۵.۹٪)</span>
+                  </div>
+                </div>
+
+                <ul class="channel-features">
+                  <li class="channel-feature-item">
+                    <svg
+                      width="17"
+                      height="17"
+                      fill="none"
+                      stroke="var(--sky-blue)"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span
+                      ><strong>خرید از برترین پلتفرم‌های اینترنتی:</strong>
+                      دیجی‌کالا، اُکالا، تکنولایف، تپسی‌شاپ، زرین‌پلاس،
+                      فلای‌تودی و...</span
+                    >
+                  </li>
+                  <li class="channel-feature-item">
+                    <svg
+                      width="17"
+                      height="17"
+                      fill="none"
+                      stroke="var(--sky-blue)"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span
+                      ><strong>تنوع صنفی گسترده:</strong> کالای دیجیتال، طلا و
+                      جواهر، سفر و اقامت، خدمات بیمه، آموزش آنلاین و کتاب</span
+                    >
+                  </li>
+                  <li class="channel-feature-item">
+                    <svg
+                      width="17"
+                      height="17"
+                      fill="none"
+                      stroke="var(--sky-blue)"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span
+                      ><strong>تسویه و تسهیم هوشمند:</strong> کسر آنی از اعتبار
+                      سازمانی، اقساط ۴ ماهه BNPL یا بالانس کیف پول</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="channel-gateways-list">
+                <div class="channel-gateways-title">
+                  کانال‌ها و درگاه‌های آنلاین متصل:
+                </div>
+                <span class="gateway-pill">درگاه مستقیم اوانو</span>
+                <span class="gateway-pill">زرین‌پلاس</span>
+                <span class="gateway-pill">اسنپ‌پی آنلاین</span>
+                <span class="gateway-pill">تپسی‌شاپ</span>
+                <span class="gateway-pill">ترب‌پی</span>
+              </div>
+            </div>
+
+            <div class="channel-box offline-box">
+              <div>
+                <div class="channel-header">
+                  <div class="channel-title-wrap">
+                    <div class="channel-icon offline">
+                      <svg
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="channel-title">
+                        فروشگاه‌های حضوری (کد QR و پایانه)
+                      </div>
+                      <div
+                        style="
+                          font-size: 11.5px;
+                          color: var(--outer-space-muted);
+                        "
+                      >
+                        خرید فوری در صندوق بدون نیاز به پول نقد و کارت
+                      </div>
+                    </div>
+                  </div>
+                  <div class="channel-stat-badge offline">
+                    ۳،۲۰۸ <span style="font-size: 12px">(۳۴.۱٪)</span>
+                  </div>
+                </div>
+
+                <ul class="channel-features">
+                  <li class="channel-feature-item">
+                    <svg
+                      width="17"
+                      height="17"
+                      fill="none"
+                      stroke="var(--persian-orange)"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span
+                      ><strong>اسکن سریع کد QR پایانه:</strong> پرداخت در کمتر
+                      از ۳ ثانیه با دوربین اپلیکیشن اوانو در صندوق فروشگاه</span
+                    >
+                  </li>
+                  <li class="channel-feature-item">
+                    <svg
+                      width="17"
+                      height="17"
+                      fill="none"
+                      stroke="var(--persian-orange)"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span
+                      ><strong>بیش از ۸،۲۰۰ شعبه فیزیکی زنجیره‌ای:</strong> افق
+                      کوروش، دیلی مارکت، رفاه، هفت، هایپراستار، شهروند و چرم
+                      مشهد</span
+                    >
+                  </li>
+                  <li class="channel-feature-item">
+                    <svg
+                      width="17"
+                      height="17"
+                      fill="none"
+                      stroke="var(--persian-orange)"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span
+                      ><strong>خرید حضوری پوشاک و طلا:</strong> ۱،۸۸۷ فروشگاه
+                      پوشاک و ۳۶۲ گالری طلا و ساعت مجهز به پایانه‌های
+                      حضوری</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="channel-gateways-list">
+                <div class="channel-gateways-title">
+                  شبکه‌های پذیرش حضوری و پایانه فروشگاهی:
+                </div>
+                <span class="gateway-pill">پینکت (سوپرمارکت و هایپر)</span>
+                <span class="gateway-pill">پایانه‌های پوز متصل به اوانو</span>
+                <span class="gateway-pill">بارکدخوان QR صندوق</span>
+                <span class="gateway-pill">اسنپ‌پی حضوری</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: CREDIT SIMULATOR -->
+        <div id="credit-sec">
+          <div class="section-title">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>شبیه‌ساز مصرف انواع اعتبار در فروشگاه اوانو</h2>
+              <div class="section-title-en">
+                (Credit Consumption Workflow Simulator)
+              </div>
+            </div>
+            <span class="section-desc"
+              >بررسی رفتار مصرفی، پذیرندگان شاخص و شرایط تسویه هر نوع اعتبار
+              مالی</span
+            >
+          </div>
+
+          <div class="credit-simulator-box">
+            <div class="credit-nav-tabs">
+              <button class="credit-btn active" data-credit="org">
+                <span>🏢</span>
+                <span>اعتبار سازمانی رفاهی</span>
+              </button>
+              <button class="credit-btn" data-credit="bnpl">
+                <span>💳</span>
+                <span>اعتبار اقساطی BNPL</span>
+              </button>
+              <button class="credit-btn" data-credit="mci">
+                <span>📱</span>
+                <span>اعتبار سیم‌کارت همراه اول</span>
+              </button>
+              <button class="credit-btn" data-credit="wallet">
+                <span>👛</span>
+                <span>کیف پول ریالی و کش‌بک</span>
+              </button>
+            </div>
+
+            <div class="credit-content-box" id="creditContentBox"></div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: CHARTS DASHBOARD -->
+        <div id="charts-sec">
+          <div class="section-title">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>نمودارهای تحلیلی و بصری‌سازی داده‌های شبکه</h2>
+              <div class="section-title-en">
+                (Data Visualizations & Merchant Distribution)
+              </div>
+            </div>
+            <span class="section-desc"
+              >انیمیشن روان هنگام اسکرول به محدوده دید (Viewport Animation) و
+              انطباق هم‌عرض با باکس‌ها</span
+            >
+          </div>
+
+          <div class="charts-dashboard-box">
+            <div class="charts-grid-main">
+              <div class="chart-card" data-observe-chart="donut">
+                <div class="chart-top-bar">
+                  <div class="chart-heading-group">
+                    <h3>توازن کانال‌های دسترسی شبکه اوانو</h3>
+                    <p>
+                      نسبت پذیرندگان درگاه آنلاین به پایانه‌های پرداخت حضوری QR
+                    </p>
+                  </div>
+                  <div class="chart-legend-pill">
+                    <span
+                      class="legend-color-dot"
+                      style="background: #0093dd"
+                    ></span>
+                    <span>آنلاین ۶۵.۹٪ | حضوری ۳۴.۱٪</span>
+                  </div>
+                </div>
+                <div class="donut-layout-split">
+                  <div class="chart-canvas-wrap">
+                    <canvas id="channelDonutChart"></canvas>
+                  </div>
+                  <div class="donut-stats-col">
+                    <div class="donut-stat-item">
+                      <div class="donut-item-label">
+                        <span
+                          class="legend-color-dot"
+                          style="background: #0093dd"
+                        ></span>
+                        <span>درگاه‌های اینترنتی (آنلاین)</span>
+                      </div>
+                      <div class="donut-item-val" style="color: #0093dd">
+                        ۶،۱۸۹
+                      </div>
+                    </div>
+                    <div class="donut-stat-item">
+                      <div class="donut-item-label">
+                        <span
+                          class="legend-color-dot"
+                          style="background: #ff7722"
+                        ></span>
+                        <span>پایانه‌ها و صندوق‌های QR</span>
+                      </div>
+                      <div class="donut-item-val" style="color: #ff7722">
+                        ۳،۲۰۸
+                      </div>
+                    </div>
+                    <div
+                      class="donut-stat-item"
+                      style="
+                        background: var(--persian-green-light);
+                        border-color: rgba(0, 212, 180, 0.3);
+                      "
+                    >
+                      <div class="donut-item-label">
+                        <span
+                          class="legend-color-dot"
+                          style="background: var(--persian-green-dark)"
+                        ></span>
+                        <span>مجموع کل پذیرندگان</span>
+                      </div>
+                      <div
+                        class="donut-item-val"
+                        style="color: var(--persian-green-dark)"
+                      >
+                        ۹،۳۹۷
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-card" data-observe-chart="bar">
+                <div class="chart-top-bar">
+                  <div class="chart-heading-group">
+                    <h3>۱۰ صنف برتر تجاری از نظر تعداد پذیرنده</h3>
+                    <p>
+                      رتبه‌بندی اصناف با بیشترین سهم در تنوع فروشگاه‌های اوانو
+                    </p>
+                  </div>
+                  <div class="chart-legend-pill">
+                    <span
+                      class="legend-color-dot"
+                      style="background: var(--persian-green)"
+                    ></span>
+                    <span>تعداد مرچنت فعال</span>
+                  </div>
+                </div>
+                <div class="chart-canvas-wrap">
+                  <canvas id="topCategoriesBarChart"></canvas>
+                </div>
+              </div>
+
+              <div class="chart-card" data-observe-chart="stacked">
+                <div class="chart-top-bar">
+                  <div class="chart-heading-group">
+                    <h3>ترکیب آنلاین و حضوری در ۱۰ صنف بزرگ</h3>
+                    <p>بررسی توازن چندکانالگی در دسته‌های اصلی فروشگاه اوانو</p>
+                  </div>
+                  <div class="chart-legend-pill">
+                    <span
+                      class="legend-color-dot"
+                      style="background: #0093dd"
+                    ></span>
+                    <span>آنلاین</span>
+                    <span
+                      class="legend-color-dot"
+                      style="background: #ff7722; margin-right: 8px"
+                    ></span>
+                    <span>حضوری QR</span>
+                  </div>
+                </div>
+                <div class="chart-canvas-wrap">
+                  <canvas id="stackedChannelChart"></canvas>
+                </div>
+              </div>
+
+              <div class="chart-card" data-observe-chart="polar">
+                <div class="chart-top-bar">
+                  <div class="chart-heading-group">
+                    <h3>پوشش سبدهای کلیدی هزینه خانوار</h3>
+                    <p>توزیع فروشگاه‌ها در محورهای اصلی مصرفی جامعه</p>
+                  </div>
+                  <div class="chart-legend-pill">
+                    <span
+                      class="legend-color-dot"
+                      style="background: var(--persian-green)"
+                    ></span>
+                    <span>سهم سبد مصرفی</span>
+                  </div>
+                </div>
+                <div class="chart-canvas-wrap" style="height: 230px">
+                  <canvas id="lifestyleRadarChart"></canvas>
+                </div>
+                <div class="lifestyle-guide-bottom">
+                  <div class="lifestyle-guide-item">
+                    <span class="dot" style="background: #00d4b4"></span>
+                    <span>پوشاک و مد: ۲،۲۹۵</span>
+                  </div>
+                  <div class="lifestyle-guide-item">
+                    <span class="dot" style="background: #0093dd"></span>
+                    <span>کالای دیجیتال: ۱،۴۱۴</span>
+                  </div>
+                  <div class="lifestyle-guide-item">
+                    <span class="dot" style="background: #76de77"></span>
+                    <span>خانه و آشپزخانه: ۱،۳۳۶</span>
+                  </div>
+                  <div class="lifestyle-guide-item">
+                    <span class="dot" style="background: #ff7722"></span>
+                    <span>آرایشی بهداشتی: ۱،۰۵۴</span>
+                  </div>
+                  <div class="lifestyle-guide-item">
+                    <span class="dot" style="background: #6f59a9"></span>
+                    <span>فرهنگ و هنر: ۷۵۸</span>
+                  </div>
+                  <div class="lifestyle-guide-item">
+                    <span class="dot" style="background: #ffdb04"></span>
+                    <span>طلا و زیورآلات: ۶۷۳</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-card full-width" data-observe-chart="chains">
+                <div class="chart-top-bar">
+                  <div class="chart-heading-group">
+                    <h3>
+                      ظرفیت شبکه فیزیکی غول‌های خرده‌فروشی زنجیره‌ای متصل به
+                      اوانو
+                    </h3>
+                    <p>
+                      بیش از ۷،۴۶۶ شعبه فیزیکی فعال مجهز به اسکن بارکد در سراسر
+                      کشور (بر اساس قرارداد توسعه پذیرندگی پینکت)
+                    </p>
+                  </div>
+                  <div class="chart-legend-pill">
+                    <span
+                      class="legend-color-dot"
+                      style="background: var(--persian-green)"
+                    ></span>
+                    <span>تعداد شعب فعال سراسری</span>
+                  </div>
+                </div>
+                <div
+                  class="chart-canvas-wrap"
+                  style="height: 280px; max-height: 300px"
+                >
+                  <canvas id="chainStoresChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: RETAIL CHAIN GIANTS -->
+        <div id="giants-sec">
+          <div class="section-title">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>غول‌های خرده‌فروشی زنجیره‌ای در شبکه اوانو</h2>
+              <div class="section-title-en">
+                (National Chain Store Ecosystem)
+              </div>
+            </div>
+            <span class="section-desc"
+              >پوشش مویرگی در بیش از ۵۰۰ شهر کشور از طریق همکاری راهبردی با
+              پینکت</span
+            >
+          </div>
+
+          <div class="giants-card-container">
+            <div class="giants-stats-banner">
+              <div class="giants-banner-text">
+                <h4>بیش از ۸،۲۰۰ نقطه فروشگاهی حضوری در سراسر کشور</h4>
+                <p>
+                  کاربران اوانو می‌توانند در صندوق تمامی شعب زیر، خرید روزانه
+                  خود را فقط با اسکن بارکد QR از محل اعتبار سازمانی، نقدی یا
+                  اقساطی پرداخت کنند.
+                </p>
+              </div>
+              <div class="giants-banner-pill">۷،۴۶۶+ شعبه فعال قطعی</div>
+            </div>
+
+            <div class="giants-grid" id="giantsContainer"></div>
+          </div>
+        </div>
+
+        <!-- SECTION 5: 30 CATEGORIES EXPLORER -->
+        <div id="categories-sec">
+          <div class="section-title">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>کاوشگر هوشمند ۳۰ صنف تجاری اوانو</h2>
+              <div class="section-title-en">
+                (30 Merchant Categories Directory)
+              </div>
+            </div>
+            <span class="section-desc"
+              >جستجوی بلادرنگ در ۹،۳۹۷ فروشگاه فعال با تفکیک دقیق کانال‌های
+              آنلاین و حضوری</span
+            >
+          </div>
+
+          <div class="categories-explorer-wrap">
+            <div class="categories-filter-bar">
+              <div class="filter-tabs-group">
+                <button class="filter-tab active" data-filter="all">
+                  همه اصناف (۳۰ صنف)
+                </button>
+                <button class="filter-tab" data-filter="high-online">
+                  پیشتازان آنلاین
+                </button>
+                <button class="filter-tab" data-filter="high-offline">
+                  پیشتازان حضوری
+                </button>
+                <button class="filter-tab" data-filter="essential">
+                  سبد روزمره و مصرفی
+                </button>
+              </div>
+
+              <input
+                type="text"
+                id="categorySearchInput"
+                class="category-search-input"
+                placeholder="جستجوی عنوان صنف (مثلاً پوشاک، دیجیتال، سوپرمارکت...)"
+              />
+            </div>
+
+            <div class="categories-cards-grid" id="categoriesContainer"></div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: IN-APP PHONE MOCKUP -->
+        <div id="mockup-sec">
+          <div class="app-experience-wrap">
+            <div class="app-exp-content">
+              <h2>تجربه خرید یکپارچه در بخش «فروشگاه» اوانو</h2>
+              <p>
+                در رابط کاربری مدرن اپلیکیشن اوانو، ویترین کاملی از هزاران
+                فروشگاه معتبر کشور در دسترس است. کاربران تنها با دو لمس
+                می‌توانند فروشگاه آنلاین دلخواه را باز کرده یا با لمس آیکون
+                اسکنر، کد QR صندوق فروشگاه فیزیکی را اسکن و خرید خود را نهایی
+                کنند.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <div style="display: flex; align-items: center; gap: 12px">
+                  <div
+                    class="app-feature-badge"
+                    style="background: var(--persian-green); color: #1c1c1c"
+                  >
+                    ۱
+                  </div>
+                  <div>
+                    <strong>پوشش ۳۶۰ درجه‌ای:</strong> خرید اینترنتی در
+                    دیجی‌کالا و خرید حضوری در افق کوروش در یک اپلیکیشن.
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px">
+                  <div
+                    class="app-feature-badge"
+                    style="background: var(--persian-orange); color: #ffffff"
+                  >
+                    ۲
+                  </div>
+                  <div>
+                    <strong>انتخاب خودکار منبع مالی:</strong> کسر هوشمند از بن
+                    رفاهی یا اقساط BNPL بدون کارمزد مازاد.
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px">
+                  <div
+                    class="app-feature-badge"
+                    style="background: var(--sky-blue); color: #ffffff"
+                  >
+                    ۳
+                  </div>
+                  <div>
+                    <strong>تسویه آنی و بدون تأخیر:</strong> سیستم مالی ویژه
+                    همراه اول با گزارش‌های دقیق تحلیلی.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-mockup-frame">
+              <div class="phone-screen">
+                <div class="app-notch"></div>
+                <div class="app-header-mockup">
+                  <div
+                    style="
+                      font-weight: 900;
+                      font-size: 12.5px;
+                      color: var(--persian-green-dark);
+                    "
+                  >
+                    فروشگاه اوانو
+                  </div>
+                  <div class="app-tabs-pill">
+                    <button
+                      class="app-tab-btn active"
+                      id="tabBtnOnline"
+                      onclick="switchMockupTab('online')"
+                    >
+                      آنلاین
+                    </button>
+                    <button
+                      class="app-tab-btn"
+                      id="tabBtnOffline"
+                      onclick="switchMockupTab('offline')"
+                    >
+                      حضوری (QR)
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    background: var(--persian-green-light);
+                    padding: 7px 10px;
+                    border-radius: 8px;
+                    font-size: 10px;
+                    color: var(--persian-green-dark);
+                    font-weight: 800;
+                  "
+                >
+                  اعتبار قابل مصرف: <strong>۱۰،۰۰۰،۰۰۰ تومان</strong>
+                </div>
+
+                <div class="app-merchants-feed" id="mockupFeed"></div>
+
+                <div
+                  style="
+                    background: var(--persian-green);
+                    color: #1c1c1c;
+                    text-align: center;
+                    padding: 9px;
+                    border-radius: 10px;
+                    font-weight: 900;
+                    font-size: 11.5px;
+                    margin-top: 4px;
+                  "
+                >
+                  اسکن بارکد QR و پرداخت حضوری
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-slogan">
+          <span>خط همراه اول داری؟</span>
+          <span class="slogan-highlight">«اوانو اعتبارته»</span>
+        </div>
+        <div class="footer-meta">
+          شبکه پذیرندگان و درگاه‌های خرید اعتباری اپلیکیشن اوانو (Ewano)<br />
+          شرکت همراه کسب‌وکارهای هوشمند (EBCOM) و همراه اول © ۲۰۲۶
+        </div>
+      </footer>
+    </div>
+
+    <nav class="floating-nav">
+      <a href="#channels-sec" class="floating-btn">🌐 کانال‌های خرید</a>
+      <a href="#credit-sec" class="floating-btn">💳 انواع اعتبار</a>
+      <a href="#charts-sec" class="floating-btn">📊 نمودارها</a>
+      <a href="#giants-sec" class="floating-btn">🏬 شعب زنجیره‌ای</a>
+      <a href="#categories-sec" class="floating-btn">🏷️ ۳۰ صنف</a>
+    </nav>
+
+    <script>
+      // -------------------------------------------------------------
+      // 1. DATASETS
+      // -------------------------------------------------------------
+      const categoriesData = [
+        { id: 1, name: "پوشاک", total: 2295, online: 408, offline: 1887, pct: 24.42, icon: "👕", color: "#00D4B4" },
+        { id: 2, name: "کالای دیجیتال", total: 1414, online: 853, offline: 561, pct: 15.05, icon: "📱", color: "#3DD598" },
+        { id: 3, name: "خانه و آشپزخانه", total: 1336, online: 930, offline: 406, pct: 14.22, icon: "🏠", color: "#76DE77" },
+        { id: 4, name: "آرایشی بهداشتی", total: 1054, online: 729, offline: 325, pct: 11.22, icon: "💄", color: "#FF7722" },
+        { id: 5, name: "فرهنگ و هنر", total: 758, online: 623, offline: 135, pct: 8.07, icon: "🎨", color: "#6F59A9" },
+        { id: 6, name: "طلا و زیورآلات", total: 673, online: 311, offline: 362, pct: 7.16, icon: "💍", color: "#FFDB04" },
+        { id: 7, name: "لوازم خودرو", total: 629, online: 599, offline: 30, pct: 6.69, icon: "🚗", color: "#0093DD" },
+        { id: 8, name: "سوپرمارکت", total: 616, online: 557, offline: 59, pct: 6.55, icon: "🛒", color: "#00D4B4" },
+        { id: 9, name: "ورزشی", total: 444, online: 334, offline: 110, pct: 4.72, icon: "⚽", color: "#F16273" },
+        { id: 10, name: "خدمات", total: 358, online: 260, offline: 98, pct: 3.81, icon: "🛠️", color: "#3DD598" },
+        { id: 11, name: "آموزشی", total: 154, online: 152, offline: 2, pct: 1.64, icon: "🎓", color: "#6F59A9" },
+        { id: 12, name: "کودک و نوزاد", total: 142, online: 65, offline: 77, pct: 1.51, icon: "🍼", color: "#FF7722" },
+        { id: 13, name: "پت شاپ", total: 135, online: 135, offline: 0, pct: 1.44, icon: "🐾", color: "#00DDBD" },
+        { id: 14, name: "سرگرمی", total: 85, online: 64, offline: 21, pct: 0.9, icon: "🎮", color: "#6F59A9" },
+        { id: 15, name: "اینستاگرام (کانال فروش)", total: 61, online: 61, offline: 0, pct: 0.65, icon: "📸", color: "#F16273" },
+        { id: 16, name: "آجیل و شیرینی", total: 51, online: 6, offline: 45, pct: 0.54, icon: "🥜", color: "#FF7722" },
+        { id: 17, name: "پروتئین", total: 20, online: 6, offline: 14, pct: 0.21, icon: "🥩", color: "#F16273" },
+        { id: 18, name: "سفر و گردشگری", total: 14, online: 12, offline: 2, pct: 0.15, icon: "✈️", color: "#0093DD" },
+        { id: 19, name: "کتاب و لوازم التحریر", total: 12, online: 6, offline: 6, pct: 0.13, icon: "📚", color: "#6F59A9" },
+        { id: 20, name: "میوه", total: 12, online: 5, offline: 7, pct: 0.13, icon: "🍏", color: "#76DE77" },
+        { id: 21, name: "فروشگاه زنجیره‌ای", total: 11, online: 0, offline: 11, pct: 0.12, icon: "🏬", color: "#00D4B4" },
+        { id: 22, name: "تجهیزات", total: 10, online: 10, offline: 0, pct: 0.1, icon: "⚙️", color: "#444444" },
+        { id: 23, name: "سلامت و دارو", total: 9, online: 9, offline: 0, pct: 0.1, icon: "💊", color: "#00D4B4" },
+        { id: 24, name: "کالای ارگانیک", total: 8, online: 7, offline: 1, pct: 0.09, icon: "🌿", color: "#3DD598" },
+        { id: 25, name: "ابزارآلات", total: 7, online: 7, offline: 0, pct: 0.07, icon: "🔨", color: "#6B7280" },
+        { id: 26, name: "فروشگاه اینترنتی", total: 7, online: 7, offline: 0, pct: 0.07, icon: "🌐", color: "#0093DD" },
+        { id: 27, name: "گل و گیاه", total: 5, online: 4, offline: 1, pct: 0.05, icon: "🌸", color: "#76DE77" },
+        { id: 28, name: "لوازم سفر و کوهنوردی", total: 5, online: 5, offline: 0, pct: 0.05, icon: "🏕️", color: "#00D4B4" },
+        { id: 29, name: "صنایع دستی", total: 2, online: 2, offline: 0, pct: 0.02, icon: "🏺", color: "#FF7722" },
+        { id: 30, name: "کافه و رستوران", total: 2, online: 2, offline: 0, pct: 0.02, icon: "☕", color: "#6F59A9" },
+      ];
+
+      const chainGiants = [
+        { name: "افق کوروش", branches: 4400, category: "فروشگاه زنجیره‌ای تخفیفی", badge: "۴،۴۰۰ شعبه" },
+        { name: "دیلی مارکت", branches: 1400, category: "سوپرمارکت‌های محلی و همسایگی", badge: "۱،۴۰۰ شعبه" },
+        { name: "فروشگاه‌های رفاه", branches: 700, category: "هایپرمارکت و فروشگاه زنجیره‌ای", badge: "۷۰۰ شعبه" },
+        { name: "فروشگاه‌های هفت", branches: 600, category: "زنجیره‌ای تخفیف‌محور", badge: "۶۰۰ شعبه" },
+        { name: "شهر کتاب", branches: 100, category: "کتاب، هنر و محصولات فرهنگی", badge: "۱۰۰ شعبه" },
+        { name: "هایپرفمیلی", branches: 80, category: "هایپرمارکت‌های مدرن استانی", badge: "۸۰ شعبه" },
+        { name: "چرم مشهد", branches: 58, category: "پوشاک، کفش و چرم طبیعی", badge: "۵۸ شعبه" },
+        { name: "فروشگاه شهروند", branches: 50, category: "هایپرمارکت‌های بزرگ پایتخت", badge: "۵۰ شعبه" },
+        { name: "هایپرمی", branches: 26, category: "هایپرمارکت‌های جامع شهری", badge: "۲۶ شعبه" },
+        { name: "هایپراستار", branches: 23, category: "مگامال‌ها و هایپرمارکت‌های کلان", badge: "۲۳ شعبه" },
+        { name: "مادیران", branches: 14, category: "لوازم خانگی و کالای دیجیتال", badge: "۱۴ شعبه" },
+        { name: "بهشتی مارکت", branches: 11, category: "سوپرمارکت زنجیره‌ای پایتخت", badge: "۱۱ شعبه" },
+        { name: "نجم خاورمیانه", branches: 4, category: "هایپرمارکت کلان‌مقیاس", badge: "۴ شعبه" },
+      ];
+
+      const creditData = {
+        org: {
+          badge: "سازمانی رفاهی",
+          title: "اعتبار سازمانی اوانو (Corporate Credit)",
+          desc: "این اعتبار توسط شرکت‌ها، بانک‌ها و ارگان‌های دولتی به عنوان بسته رفاهی، بن‌کارت ماهانه و پاداش در کیف پول پرسنل شارژ می‌شود. کاربران می‌توانند بدون نیاز به نقدینگی، مایحتاج زندگی خود را در فروشگاه‌های طرف قرارداد تامین کنند.",
+          chips: ["تخصیص آنی از پنل سازمانی", "بدون کارمزد برای کارمند", "امکان تسهیم در صندوق", "تسویه تضمین‌شده با مرچنت"],
+          merchantsTitle: "فروشگاه‌های پرمصرف اعتبار سازمانی:",
+          merchants: ["افق کوروش (۴،۴۰۰ شعبه)", "دیجی‌کالا و سوپرمارکت جت", "هایپراستار و هایپرمی", "دیلی مارکت و رفاه", "اُکالا", "شهروند", "فروشگاه‌های هفت"],
+        },
+        bnpl: {
+          badge: "الان بخر بعداً پرداخت کن",
+          title: "اعتبار اقساطی BNPL اوانو (Buy Now, Pay Later)",
+          desc: "کاربران اوانو با سنجش اعتبار بانکی و بدون نیاز به چک و ضامن، خط اعتباری خرید اقساطی دریافت می‌کنند. مبلغ خرید در زمان معامله پرداخت نمی‌شود و طی ۴ قسط مساوی ماهانه از کاربر کسر خواهد شد.",
+          chips: ["بدون سود و کارمزد", "تایید هویت و اعتبارسنجی آنلاین", "تا سقف اعتباری ۲۰ میلیون تومان", "افزایش سقف با خوش‌حسابی"],
+          merchantsTitle: "برترین پذیرندگان اعتبار اقساطی BNPL:",
+          merchants: ["تکنولایف (کالای دیجیتال)", "چرم مشهد (پوشاک)", "تپسی‌شاپ", "اسنپ‌پی هم‌پیمان", "گالری‌های طلا و جواهر", "مادیران", "ترب‌پی"],
+        },
+        mci: {
+          badge: "همراه اول دائمی",
+          title: "اعتبار سیم‌کارت دائمی همراه اول (Direct Carrier Billing)",
+          desc: "بیش از ۲۰ میلیون مشترک سیم‌کارت‌های دائمی همراه اول بر اساس خوش‌حسابی و میانگین کارکرد قبض، اعتبار خرید دریافت می‌کنند. هزینه خرید روی صورت‌حساب دوره بعدی خط تلفن همراه آنها منظور می‌شود.",
+          chips: ["مخصوص مشترکین همراه اول", "بدون نیاز به ثبت کارت بانکی", "تسویه روی قبض پایان‌دوره", "پوشش گسترده خدمات دیجیتال"],
+          merchantsTitle: "پذیرندگان پشتیبانی‌کننده از اعتبار قبوض:",
+          merchants: ["سوپرمارکت دیجی‌کالا", "اُکالا", "پینکت", "خدمات آنلاین و بیمه", "خرید شارژ و بسته", "سینما و کنسرت"],
+        },
+        wallet: {
+          badge: "موجودی ریالی با کش‌بک",
+          title: "کیف پول نقدی و وفاداری اوانو (Ewano Wallet)",
+          desc: "کیف پول امن اوانو با قابلیت شارژ سریع از کلیه کارت‌های شتابی و انتقال وجه کارت به کارت. خریدهای انجام‌شده با کیف پول مشمول دریافت کش‌بک نقدی، سکه و شانس شرکت در قرعه‌کشی‌های بزرگ دوره‌ای اوانو می‌شوند.",
+          chips: ["شارژ آنی با کارت شتاب", "کش‌بک و بازگشت نقدی خرید", "انتقال وجه فردبه‌فرد", "پرداخت سریع زیر ۱ ثانیه"],
+          merchantsTitle: "پذیرش در ۱۰۰٪ شبکه پذیرندگان اوانو:",
+          merchants: ["تمامی ۹،۳۹۷ فروشگاه آنلاین و حضوری", "کلیه شعب افق کوروش و دیلی‌مارکت", "دیجی‌کالا و اُکالا", "تمامی صندوق‌های QR"],
+        },
+      };
+
+      const mockupData = {
+        online: [
+          { name: "دیجی‌کالا", cat: "فروشگاه اینترنتی و سوپرمارکت", avatar: "DK", badge: "درگاه اعتباری" },
+          { name: "تکنولایف", cat: "کالای دیجیتال و موبایل", avatar: "TL", badge: "اقساطی BNPL" },
+          { name: "اُکالا (Okala)", cat: "سوپرمارکت و میوه تازه", avatar: "OK", badge: "تحویل فوری" },
+          { name: "فلای تودی", cat: "بلیط هواپیما و هتل", avatar: "FT", badge: "سفر اعتباری" },
+          { name: "طلاسی", cat: "خرید آنلاین طلا و پس‌انداز", avatar: "TL", badge: "سرمایه‌گذاری" },
+        ],
+        offline: [
+          { name: "افق کوروش (شعبه پیروزی)", cat: "سوپرمارکت تخفیفی - کد QR", avatar: "OK", badge: "اسکن در صندوق" },
+          { name: "هایپراستار (شعبه باکری)", cat: "هایپرمارکت بزرگ - بارکدخوان", avatar: "HS", badge: "اسکن در صندوق" },
+          { name: "چرم مشهد (شعبه پاسداران)", cat: "پوشاک و کیف و کفش - کد QR", avatar: "MC", badge: "اقساطی BNPL" },
+          { name: "دیلی مارکت (شعبه سعادت‌آباد)", cat: "سوپرمارکت محلی - کد QR", avatar: "DM", badge: "اسکن در صندوق" },
+          { name: "شهر کتاب (شعبه نیاوران)", cat: "کتاب و محصولات فرهنگی", avatar: "BK", badge: "اعتبار سازمانی" },
+        ],
+      };
+
+      function toPersianDigits(n) {
+        if (n === null || n === undefined) return "";
+        const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+        return n.toString().replace(/\d/g, (x) => farsiDigits[x]).replace(/\B(?=(\d{3})+(?!\d))/g, "،");
+      }
+
+      // -------------------------------------------------------------
+      // 2. INTERACTIVE VIEW SWITCHER
+      // -------------------------------------------------------------
+      function switchView(view, btnElem) {
+        document.querySelectorAll(".nav-tab-btn").forEach((b) => b.classList.remove("active"));
+        if (btnElem) btnElem.classList.add("active");
+
+        const secChannels = document.getElementById("channels-sec");
+        const secCredit = document.getElementById("credit-sec");
+        const secCharts = document.getElementById("charts-sec");
+        const secGiants = document.getElementById("giants-sec");
+        const secCategories = document.getElementById("categories-sec");
+
+        if (view === "all") {
+          secChannels.style.display = "block";
+          secCredit.style.display = "block";
+          secCharts.style.display = "block";
+          secGiants.style.display = "block";
+          secCategories.style.display = "block";
+        } else {
+          secChannels.style.display = view === "channels" ? "block" : "none";
+          secCredit.style.display = view === "credit" ? "block" : "none";
+          secCharts.style.display = view === "charts" ? "block" : "none";
+          secGiants.style.display = view === "giants" ? "block" : "none";
+          secCategories.style.display = view === "categories" ? "block" : "none";
+
+          const targetSec = document.getElementById(view + "-sec");
+          if (targetSec) {
+            targetSec.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      }
+
+      // -------------------------------------------------------------
+      // 3. COUNTER ANIMATIONS
+      // -------------------------------------------------------------
+      function animateCounters() {
+        const counters = document.querySelectorAll(".hero-stat-num[data-count]");
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-count");
+          const suffix = counter.getAttribute("data-suffix") || "";
+          const duration = 1800;
+          const startTime = performance.now();
+
+          function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(ease * target);
+            counter.innerHTML = toPersianDigits(current) + (suffix ? `<span class="hero-stat-unit">${suffix}</span>` : "");
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCount);
+            } else {
+              counter.innerHTML = toPersianDigits(target) + (suffix ? `<span class="hero-stat-unit">${suffix}</span>` : "");
+            }
+          }
+          requestAnimationFrame(updateCount);
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 4. RETAIL CHAIN GIANTS RENDER
+      // -------------------------------------------------------------
+      function renderGiants() {
+        const container = document.getElementById("giantsContainer");
+        if (!container) return;
+        const maxBranches = 4400;
+
+        container.innerHTML = chainGiants
+          .map((g) => {
+            const fillPct = Math.max(5, Math.round((g.branches / maxBranches) * 100));
+            return `
+          <div class="giant-item-card">
+            <div>
+              <div class="giant-brand-row">
+                <span class="giant-name">${g.name}</span>
+                <span class="giant-branch-count">${toPersianDigits(g.branches)}</span>
+              </div>
+              <div class="giant-category">${g.category}</div>
+            </div>
+            <div>
+              <div class="giant-bar-track">
+                <div class="giant-bar-fill" style="width: ${fillPct}%;"></div>
+              </div>
+            </div>
+          </div>
+        `;
+          })
+          .join("");
+      }
+
+      // -------------------------------------------------------------
+      // 5. CREDIT SIMULATOR TAB SWITCH
+      // -------------------------------------------------------------
+      function updateCreditSimulator(key) {
+        const data = creditData[key];
+        const box = document.getElementById("creditContentBox");
+        if (!data || !box) return;
+
+        box.innerHTML = `
+        <div class="credit-info-pane">
+          <div style="display:inline-block; font-size:11.5px; font-weight:800; padding:4px 12px; border-radius:20px; background:var(--persian-green-light); color:var(--persian-green-dark); margin-bottom:10px;">
+            ${data.badge}
+          </div>
+          <h3>${data.title}</h3>
+          <p>${data.desc}</p>
+          <div class="credit-chips-row">
+            ${data.chips.map((c) => `<span class="credit-chip">✓ ${c}</span>`).join("")}
+          </div>
+        </div>
+        <div class="credit-merchants-box">
+          <div class="credit-merchants-title">
+            <svg width="17" height="17" fill="none" stroke="var(--persian-green-dark)" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>${data.merchantsTitle}</span>
+          </div>
+          <div class="merchants-pill-wrap">
+            ${data.merchants.map((m) => `<span class="m-pill">${m}</span>`).join("")}
+          </div>
+        </div>
+      `;
+      }
+
+      // -------------------------------------------------------------
+      // 6. CATEGORIES DIRECTORY
+      // -------------------------------------------------------------
+      function renderCategories(filterType, searchQuery) {
+        const grid = document.getElementById("categoriesContainer");
+        if (!grid) return;
+
+        let items = [...categoriesData];
+
+        if (searchQuery && searchQuery.trim() !== "") {
+          const q = searchQuery.trim().toLowerCase();
+          items = items.filter((c) => c.name.toLowerCase().includes(q));
+        }
+
+        if (filterType === "high-online") {
+          items = items.filter((c) => c.online >= 50).sort((a, b) => b.online - a.online);
+        } else if (filterType === "high-offline") {
+          items = items.filter((c) => c.offline >= 20).sort((a, b) => b.offline - a.offline);
+        } else if (filterType === "essential") {
+          const essentials = ["سوپرمارکت", "پوشاک", "خانه و آشپزخانه", "کالای دیجیتال", "آرایشی بهداشتی", "آجیل و شیرینی", "پروتئین", "میوه", "فروشگاه زنجیره‌ای"];
+          items = items.filter((c) => essentials.includes(c.name));
+        }
+
+        if (items.length === 0) {
+          grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:36px; color:var(--outer-space-muted); font-size:13px;">صنفی با این مشخصات یافت نشد.</div>`;
+          return;
+        }
+
+        grid.innerHTML = items
+          .map((cat) => {
+            const onlineWidth = cat.total > 0 ? (cat.online / cat.total) * 100 : 0;
+            const offlineWidth = cat.total > 0 ? (cat.offline / cat.total) * 100 : 0;
+
+            return `
+          <div class="cat-item-card">
+            <div class="cat-card-top">
+              <div class="cat-name-group">
+                <div class="cat-icon-circle" style="background:${cat.color}15; color:${cat.color};">
+                  ${cat.icon}
+                </div>
+                <div>
+                  <div class="cat-card-name">${cat.name}</div>
+                  <div style="font-size:10.5px; color:var(--outer-space-muted); font-weight:600;">${toPersianDigits(cat.pct)}٪ از کل شبکه</div>
+                </div>
+              </div>
+              <div class="cat-total-count">${toPersianDigits(cat.total)}</div>
+            </div>
+
+            <div class="cat-progress-wrap">
+              <div class="cat-stacked-bar">
+                <div class="cat-segment-online" style="width:${onlineWidth}%;" title="آنلاین: ${cat.online}"></div>
+                <div class="cat-segment-offline" style="width:${offlineWidth}%;" title="حضوری: ${cat.offline}"></div>
+              </div>
+              <div class="cat-split-info">
+                <span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#38C7B4;margin-left:4px;"></span>آنلاین: <strong>${toPersianDigits(cat.online)}</strong></span>
+                <span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#F9A073;margin-left:4px;"></span>حضوری: <strong>${toPersianDigits(cat.offline)}</strong></span>
+              </div>
+            </div>
+          </div>
+        `;
+          })
+          .join("");
+      }
+
+      function switchMockupTab(tabKey) {
+        document.getElementById("tabBtnOnline").classList.toggle("active", tabKey === "online");
+        document.getElementById("tabBtnOffline").classList.toggle("active", tabKey === "offline");
+        const feed = document.getElementById("mockupFeed");
+        if (!feed) return;
+
+        const list = mockupData[tabKey] || mockupData.online;
+        feed.innerHTML = list
+          .map(
+            (item) => `
+        <div class="app-m-row">
+          <div class="app-m-info">
+            <div class="app-m-avatar">${item.avatar}</div>
+            <div>
+              <div class="app-m-name">${item.name}</div>
+              <div class="app-m-cat">${item.cat}</div>
+            </div>
+          </div>
+          <div class="app-m-action">${item.badge}</div>
+        </div>
+      `,
+          )
+          .join("");
+      }
+
+      // -------------------------------------------------------------
+      // 7. CHART CREATION FUNCTIONS
+      // -------------------------------------------------------------
+      Chart.defaults.font.family = "'IRANYekanX', 'Vazirmatn', sans-serif";
+      Chart.defaults.font.size = 11.5;
+      Chart.defaults.color = "#444444";
+
+      const chartInstances = {};
+
+      function createDonutChart() {
+        const ctx = document.getElementById("channelDonutChart");
+        if (!ctx || chartInstances.donut) return;
+        chartInstances.donut = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["پذیرندگان آنلاین (Web/App)", "فروشگاه‌های حضوری (کد QR)"],
+            datasets: [
+              {
+                data: [6189, 3208],
+                backgroundColor: ["#0093DD", "#FF7722"],
+                hoverBackgroundColor: ["#007AB8", "#E05B0A"],
+                borderWidth: 3,
+                borderColor: "#FFFFFF",
+                hoverOffset: 6,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "70%",
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                rtl: true,
+                callbacks: {
+                  label: function (ctx) {
+                    const val = ctx.raw;
+                    const total = 9397;
+                    const pct = ((val / total) * 100).toFixed(1);
+                    return ` ${ctx.label}: ${toPersianDigits(val)} فروشگاه (${toPersianDigits(pct)}٪)`;
+                  },
+                },
+              },
+            },
+            animation: {
+              animateScale: true,
+              animateRotate: true,
+              duration: 1600,
+            },
+          },
+        });
+      }
+
+      function createBarChart() {
+        const ctx = document.getElementById("topCategoriesBarChart");
+        if (!ctx || chartInstances.bar) return;
+        const top10 = categoriesData.slice(0, 10);
+        chartInstances.bar = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: top10.map((c) => c.name),
+            datasets: [
+              {
+                label: "تعداد کل پذیرندگان",
+                data: top10.map((c) => c.total),
+                backgroundColor: ["#00D4B4", "#3DD598", "#76DE77", "#FF7722", "#6F59A9", "#FFDB04", "#0093DD", "#00D4B4", "#F16273", "#3DD598"],
+                borderRadius: 5,
+                borderSkipped: false,
+              },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                rtl: true,
+                callbacks: {
+                  label: function (ctx) {
+                    return ` تعداد فروشگاه: ${toPersianDigits(ctx.raw)}`;
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                grid: { color: "#EDF2F7" },
+                ticks: { callback: (v) => toPersianDigits(v) },
+              },
+              y: { grid: { display: false } },
+            },
+            animation: { duration: 1600 },
+          },
+        });
+      }
+
+      function createStackedChart() {
+        const ctx = document.getElementById("stackedChannelChart");
+        if (!ctx || chartInstances.stacked) return;
+        const top10 = categoriesData.slice(0, 10);
+        chartInstances.stacked = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: top10.map((c) => c.name),
+            datasets: [
+              {
+                label: "پذیرندگان آنلاین",
+                data: top10.map((c) => c.online),
+                backgroundColor: "#0093DD",
+                borderRadius: 5,
+              },
+              {
+                label: "پذیرندگان حضوری QR",
+                data: top10.map((c) => c.offline),
+                backgroundColor: "#FF7722",
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: { stacked: true, grid: { display: false } },
+              y: {
+                stacked: true,
+                grid: { color: "#EDF2F7" },
+                ticks: { callback: (v) => toPersianDigits(v) },
+              },
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                rtl: true,
+                callbacks: {
+                  label: function (ctx) {
+                    return ` ${ctx.dataset.label}: ${toPersianDigits(ctx.raw)}`;
+                  },
+                },
+              },
+            },
+            animation: { duration: 1600 },
+          },
+        });
+      }
+
+      function createPolarChart() {
+        const ctx = document.getElementById("lifestyleRadarChart");
+        if (!ctx || chartInstances.polar) return;
+        chartInstances.polar = new Chart(ctx, {
+          type: "polarArea",
+          data: {
+            labels: ["پوشاک و مد", "کالای دیجیتال", "خانه و آشپزخانه", "زیبایی و سلامت", "فرهنگ و کتاب", "طلا و زیورآلات"],
+            datasets: [
+              {
+                data: [2295, 1414, 1336, 1063, 770, 673],
+                backgroundColor: ["rgba(0, 212, 180, 0.75)", "rgba(0, 147, 221, 0.80)", "rgba(118, 222, 119, 0.75)", "rgba(255, 119, 34, 0.75)", "rgba(111, 89, 169, 0.75)", "rgba(255, 219, 4, 0.75)"],
+                borderWidth: 2,
+                borderColor: "#FFFFFF",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                rtl: true,
+                callbacks: {
+                  label: function (ctx) {
+                    return ` ${ctx.label}: ${toPersianDigits(ctx.raw)} فروشگاه`;
+                  },
+                },
+              },
+            },
+            scales: {
+              r: {
+                ticks: { display: false },
+                grid: { color: "#E2E8F0" },
+              },
+            },
+            animation: { duration: 1800 },
+          },
+        });
+      }
+
+      function createChainsChart() {
+        const ctx = document.getElementById("chainStoresChart");
+        if (!ctx || chartInstances.chains) return;
+        chartInstances.chains = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: chainGiants.map((c) => c.name),
+            datasets: [
+              {
+                label: "تعداد شعب فیزیکی",
+                data: chainGiants.map((c) => c.branches),
+                backgroundColor: "#00D4B4",
+                hoverBackgroundColor: "#00A88E",
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                rtl: true,
+                callbacks: {
+                  label: function (ctx) {
+                    return ` تعداد شعب فیزیکی: ${toPersianDigits(ctx.raw)} شعبه سراسری`;
+                  },
+                },
+              },
+            },
+            scales: {
+              x: { grid: { display: false } },
+              y: {
+                grid: { color: "#EDF2F7" },
+                ticks: { callback: (v) => toPersianDigits(v) },
+              },
+            },
+            animation: { duration: 1800 },
+          },
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 8. INTERSECTION OBSERVER SETUP
+      // -------------------------------------------------------------
+      document.addEventListener("DOMContentLoaded", () => {
+        renderGiants();
+        updateCreditSimulator("org");
+        renderCategories("all", "");
+        switchMockupTab("online");
+
+        const headerObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCounters();
+                headerObs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        const header = document.querySelector(".header");
+        if (header) headerObs.observe(header);
+        else animateCounters();
+
+        const chartObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const chartType = entry.target.getAttribute("data-observe-chart");
+                if (chartType === "donut") createDonutChart();
+                else if (chartType === "bar") createBarChart();
+                else if (chartType === "stacked") createStackedChart();
+                else if (chartType === "polar") createPolarChart();
+                else if (chartType === "chains") createChainsChart();
+                chartObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+
+        document.querySelectorAll("[data-observe-chart]").forEach((el) => {
+          chartObserver.observe(el);
+        });
+
+        document.querySelectorAll(".credit-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll(".credit-btn").forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            updateCreditSimulator(btn.getAttribute("data-credit"));
+          });
+        });
+
+        document.querySelectorAll(".filter-tab").forEach((tab) => {
+          tab.addEventListener("click", () => {
+            document.querySelectorAll(".filter-tab").forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            const filter = tab.getAttribute("data-filter");
+            const query = document.getElementById("categorySearchInput").value;
+            renderCategories(filter, query);
+          });
+        });
+
+        document.getElementById("categorySearchInput").addEventListener("input", (e) => {
+          const activeFilter = document.querySelector(".filter-tab.active").getAttribute("data-filter");
+          renderCategories(activeFilter, e.target.value);
+        });
+      });
+    </script>
+  </body>
+</html>
