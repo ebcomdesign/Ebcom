@@ -659,10 +659,25 @@
         border-radius: 20px;
         background: rgba(0, 0, 0, 0.4);
         border: 1px solid var(--border-subtle);
-        font-family: monospace;
+        font-family:
+          "Vazirmatn",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
         letter-spacing: 0.5px;
         text-align: center;
         min-width: 68px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        direction: rtl;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-fill-color: currentColor;
+        -webkit-text-stroke: 0;
       }
 
       .tier-1 .capsule-pct-pill {
@@ -798,29 +813,29 @@
       }
 
       .dual-bottom-note {
-  margin-top: 20px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;   /* عنوان بالا، توضیحات پایین */
-  align-items: flex-start;
-  gap: 6px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px dashed var(--border-subtle);
-}
+        margin-top: 20px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column; /* عنوان بالا، توضیحات پایین */
+        align-items: flex-start;
+        gap: 6px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px dashed var(--border-subtle);
+      }
 
-.dual-note-title {
-  font-weight: 800;
-  color: var(--ziira-cyan);   /* پیش‌فرض B2C */
-  font-size: 12.5px;
-}
+      .dual-note-title {
+        font-weight: 800;
+        color: var(--ziira-cyan); /* پیش‌فرض B2C */
+        font-size: 12.5px;
+      }
 
-.dual-note-desc {
-  color: var(--text-dim);
-  line-height: 1.7;
-  font-size: 12px;
-}
+      .dual-note-desc {
+        color: var(--text-dim);
+        line-height: 1.7;
+        font-size: 12px;
+      }
 
       /* 4 STRATEGIC ENGINES (3D GLOSSY DONUT GAUGES) */
       .gauge-section {
@@ -1659,24 +1674,24 @@
         }
 
         .dual-bottom-note {
-    font-size: 12.5px;
-    padding: 10px 12px;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 4px;
-  }
+          font-size: 12.5px;
+          padding: 10px 12px;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          gap: 4px;
+        }
 
-  .dual-note-title {
-    font-size: 13px;
-    text-align: center;      /* وسط‌چین */
-    width: 100%;             /* اطمینان از پر کردن عرض */
-  }
+        .dual-note-title {
+          font-size: 13px;
+          text-align: center; /* وسط‌چین */
+          width: 100%; /* اطمینان از پر کردن عرض */
+        }
 
-  .dual-note-desc {
-    font-size: 12.5px;
-    text-align: center;
-  }
+        .dual-note-desc {
+          font-size: 12.5px;
+          text-align: center;
+        }
 
         /* =======================================================
          SECTION 3: 4 STRATEGIC ENGINES (DONUT GAUGES)
@@ -2197,9 +2212,7 @@
             </div>
           </div>
 
-          <div class="exec-badge">
-            گزارش راهبردی
-          </div>
+          <div class="exec-badge">گزارش راهبردی</div>
         </div>
 
         <div class="hero-title-area">
