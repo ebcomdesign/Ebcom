@@ -10,6 +10,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
@@ -43,9 +47,8 @@
         --sky-blue: #0093dd;
         --sky-blue-light: rgba(0, 147, 221, 0.12);
 
-        --font-family:
-          "IranYekanX", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma,
-          sans-serif;
+        --font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Tahoma, sans-serif;
       }
 
       * {
@@ -63,8 +66,7 @@
         padding: 30px 15px;
         display: flex;
         justify-content: center;
-        background-image:
-          radial-gradient(
+        background-image: radial-gradient(
             circle at 10% 10%,
             rgba(0, 212, 180, 0.06) 0%,
             transparent 40%
@@ -118,6 +120,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        flex-wrap: wrap;
       }
 
       .dragonfly-badge {
@@ -441,9 +444,7 @@
         display: flex;
         flex-direction: column;
         gap: 6px;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
         cursor: default;
       }
 
@@ -475,6 +476,7 @@
         gap: 14px;
         margin-bottom: 24px;
         margin-top: 10px;
+        flex-wrap: wrap;
       }
 
       .section-title .bar {
@@ -568,6 +570,8 @@
         margin-bottom: 18px;
         padding-bottom: 16px;
         border-bottom: 1px solid #edf2f7;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
       .channel-title-wrap {
@@ -865,6 +869,7 @@
         display: flex;
         align-items: center;
         gap: 6px;
+        flex-wrap: wrap;
       }
 
       .chart-canvas-wrap {
@@ -1098,7 +1103,6 @@
         margin-bottom: 22px;
         flex-wrap: wrap;
         gap: 12px;
-        /* padding-top: 8px; */
       }
 
       .filter-tabs-group {
@@ -1481,20 +1485,45 @@
         background: var(--persian-green);
       }
 
+      /* ==========================================================
+         RESPONSIVE
+         ========================================================== */
+
       @media (max-width: 1024px) {
+        .header {
+          padding: 32px 32px 26px 32px;
+        }
+        .hero-text-block h1 {
+          font-size: 28px;
+        }
+        .hero-text-block p {
+          font-size: 14.5px;
+          line-height: 1.95;
+        }
         .hero-stats-banner {
           grid-template-columns: repeat(3, 1fr);
+          gap: 14px;
+        }
+        .hero-stat-num {
+          font-size: 30px;
         }
         .interactive-tabs-bar {
           grid-template-columns: repeat(3, 1fr);
           padding: 18px 24px;
         }
         .pillars-container {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           padding: 18px 24px;
+        }
+        .pillars-container > :nth-child(4),
+        .pillars-container > :nth-child(5) {
+          grid-column: span 1;
         }
         .pillars-container > :nth-child(5) {
           grid-column: 1 / -1;
+        }
+        .content-body {
+          padding: 30px 28px;
         }
         .channels-grid {
           grid-template-columns: 1fr;
@@ -1514,87 +1543,433 @@
         .app-experience-wrap {
           grid-template-columns: 1fr;
         }
+        .footer {
+          padding: 26px 28px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .footer-meta {
+          text-align: right;
+        }
       }
 
       @media (max-width: 768px) {
         body {
           padding: 10px 6px;
         }
-        .header,
-        .content-body,
-        .footer {
-          padding: 24px 16px;
+        .infographic-wrapper {
+          border-radius: 20px;
+        }
+        .header {
+          padding: 22px 16px 20px 16px;
+        }
+        .header-top {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          padding-bottom: 16px;
+          margin-bottom: 18px;
+        }
+        .brand-lockup {
+          gap: 12px;
+        }
+        .ewano-logo-box {
+          min-width: 130px;
+          height: 46px;
+        }
+        .co-divider {
+          height: 30px;
+        }
+        .partner-logos {
+          font-size: 11px;
+          gap: 8px;
+        }
+        .partner-pill {
+          padding: 5px 10px;
+          font-size: 10.5px;
+        }
+        .header-badge {
+          font-size: 10px;
+          padding: 5px 14px;
+          white-space: normal;
         }
         .hero-title-area {
           gap: 16px;
         }
         .hero-text-block h1 {
-          font-size: 24px;
+          font-size: 21px;
+          line-height: 1.5;
+        }
+        .hero-text-block p {
+          font-size: 12.5px;
+          line-height: 1.9;
+          text-align: right;
         }
         .hero-stats-banner {
           grid-template-columns: 1fr;
-          gap: 12px;
+          gap: 10px;
         }
         .hero-stat-card {
-          padding: 18px 14px;
+          padding: 16px 14px;
+          border-radius: 16px;
         }
         .hero-stat-num {
-          font-size: 32px;
+          font-size: 27px;
+        }
+        .hero-stat-label {
+          font-size: 13px;
+        }
+        .hero-stat-subtitle {
+          font-size: 10.5px;
         }
         .interactive-tabs-bar {
-          grid-template-columns: 1fr;
-          padding: 14px 16px;
-          gap: 8px;
+          display: flex !important;
+          flex-direction: column !important;
+          padding: 12px 12px !important;
+          gap: 8px !important;
+          grid-template-columns: 1fr !important;
         }
         .nav-tab-btn {
           justify-content: flex-start;
-          padding: 12px 14px;
+          padding: 11px 14px;
+          border-radius: 12px;
+        }
+        .nav-tab-icon {
+          font-size: 22px;
+        }
+        .nav-tab-main {
+          font-size: 12.5px;
+        }
+        .nav-tab-sub {
+          font-size: 9.5px;
         }
         .pillars-container {
-          grid-template-columns: 1fr;
-          padding: 16px;
-          gap: 10px;
+          grid-template-columns: 1fr !important;
+          padding: 14px 12px !important;
+          gap: 10px !important;
         }
         .pillars-container > :nth-child(5) {
-          grid-column: auto;
+          grid-column: auto !important;
+        }
+        .pillar-card {
+          padding: 12px 14px;
+          border-radius: 12px;
+        }
+        .pillar-num {
+          font-size: 10.5px;
+        }
+        .pillar-text {
+          font-size: 12px;
+        }
+        .content-body {
+          padding: 18px 12px;
+        }
+        .section-title {
+          gap: 10px;
+          margin-bottom: 16px;
+        }
+        .section-title .bar {
+          width: 4px;
+          height: 36px;
+        }
+        .section-title h2 {
+          font-size: 16.5px;
+        }
+        .section-title-en {
+          font-size: 11px;
+        }
+        .section-title .section-desc {
+          font-size: 11px;
+          width: 100%;
+          margin-right: 0;
+          align-self: flex-start;
+          padding-right: 14px;
         }
         .channels-grid {
           grid-template-columns: 1fr;
+          gap: 16px;
+          margin-bottom: 28px;
         }
         .channel-box {
-          padding: 20px 16px;
+          padding: 18px 14px;
+          border-radius: 16px;
+        }
+        .channel-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .channel-icon {
+          width: 38px;
+          height: 38px;
+        }
+        .channel-title {
+          font-size: 15px;
+        }
+        .channel-stat-badge {
+          font-size: 13px;
+          padding: 5px 12px;
+        }
+        .channel-feature-item {
+          font-size: 12px;
+        }
+        .gateway-pill {
+          font-size: 10.5px;
+          padding: 3px 8px;
         }
         .credit-simulator-box,
         .charts-dashboard-box,
         .giants-card-container,
         .categories-explorer-wrap {
-          padding: 20px 14px;
+          padding: 16px 12px;
+          border-radius: 18px;
+          margin-bottom: 40px;
         }
-        .giants-grid {
-          grid-template-columns: 1fr;
+        .credit-nav-tabs {
+          gap: 8px;
         }
-        .categories-cards-grid {
-          grid-template-columns: 1fr;
+        .credit-btn {
+          flex: 1 1 45%;
+          font-size: 11.5px;
+          padding: 8px 10px;
+          justify-content: center;
+        }
+        .credit-content-box {
+          padding: 16px 14px;
+          gap: 18px;
+        }
+        .credit-info-pane h3 {
+          font-size: 16px;
+        }
+        .credit-info-pane p {
+          font-size: 12.5px;
+        }
+        .credit-chip {
+          font-size: 10.5px;
+          padding: 4px 9px;
+        }
+        .credit-merchants-box {
+          padding: 14px;
+        }
+        .credit-merchants-title {
+          font-size: 11.5px;
+        }
+        .m-pill {
+          font-size: 10.5px;
+          padding: 3px 8px;
+        }
+        .chart-card {
+          padding: 16px 12px;
+          border-radius: 16px;
+        }
+        .chart-heading-group h3 {
+          font-size: 14px;
+        }
+        .chart-heading-group p {
+          font-size: 10.5px;
+        }
+        .chart-legend-pill {
+          font-size: 10px;
+          padding: 3px 8px;
+        }
+        .chart-canvas-wrap {
+          height: 230px;
+          max-height: 240px;
         }
         .donut-layout-split {
           grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .donut-stat-item {
+          padding: 8px 12px;
+        }
+        .donut-item-label {
+          font-size: 11px;
+        }
+        .donut-item-val {
+          font-size: 14px;
+        }
+        .lifestyle-guide-item {
+          font-size: 10.5px;
+          padding: 3px 8px;
+        }
+        .giants-stats-banner {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 14px 16px;
+        }
+        .giants-banner-text h4 {
+          font-size: 15px;
+        }
+        .giants-banner-text p {
+          font-size: 11.5px;
+        }
+        .giants-banner-pill {
+          font-size: 12px;
+          padding: 6px 14px;
+        }
+        .giants-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .giant-item-card {
+          padding: 12px 14px;
+        }
+        .giant-name {
+          font-size: 13px;
+        }
+        .giant-branch-count {
+          font-size: 13px;
+        }
+        .giant-category {
+          font-size: 10px;
+          margin-bottom: 8px;
+        }
+        .categories-filter-bar {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .filter-tabs-group {
+          gap: 6px;
+        }
+        .filter-tab {
+          font-size: 10.5px;
+          padding: 5px 10px;
+        }
+        .category-search-input {
+          width: 100%;
+          min-width: unset;
+          font-size: 12px;
+          padding: 8px 12px;
+        }
+        .categories-cards-grid {
+          grid-template-columns: 1fr;
+          max-height: 440px;
+          gap: 10px;
+        }
+        .cat-item-card {
+          padding: 12px 14px;
+        }
+        .cat-icon-circle {
+          width: 32px;
+          height: 32px;
+          font-size: 15px;
+        }
+        .cat-card-name {
+          font-size: 13px;
+        }
+        .cat-total-count {
+          font-size: 16px;
         }
         .app-experience-wrap {
-          padding: 24px 16px;
+          padding: 20px 16px;
+          border-radius: 20px;
+          gap: 24px;
+        }
+        .app-exp-content h2 {
+          font-size: 19px;
+        }
+        .app-exp-content p {
+          font-size: 12.5px;
+        }
+        .phone-mockup-frame {
+          max-width: 260px;
+          border-width: 6px;
+          padding: 10px;
+          border-radius: 28px;
+        }
+        .phone-screen {
+          font-size: 11px;
+          padding: 10px;
+        }
+        .app-m-row {
+          padding: 6px 8px;
+        }
+        .app-m-name {
+          font-size: 10px;
+        }
+        .app-m-cat {
+          font-size: 8.5px;
+        }
+        .app-m-action {
+          font-size: 8.5px;
+        }
+        .footer {
+          padding: 20px 16px;
+          gap: 12px;
+        }
+        .footer-slogan {
+          font-size: 14px;
+          gap: 8px;
+        }
+        .slogan-highlight {
+          font-size: 16px;
+        }
+        .footer-meta {
+          font-size: 10px;
+          width: 100%;
         }
         .floating-nav {
           display: none;
-        }
-        .ewano-logo-box {
-          min-width: 140px;
-          height: 56px;
         }
       }
 
       @media (max-width: 480px) {
         .ewano-logo-box {
-          min-width: 120px;
-          height: 48px;
+          min-width: 110px;
+          height: 40px;
+        }
+        .hero-stat-num {
+          font-size: 24px;
+        }
+        .interactive-tabs-bar {
+          padding: 10px 8px !important;
+        }
+        .nav-tab-btn {
+          padding: 10px 12px;
+        }
+        .nav-tab-icon {
+          font-size: 20px;
+        }
+        .nav-tab-main {
+          font-size: 11.5px;
+        }
+        .nav-tab-sub {
+          font-size: 9px;
+        }
+        .section-title h2 {
+          font-size: 15px;
+        }
+        .credit-btn {
+          flex: 1 1 100%;
+        }
+        .chart-canvas-wrap {
+          height: 200px;
+        }
+        .giants-banner-text h4 {
+          font-size: 14px;
+        }
+        .giants-banner-pill {
+          font-size: 11px;
+        }
+        .app-exp-content h2 {
+          font-size: 17px;
+        }
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: #ffffff;
+        }
+        .infographic-wrapper {
+          box-shadow: none;
+          border: none;
+        }
+        .floating-nav,
+        .interactive-tabs-bar {
+          display: none;
         }
       }
     </style>
@@ -2048,10 +2423,6 @@
                 (Data Visualizations & Merchant Distribution)
               </div>
             </div>
-            <!-- <span class="section-desc"
-              >انیمیشن روان هنگام اسکرول به محدوده دید (Viewport Animation) و
-              انطباق هم‌عرض با باکس‌ها</span
-            > -->
           </div>
 
           <div class="charts-dashboard-box">
@@ -2790,7 +3161,7 @@
       // -------------------------------------------------------------
       // 7. CHART CREATION FUNCTIONS
       // -------------------------------------------------------------
-      Chart.defaults.font.family = "'IRANYekanX', 'Vazirmatn', sans-serif";
+      Chart.defaults.font.family = "'Vazirmatn', 'IRANYekanX', sans-serif";
       Chart.defaults.font.size = 11.5;
       Chart.defaults.color = "#444444";
 
