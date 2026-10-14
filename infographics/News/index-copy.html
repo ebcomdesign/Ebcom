@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اینفوگرافیک رسمی اخبار و دستاوردهای ایبیکام (EBCOM)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sheen-green: #99CC00;
+      --sheen-green-dark: #688a00;
+      --sheen-green-light: rgba(153, 204, 0, 0.14);
+      --eerie-black: #1C1C1C;
+      --cultured: #F8F8F8;
+      --snow-white: #F2F0EB;
+      --sizzling-red: #FF3350;
+      --sizzling-red-light: rgba(255, 51, 80, 0.12);
+      --mci-cyan: #00A3E0;
+      --mci-cyan-dark: #0081b3;
+      --mci-cyan-light: rgba(0, 163, 224, 0.12);
+      --gold-accent: #FFB800;
+      --gold-light: rgba(255, 184, 0, 0.14);
+      --border-color: #E2E0D9;
+      --border-dark: #333333;
+      --text-muted: #6B7280;
+      --text-dark: #1C1C1C;
+      --card-bg: #FFFFFF;
+      --font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--cultured);
+      font-family: var(--font-family);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 30px 15px;
+      display: flex;
+      justify-content: center;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(153, 204, 0, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 40%, rgba(0, 163, 224, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(255, 184, 0, 0.04) 0%, transparent 45%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .infographic-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      background: #FFFFFF;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(28, 28, 28, 0.08);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* HEADER & BRAND LOCKUP */
+    .header {
+      background: var(--eerie-black);
+      color: #FFFFFF;
+      padding: 40px 48px 30px 48px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .ebcom-logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .ebcom-logo-img {
+      height: 48px;
+      width: auto;
+      max-width: 240px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .co-divider {
+      width: 1px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #D1D5DB;
+      flex-wrap: wrap;
+    }
+
+    .partner-pill {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .partner-pill strong.green {
+      color: var(--sheen-green);
+    }
+    .partner-pill strong.cyan {
+      color: var(--mci-cyan);
+    }
+
+    .header-badge {
+      background: var(--sheen-green);
+      color: var(--eerie-black);
+      font-weight: 900;
+      font-size: 12px;
+      padding: 7px 18px;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(153, 204, 0, 0.3);
+      white-space: nowrap;
+    }
+
+    .hero-title-area {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      width: 100%;
+    }
+
+    .hero-text-block h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-text-block p {
+      font-size: 15.5px;
+      color: #D1D5DB;
+      font-weight: 400;
+      line-height: 2.05;
+      text-align: justify;
+      text-justify: inter-word;
+      width: 100%;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    /* 3 Main Highlights Banner */
+    .hero-stats-banner {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      width: 100%;
+    }
+
+    .hero-stat-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 22px;
+      padding: 24px 20px;
+      text-align: center;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .hero-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--sheen-green), transparent);
+      opacity: 0.7;
+    }
+
+    .hero-stat-card.cyan-card::before {
+      background: linear-gradient(90deg, transparent, var(--mci-cyan), transparent);
+    }
+    .hero-stat-card.gold-card::before {
+      background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+    }
+
+    .hero-stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--sheen-green);
+      box-shadow: 0 16px 36px rgba(153, 204, 0, 0.22);
+    }
+
+    .hero-stat-tag {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
+      line-height: 1.6;
+    }
+    .tag-green { background: rgba(153, 204, 0, 0.2); color: var(--sheen-green); }
+    .tag-cyan { background: rgba(0, 163, 224, 0.2); color: var(--mci-cyan); }
+    .tag-gold { background: rgba(255, 184, 0, 0.2); color: var(--gold-accent); }
+
+    .hero-stat-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+
+    .hero-stat-subtitle {
+      font-size: 12.5px;
+      color: #9CA3AF;
+      margin-top: 6px;
+      line-height: 1.7;
+    }
+
+    /* INTERACTIVE TABS */
+    .interactive-tabs-bar {
+      display: flex;
+      background: #F3F4F6;
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 48px;
+      gap: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    .tab-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      padding: 10px 22px;
+      border-radius: 24px;
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .tab-btn:hover {
+      background: #E5E7EB;
+      color: var(--eerie-black);
+    }
+
+    .tab-btn.active {
+      background: var(--eerie-black);
+      color: #FFFFFF;
+      border-color: var(--eerie-black);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .tab-btn.active .tab-icon-badge {
+      background: var(--sheen-green);
+      color: var(--eerie-black);
+    }
+
+    .tab-icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #E5E7EB;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* CONTENT BODY */
+    .content-body {
+      padding: 44px 48px;
+      background: #FFFFFF;
+    }
+
+    .news-section {
+      margin-bottom: 56px;
+      transition: all 0.3s ease;
+    }
+
+    .news-section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== SECTION TITLE (اصلاح‌شده: خط دقیقاً کنار عنوان) ===== */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .section-title-main {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .section-title .bar {
+      width: 6px;
+      min-height: 38px;
+      align-self: stretch;
+      border-radius: 4px;
+      background: var(--sheen-green);
+      flex-shrink: 0;
+    }
+
+    .section-title.cyan .bar {
+      background: var(--mci-cyan);
+    }
+
+    .section-title.gold .bar {
+      background: var(--gold-accent);
+    }
+
+    .section-title-headings {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-title-headings h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--eerie-black);
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .section-title-en {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      direction: ltr;
+      display: inline-block;
+      margin-top: 2px;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    .section-desc {
+      margin-right: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+      background: #F3F4F6;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-weight: 500;
+      line-height: 1.7;
+      flex-shrink: 0;
+    }
+
+    /* FEATURED NEWS CARD WITH IMAGE */
+    .news-featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 32px;
+      background: #FAF9F6;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .news-featured-card.reverse {
+      grid-template-columns: 1.15fr 1fr;
+    }
+
+    .news-media-box {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      position: relative;
+      background: #E5E7EB;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .news-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .news-media-box:hover .news-img {
+      transform: scale(1.03);
+    }
+
+    .media-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(28, 28, 28, 0.85);
+      color: #FFFFFF;
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      max-width: calc(100% - 24px);
+      overflow-wrap: anywhere;
+    }
+
+    .news-content-box {
+      min-width: 0;
+    }
+
+    .news-content-box h3 {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--eerie-black);
+      margin-bottom: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .news-lead-text {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.95;
+      text-align: justify;
+      margin-bottom: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .news-highlight-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .news-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--eerie-black);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      line-height: 1.6;
+    }
+
+    .news-chip .bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sheen-green);
+      flex-shrink: 0;
+    }
+    .news-chip.cyan .bullet { background: var(--mci-cyan); }
+    .news-chip.gold .bullet { background: var(--gold-accent); }
+
+    /* PILLARS / SUB-CARDS GRID */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .pillar-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 22px 18px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-width: 0;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      border-color: var(--sheen-green);
+    }
+
+    .pillar-card.cyan-border:hover {
+      border-color: var(--mci-cyan);
+    }
+
+    .pillar-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--sheen-green-light);
+      color: var(--sheen-green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+
+    .pillar-card.cyan-border .pillar-card-icon {
+      background: var(--mci-cyan-light);
+      color: var(--mci-cyan-dark);
+    }
+
+    .pillar-card h4 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--eerie-black);
+      margin-bottom: 8px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .pillar-card p {
+      font-size: 12.8px;
+      color: #4B5563;
+      line-height: 1.8;
+      flex-grow: 1;
+      overflow-wrap: anywhere;
+    }
+
+    .pillar-features-list {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-color);
+      list-style: none;
+    }
+
+    .pillar-features-list li {
+      font-size: 11.8px;
+      color: #6B7280;
+      margin-bottom: 6px;
+      position: relative;
+      padding-right: 12px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .pillar-features-list li::before {
+      content: '✓';
+      position: absolute;
+      right: 0;
+      color: var(--sheen-green-dark);
+      font-weight: 900;
+    }
+
+    .pillar-card.cyan-border .pillar-features-list li::before {
+      color: var(--mci-cyan);
+    }
+
+    /* 3 COL GRID FOR EWANO */
+    .ewano-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .ewano-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px 20px;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .ewano-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 163, 224, 0.12);
+      border-color: var(--mci-cyan);
+    }
+
+    .ewano-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: var(--mci-cyan-light);
+      color: var(--mci-cyan-dark);
+      margin-bottom: 12px;
+      width: fit-content;
+      line-height: 1.6;
+    }
+
+    .ewano-card h4 {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--eerie-black);
+      margin-bottom: 10px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .ewano-card p {
+      font-size: 13px;
+      color: #4B5563;
+      line-height: 1.85;
+      margin-bottom: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    /* COMPARISON & SYNERGY MATRIX TABLE */
+    .matrix-container {
+      background: #FAF9F6;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      min-width: 720px;
+    }
+
+    .matrix-table th {
+      background: var(--eerie-black);
+      color: #FFFFFF;
+      padding: 16px 18px;
+      font-weight: 800;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .matrix-table th:first-child {
+      border-top-right-radius: 14px;
+    }
+    .matrix-table th:last-child {
+      border-top-left-radius: 14px;
+    }
+
+    .matrix-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-color);
+      color: #374151;
+      vertical-align: top;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .matrix-table tr:hover td {
+      background: #FFFFFF;
+    }
+
+    .matrix-table td.dim-title {
+      font-weight: 800;
+      color: var(--eerie-black);
+      background: rgba(0, 0, 0, 0.02);
+      width: 20%;
+    }
+
+    .matrix-table td.rada-col {
+      width: 40%;
+      border-left: 1px solid var(--border-color);
+    }
+    .matrix-table td.ewano-col {
+      width: 40%;
+    }
+
+    /* FOOTER */
+    .infographic-footer {
+      background: var(--eerie-black);
+      color: #D1D5DB;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-info {
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-info strong {
+      color: #FFFFFF;
+    }
+
+    .footer-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: var(--font-family);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-action:hover {
+      background: var(--sheen-green);
+      color: var(--eerie-black);
+      border-color: var(--sheen-green);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 992px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .header {
+        padding: 28px 24px 24px;
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .brand-lockup {
+        gap: 14px;
+      }
+
+      .co-divider {
+        display: none;
+      }
+
+      .hero-text-block h1 {
+        font-size: 26px;
+      }
+
+      .hero-text-block p {
+        font-size: 14.5px;
+        text-align: right;
+      }
+
+      .hero-stats-banner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .hero-stat-card {
+        padding: 20px 18px;
+      }
+
+      .interactive-tabs-bar {
+        padding: 12px 20px;
+      }
+
+      .content-body {
+        padding: 28px 24px;
+      }
+
+      .news-featured-card,
+      .news-featured-card.reverse {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 20px;
+      }
+
+      .news-featured-card.reverse .news-media-box {
+        order: -1;
+      }
+
+      .pillars-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ewano-features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* section-title در تبلت */
+      .section-title {
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .section-title-main {
+        flex: 1 1 100%;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .section-title-headings h2 {
+        font-size: 20px;
+      }
+
+      .section-desc {
+        margin-right: 0;
+        width: 100%;
+      }
+
+      .infographic-footer {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 8px;
+      }
+
+      .infographic-wrapper {
+        border-radius: 18px;
+      }
+
+      .header {
+        padding: 22px 16px 20px;
+      }
+
+      .header-top {
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+      }
+
+      .ebcom-logo-img {
+        height: 38px;
+        max-width: 180px;
+      }
+
+      .partner-logos {
+        font-size: 11.5px;
+      }
+
+      .partner-pill {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+
+      .header-badge {
+        font-size: 11px;
+        padding: 6px 14px;
+        white-space: normal;
+        text-align: center;
+      }
+
+      .hero-text-block h1 {
+        font-size: 21px;
+        line-height: 1.5;
+      }
+
+      .hero-text-block p {
+        font-size: 13.5px;
+        line-height: 1.9;
+        text-align: right;
+      }
+
+      .hero-stat-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+      }
+
+      .hero-stat-title {
+        font-size: 17px;
+      }
+
+      .hero-stat-subtitle {
+        font-size: 11.5px;
+      }
+
+      .hero-stat-tag {
+        font-size: 10px;
+        padding: 4px 10px;
+      }
+
+      .interactive-tabs-bar {
+        padding: 10px 14px;
+        gap: 8px;
+      }
+
+      .tab-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+
+      .content-body {
+        padding: 22px 16px;
+      }
+
+      .news-section {
+        margin-bottom: 38px;
+      }
+
+      /* section-title در موبایل */
+      .section-title {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .section-title-main {
+        gap: 10px;
+      }
+
+      .section-title .bar {
+        width: 5px;
+        min-height: 30px;
+      }
+
+      .section-title-headings h2 {
+        font-size: 17px;
+      }
+
+      .section-title-en {
+        font-size: 10.5px;
+      }
+
+      .section-desc {
+        font-size: 11.5px;
+        padding: 5px 10px;
+      }
+
+      .news-featured-card,
+      .news-featured-card.reverse {
+        padding: 14px;
+        border-radius: 18px;
+        gap: 16px;
+      }
+
+      .news-media-box {
+        border-radius: 12px;
+        aspect-ratio: 16 / 10;
+      }
+
+      .media-badge {
+        font-size: 10px;
+        padding: 4px 10px;
+        bottom: 8px;
+        right: 8px;
+      }
+
+      .news-content-box h3 {
+        font-size: 16px;
+      }
+
+      .news-lead-text {
+        font-size: 12.5px;
+        line-height: 1.9;
+        text-align: right;
+      }
+
+      .news-chip {
+        font-size: 11px;
+        padding: 5px 10px;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .pillar-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+      }
+
+      .pillar-card h4 {
+        font-size: 14.5px;
+      }
+
+      .pillar-card p {
+        font-size: 12px;
+      }
+
+      .ewano-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+      }
+
+      .ewano-card h4 {
+        font-size: 15px;
+      }
+
+      .ewano-card p {
+        font-size: 12px;
+      }
+
+      .matrix-container {
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .matrix-table {
+        font-size: 12px;
+        min-width: 560px;
+      }
+
+      .matrix-table th,
+      .matrix-table td {
+        padding: 10px 12px;
+      }
+
+      .infographic-footer {
+        padding: 20px 16px;
+        gap: 14px;
+      }
+
+      .footer-actions {
+        width: 100%;
+      }
+
+      .btn-action {
+        flex: 1;
+        justify-content: center;
+        font-size: 11.5px;
+        padding: 8px 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-text-block h1 {
+        font-size: 18px;
+      }
+
+      .hero-stat-title {
+        font-size: 15px;
+      }
+
+      .section-title-headings h2 {
+        font-size: 15px;
+      }
+
+      .news-content-box h3 {
+        font-size: 14.5px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+      }
+
+      .infographic-wrapper {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        max-width: 100%;
+      }
+
+      .interactive-tabs-bar,
+      .footer-actions {
+        display: none !important;
+      }
+
+      .news-section {
+        display: block !important;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="infographic-wrapper">
+
+    <!-- HEADER / BRAND LOCKUP -->
+    <header class="header">
+      <div class="header-top">
+        <div class="brand-lockup">
+          <div class="ebcom-logo-container">
+            <img src="../../assets/images/EBCOM.png" alt="شرکت همراه کسب‌وکارهای هوشمند (EBCOM)" class="ebcom-logo-img" onerror="this.onerror=null; this.src='EBCOM_LOGO_L.png';">
+          </div>
+          <div class="co-divider"></div>
+          <div class="partner-logos">
+            <div class="partner-pill">هم‌پیمان استراتژیک: <strong class="green">همراه اول</strong></div>
+            <div class="partner-pill">محصولات کلیدی: <strong class="cyan">اوانو (Ewano)</strong> و <strong class="green">ردا (RADA)</strong></div>
+          </div>
+        </div>
+        <div class="header-badge">بولتن رسمی اخبار و دستاوردهای ایبیکام</div>
+      </div>
+
+      <div class="hero-title-area">
+        <div class="hero-text-block">
+          <h1>گام‌های تحول‌آفرین EBCOM در اقتصاد دیجیتال و نوآوری مالی</h1>
+          <p>
+            شرکت همراه کسب‌وکارهای هوشمند (ایبیکام)، بازوی نوآوری دیجیتال همراه اول، با تمرکز بر گسترش خدمات فناوری‌محور، همزمان دو دستاورد راهبردی را رقم زد: توسعه فنی بستر هوشمند «ردا» برای ساماندهی جامع خدمات دانشجویان سراسر کشور، و اخذ رسمی گواهی شرکت «دانش‌بنیان» با محوریت سوپراپلیکیشن جامع مدیریت مالی و پرداخت اوانو.
+          </p>
+        </div>
+
+        <div class="hero-stats-banner">
+          <div class="hero-stat-card green-card">
+            <span class="hero-stat-tag tag-green">زیست‌بوم ردا (رفاه دانشجویان)</span>
+            <div class="hero-stat-title">۴ ستون خدمت‌رسانی یکپارچه</div>
+            <div class="hero-stat-subtitle">تجمیع خدمات بانکی و اعتباری، بسته‌های اینترنت، امور رفاهی و میکروسرویس‌ها در یک پلتفرم هوشمند</div>
+          </div>
+          <div class="hero-stat-card cyan-card">
+            <span class="hero-stat-tag tag-cyan">عنوان رسمی دانش‌بنیان</span>
+            <div class="hero-stat-title">احراز صلاحیت علمی و فنی</div>
+            <div class="hero-stat-subtitle">اخذ عنوان شرکت دانش‌بنیان برای سوپراپلیکیشن جامع مدیریت مالی و خدمات پرداخت اوانو (Ewano)</div>
+          </div>
+          <div class="hero-stat-card gold-card">
+            <span class="hero-stat-tag tag-gold">گستره مخاطبان و اثرگذاری</span>
+            <div class="hero-stat-title">جامعه چندمیلیونی دانشگاهی و عمومی</div>
+            <div class="hero-stat-subtitle">ارائه خدمات بدون مرز مالی، دیجیتال و رفاهی با بهره‌گیری از زیرساخت پیشرفته همراه اول</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- INTERACTIVE SECTION TABS -->
+    <div class="interactive-tabs-bar" id="view-tabs">
+      <button class="tab-btn active" onclick="filterSections('all', this)">
+        <span class="tab-icon-badge">★</span>
+        <span>همه دستاوردها (نمای جامع)</span>
+      </button>
+      <button class="tab-btn" onclick="filterSections('rada-sec', this)">
+        <span class="tab-icon-badge">۱</span>
+        <span>زیست‌بوم رفاه دانشجویان (ردا)</span>
+      </button>
+      <button class="tab-btn" onclick="filterSections('ewano-sec', this)">
+        <span class="tab-icon-badge">۲</span>
+        <span>شرکت دانش‌بنیان (اوانو)</span>
+      </button>
+      <button class="tab-btn" onclick="filterSections('matrix-sec', this)">
+        <span class="tab-icon-badge">۳</span>
+        <span>ماتریس مقایسه و هم‌افزایی</span>
+      </button>
+    </div>
+
+    <div class="content-body">
+
+      <!-- SECTION 1: RADA STUDENT ECOSYSTEM -->
+      <section class="news-section" id="rada-sec">
+        <div class="section-title">
+          <div class="section-title-main">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>توسعه فنی زیست‌بوم «ردا» (رفاه دانشجویان ایران) در EBCOM</h2>
+              <div class="section-title-en">(RADA - Iran Student Welfare Smart Ecosystem)</div>
+            </div>
+          </div>
+          <span class="section-desc">یکپارچه‌سازی خدمات و هوشمندسازی زیست دانشجویی</span>
+        </div>
+
+        <div class="news-featured-card">
+          <div class="news-media-box">
+            <img src="../../assets/images/contract.jpeg" alt="توسعه فنی زیست‌بوم ردا رفاه دانشجویان ایران در ایبیکام" class="news-img">
+            <div class="media-badge">زیست‌بوم دیجیتال ردا (RADA)</div>
+          </div>
+          <div class="news-content-box">
+            <div class="news-highlight-chips">
+              <div class="news-chip"><span class="bullet"></span>ساده‌سازی دسترسی دانشجویان</div>
+              <div class="news-chip"><span class="bullet"></span>هوشمندسازی خدمات دانشگاهی</div>
+              <div class="news-chip"><span class="bullet"></span>فضای واحد خدمات چندگانه</div>
+            </div>
+            <h3>بستر یکپارچه خدمات معیشتی و دیجیتال دانشگاهی</h3>
+            <p class="news-lead-text">
+              هدف اصلی توسعه فنی زیست‌بوم «ردا»، ساده‌تر کردن دسترسی دانشجویان به خدمات مختلف و حرکت پرشتاب به سمت هوشمندسازی خدمات دانشجویی کشور است. با توسعه این بستر توسط متخصصان شرکت همراه کسب‌وکارهای هوشمند (EBCOM)، مسیر ایجاد درگاه یکپارچه خدمات وارد مرحله تازه‌ای شده است؛ بستری که خدمات بانکی و اعتباری، بسته‌های اینترنتی، خدمات رفاهی و مجموعه‌ای از میکروسرویس‌ها را در یک فضای واحد در اختیار جامعه دانشگاهی قرار می‌دهد.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-card-icon">💳</div>
+            <h4>خدمات بانکی و اعتباری</h4>
+            <p>ارائه کارت‌های هوشمند بانکی متصل به شبکه شتاب، اعتبارات خرد معیشتی دانشجویی، و کیف‌پول دیجیتال اختصاصی.</p>
+            <ul class="pillar-features-list">
+              <li>تخصیص اعتبارات خرد دوره‌ای</li>
+              <li>انتقال وجه و خرید درون‌دانشگاهی</li>
+              <li>اتصال امن به شبکه پرداخت بانکی</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-card-icon">📶</div>
+            <h4>بسته‌های اینترنتی و دیتا</h4>
+            <p>ارائه بسته‌های اختصاصی اینترنت دانشجویی با تعرفه‌های ویژه و تسهیل اتصال به پلتفرم‌های پژوهشی و آموزشی.</p>
+            <ul class="pillar-features-list">
+              <li>اینترنت با تخفیف ویژه دانشجویی</li>
+              <li>پوشش ترافیک رایگان سامانه‌های آموزشی</li>
+              <li>سیم‌کارت دانشجویی همراه اول</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-card-icon">🥗</div>
+            <h4>خدمات رفاهی و معیشتی</h4>
+            <p>ساماندهی خدمات تغذیه، تسهیلات خوابگاهی، بن‌های تخفیف خرید و خدمات رفاهی متمرکز در سراسر دانشگاه‌ها.</p>
+            <ul class="pillar-features-list">
+              <li>رزرو و پرداخت غذای دانشجویی</li>
+              <li>تخفیف در شبکه پذیرندگان و فروشگاه‌ها</li>
+              <li>خدمات گردشگری و اقامتی دانشجویی</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-card-icon">⚙️</div>
+            <h4>مجموعه میکروسرویس‌ها</h4>
+            <p>معماری مدرن مبتنی بر میکروسرویس برای اتصال سریع وب‌سرویس‌های دانشگاه‌ها و نهادهای رفاهی بدون اصطکاک فنی.</p>
+            <ul class="pillar-features-list">
+              <li>احراز هویت متمرکز (SSO) دانشجو</li>
+              <li>اتصال وب‌سرویسی به صندوق رفاه</li>
+              <li>توسعه‌پذیری ماژولار و مقیاس‌پذیر</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: KNOWLEDGE-BASED EWANO -->
+      <section class="news-section" id="ewano-sec">
+        <div class="section-title cyan">
+          <div class="section-title-main">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>شرکت همراه کسب و کارهای هوشمند دانش‌بنیان شد</h2>
+              <div class="section-title-en">(Knowledge-Based Enterprise Certification - Ewano Super-App)</div>
+            </div>
+          </div>
+          <span class="section-desc">تأیید رسمی نوآوری فناورانه در سطح ملی</span>
+        </div>
+
+        <div class="news-featured-card reverse">
+          <div class="news-content-box">
+            <div class="news-highlight-chips">
+              <div class="news-chip cyan"><span class="bullet"></span>مجوز رسمی معاونت علمی</div>
+              <div class="news-chip cyan"><span class="bullet"></span>محصول: سوپراپلیکیشن اوانو</div>
+              <div class="news-chip cyan"><span class="bullet"></span>فناوری پیشرفته مالی (Fintech)</div>
+            </div>
+            <h3>ارتقای جایگاه فناورانه EBCOM به رتبه شرکت دانش‌بنیان</h3>
+            <p class="news-lead-text">
+              شرکت همراه کسب‌وکارهای هوشمند پس از پشت‌سر گذاشتن مراحل دقیق ارزیابی فنی و کارشناسی و اخذ مجوزها و تأییدیه‌های مراجع ذی‌صلاح، موفق به کسب عنوان معتبر <strong>«شرکت دانش‌بنیان»</strong> شد. این تأییدیه ملی ارزشمند به پاس توسعه محصول راهبردی <strong>«سوپر اپلیکیشن جامع مدیریت مالی و خدمات پرداخت اوانو (Ewano)»</strong> اعطا گردیده که نمایانگر بلوغ فنی، خودکفایی و نوآوری زیرساختی در صنعت فناوری مالی کشور است.
+            </p>
+          </div>
+          <div class="news-media-box">
+            <img src="../../assets/images/BI.JPG" alt="کسب عنوان دانش‌بنیان برای سوپراپلیکیشن اوانو" class="news-img">
+            <div class="media-badge">گواهی دانش‌بنیان • اوانو (Ewano)</div>
+          </div>
+        </div>
+
+        <div class="ewano-features-grid">
+          <div class="ewano-card">
+            <span class="ewano-badge">مدیریت مالی و پرداخت</span>
+            <h4>سوپراپلیکیشن جامع خدمات مالی</h4>
+            <p>
+              ارائه زنجیره‌ای کامل از خدمات تراکنشی روزمره شامل انتقال وجه شتابی، کارت به کارت از مبادی متنوع بانکی، خرید شارژ، پرداخت سریع قبوض خدماتی و کیف‌پول دیجیتال یکپارچه با امنیت بسیار بالا.
+            </p>
+          </div>
+
+          <div class="ewano-card">
+            <span class="ewano-badge">نوآوری اعتباری BNPL</span>
+            <h4>اعتبار خرد و اقساطی اوانو</h4>
+            <p>
+              طراحی الگوهای نوین اعتبارسنجی بلادرنگ بدون نیاز به ضامن، چک و سفته کاغذی؛ امکان خرید اقساطی ۴ قسطه در بزرگ‌ترین شبکه پذیرندگان حضوری و آنلاین کشور با تکیه بر ظرفیت مشترکین همراه اول.
+            </p>
+          </div>
+
+          <div class="ewano-card">
+            <span class="ewano-badge">زیرساخت و امنیت داده</span>
+            <h4>معماری مقیاس‌پذیر و پردازش پایدار</h4>
+            <p>
+              پیاده‌سازی پلتفرمی ماژولار و مبتنی بر میکروسرویس با تاب‌آوری بسیار بالا در زمان اوج ترافیک، منطبق با الزامات شاپرک و استانداردهای روز حفاظت از امنیت داده‌های مالی و حریم خصوصی کاربران.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: COMPARISON MATRIX & SYNERGY -->
+      <section class="news-section" id="matrix-sec">
+        <div class="section-title gold">
+          <div class="section-title-main">
+            <div class="bar"></div>
+            <div class="section-title-headings">
+              <h2>ماتریس راهبردی و هم‌افزایی دو رویداد</h2>
+              <div class="section-title-en">(Synergy & Strategic Alignment Matrix)</div>
+            </div>
+          </div>
+          <span class="section-desc">هم‌راستایی در زنجیره ارزش اقتصاد دیجیتال همراه اول</span>
+        </div>
+
+        <div class="matrix-container">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>محور ارزیابی</th>
+                <th>زیست‌بوم دانشجویی «ردا»</th>
+                <th>گواهی دانش‌بنیان «اوانو»</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="dim-title">موضوع و هدف اصلی</td>
+                <td class="rada-col">یکپارچه‌سازی و هوشمندسازی زنجیره خدمات معیشتی، بانکی و ارتباطی دانشجویان</td>
+                <td class="ewano-col">احراز صلاحیت علمی و نوآوری فنی در سوپراپلیکیشن مدیریت مالی و پرداخت فراگیر</td>
+              </tr>
+              <tr>
+                <td class="dim-title">محصول محوری</td>
+                <td class="rada-col">سامانه و زیست‌بوم یکپارچه ردا (RADA Ecosystem)</td>
+                <td class="ewano-col">سوپراپلیکیشن چندوجهی اوانو (Ewano Super-App)</td>
+              </tr>
+              <tr>
+                <td class="dim-title">جامعه هدف و ذی‌نفعان</td>
+                <td class="rada-col">دانشجویان، دانشگاه‌ها، صندوق رفاه دانشجویان و مراکز آموزشی کشور</td>
+                <td class="ewano-col">عموم کاربران خدمات مالی، خریداران اعتباری (BNPL) و مشترکین شبکه همراه اول</td>
+              </tr>
+              <tr>
+                <td class="dim-title">زیرساخت فنی زیربنایی</td>
+                <td class="rada-col">معماری میکروسرویسی توزیع‌شده با اتصال به درگاه‌های بانکی و وب‌سرویس‌های آموزشی</td>
+                <td class="ewano-col">موتور اعتبارسنجی بلادرنگ، پلتفرم پردازش تراکنش با ظرفیت بالا و اتصال به شاپرک</td>
+              </tr>
+              <tr>
+                <td class="dim-title">اثرگذاری راهبردی بر EBCOM</td>
+                <td class="rada-col">توسعه سهم بازار در بخش B2B2C و ایجاد هویت دیجیتال خدماتی در محیط‌های علمی کشور</td>
+                <td class="ewano-col">تثبیت اعتبار برند ملی در صنعت فین‌تک، بهره‌مندی از تسهیلات دانش‌بنیان و شتاب‌دهی توسعه</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="infographic-footer">
+      <div class="footer-info">
+        <strong>شرکت همراه کسب‌وکارهای هوشمند (EBCOM)</strong>
+      </div>
+      <div class="footer-actions">
+        <button class="btn-action" onclick="window.print()">🖨️ چاپ / ذخیره PDF</button>
+        <button class="btn-action" onclick="alert('پیوند اینفوگرافیک با موفقیت کپی شد!')">🔗 اشتراک‌گذاری</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    function filterSections(sectionId, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const sections = document.querySelectorAll('.news-section');
+      if (sectionId === 'all') {
+        sections.forEach(s => s.style.display = 'block');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        sections.forEach(s => {
+          if (s.id === sectionId) {
+            s.style.display = 'block';
+            s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            s.style.display = 'none';
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
