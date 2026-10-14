@@ -96,11 +96,14 @@
       align-items: center;
       gap: 22px;
       flex-wrap: wrap;
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .ebcom-logo-container {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .ebcom-logo-img {
@@ -121,7 +124,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 600;
       color: #D1D5DB;
       flex-wrap: wrap;
@@ -149,7 +152,7 @@
       background: var(--sheen-green);
       color: var(--eerie-black);
       font-weight: 900;
-      font-size: 12px;
+      font-size: 12.5px;
       padding: 7px 18px;
       border-radius: 30px;
       letter-spacing: 0.5px;
@@ -165,7 +168,7 @@
     }
 
     .hero-text-block h1 {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 900;
       color: #FFFFFF;
       margin-bottom: 14px;
@@ -174,7 +177,7 @@
     }
 
     .hero-text-block p {
-      font-size: 15.5px;
+      font-size: 16.5px;
       color: #D1D5DB;
       font-weight: 400;
       line-height: 2.05;
@@ -236,7 +239,7 @@
     }
 
     .hero-stat-tag {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       padding: 4px 12px;
       border-radius: 20px;
@@ -249,14 +252,14 @@
     .tag-gold { background: rgba(255, 184, 0, 0.2); color: var(--gold-accent); }
 
     .hero-stat-title {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 900;
       color: #FFFFFF;
       line-height: 1.3;
     }
 
     .hero-stat-subtitle {
-      font-size: 12.5px;
+      font-size: 13.5px;
       color: #9CA3AF;
       margin-top: 6px;
       line-height: 1.7;
@@ -281,7 +284,7 @@
       border-radius: 24px;
       font-family: var(--font-family);
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 14px;
       color: var(--text-dark);
       cursor: pointer;
       transition: all 0.25s ease;
@@ -337,7 +340,7 @@
       margin-bottom: 0;
     }
 
-    /* ===== SECTION TITLE (اصلاح‌شده: خط دقیقاً کنار عنوان) ===== */
+    /* SECTION TITLE */
     .section-title {
       display: flex;
       align-items: center;
@@ -380,7 +383,7 @@
     }
 
     .section-title-headings h2 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 900;
       color: var(--eerie-black);
       line-height: 1.4;
@@ -388,7 +391,7 @@
     }
 
     .section-title-en {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
       letter-spacing: 0.5px;
@@ -401,7 +404,7 @@
 
     .section-desc {
       margin-right: auto;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
       background: #F3F4F6;
       padding: 6px 14px;
@@ -465,7 +468,7 @@
       color: #FFFFFF;
       padding: 5px 12px;
       border-radius: 16px;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 700;
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -478,7 +481,7 @@
     }
 
     .news-content-box h3 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 900;
       color: var(--eerie-black);
       margin-bottom: 14px;
@@ -487,7 +490,7 @@
     }
 
     .news-lead-text {
-      font-size: 14px;
+      font-size: 15px;
       color: #374151;
       line-height: 1.95;
       text-align: justify;
@@ -507,7 +510,7 @@
       border: 1px solid var(--border-color);
       border-radius: 16px;
       padding: 6px 14px;
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--eerie-black);
       display: flex;
@@ -577,7 +580,7 @@
     }
 
     .pillar-card h4 {
-      font-size: 15.5px;
+      font-size: 16.5px;
       font-weight: 800;
       color: var(--eerie-black);
       margin-bottom: 8px;
@@ -586,7 +589,7 @@
     }
 
     .pillar-card p {
-      font-size: 12.8px;
+      font-size: 13.8px;
       color: #4B5563;
       line-height: 1.8;
       flex-grow: 1;
@@ -601,7 +604,7 @@
     }
 
     .pillar-features-list li {
-      font-size: 11.8px;
+      font-size: 12.8px;
       color: #6B7280;
       margin-bottom: 6px;
       position: relative;
@@ -650,7 +653,7 @@
 
     .ewano-badge {
       display: inline-block;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 12px;
@@ -662,7 +665,7 @@
     }
 
     .ewano-card h4 {
-      font-size: 16.5px;
+      font-size: 17.5px;
       font-weight: 800;
       color: var(--eerie-black);
       margin-bottom: 10px;
@@ -671,7 +674,7 @@
     }
 
     .ewano-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: #4B5563;
       line-height: 1.85;
       margin-bottom: 14px;
@@ -692,7 +695,7 @@
     .matrix-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13.5px;
+      font-size: 14.5px;
       min-width: 720px;
     }
 
@@ -758,7 +761,7 @@
     }
 
     .footer-info {
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.8;
       overflow-wrap: anywhere;
     }
@@ -779,7 +782,7 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       padding: 8px 18px;
       border-radius: 20px;
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 700;
       font-family: var(--font-family);
       cursor: pointer;
@@ -822,11 +825,11 @@
       }
 
       .hero-text-block h1 {
-        font-size: 26px;
+        font-size: 28px;
       }
 
       .hero-text-block p {
-        font-size: 14.5px;
+        font-size: 15.5px;
         text-align: right;
       }
 
@@ -866,7 +869,6 @@
         grid-template-columns: 1fr;
       }
 
-      /* section-title در تبلت */
       .section-title {
         align-items: flex-start;
         gap: 12px;
@@ -879,12 +881,13 @@
       }
 
       .section-title-headings h2 {
-        font-size: 20px;
+        font-size: 22px;
       }
 
       .section-desc {
         margin-right: 0;
         width: 100%;
+        font-size: 14px;
       }
 
       .infographic-footer {
@@ -910,56 +913,107 @@
       .header-top {
         padding-bottom: 16px;
         margin-bottom: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
       }
 
-      .ebcom-logo-img {
-        height: 38px;
-        max-width: 180px;
+      /* ===== برند لوکاپ در موبایل: لوگو راست، بج استراتژیک چپ ===== */
+      .brand-lockup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 24px;
+        flex-wrap: nowrap;
+      }
+
+      .ebcom-logo-container {
+        order: 1;
+        flex-shrink: 0;
       }
 
       .partner-logos {
-        font-size: 11.5px;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+        flex: 1 1 auto;
+        min-width: 0;
       }
 
-      .partner-pill {
-        padding: 5px 10px;
-        font-size: 11px;
+      /* بج اول (هم‌پیمان استراتژیک) کنار لوگو - چپ‌چین */
+      .partner-pill.partner-strategic {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        text-align: left;
+        font-size: 12px;
+        padding: 6px 12px;
+        direction: rtl;
       }
 
-      .header-badge {
-        font-size: 11px;
-        padding: 6px 14px;
-        white-space: normal;
+      /* بج دوم (محصولات کلیدی) زیر، تمام عرض */
+      .partner-pill.partner-products {
+        order: 2;
+        width: 100%;
+        justify-content: center;
         text-align: center;
+        font-size: 12px;
+        padding: 6px 12px;
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+
+      /* بج سوم (بولتن رسمی) تمام عرض */
+      .header-badge {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        font-size: 12.5px;
+        padding: 8px 16px;
+        white-space: normal;
+      }
+
+      .ebcom-logo-img {
+        height: 40px;
+        max-width: 170px;
+      }
+
+      .co-divider {
+        display: none;
       }
 
       .hero-text-block h1 {
-        font-size: 21px;
-        line-height: 1.5;
+        font-size: 24px;
+        line-height: 1.55;
       }
 
       .hero-text-block p {
-        font-size: 13.5px;
-        line-height: 1.9;
+        font-size: 15px;
+        line-height: 2;
         text-align: right;
       }
 
       .hero-stat-card {
-        padding: 18px 14px;
+        padding: 20px 16px;
         border-radius: 16px;
       }
 
       .hero-stat-title {
-        font-size: 17px;
+        font-size: 19px;
       }
 
       .hero-stat-subtitle {
-        font-size: 11.5px;
+        font-size: 13.5px;
       }
 
       .hero-stat-tag {
-        font-size: 10px;
-        padding: 4px 10px;
+        font-size: 11.5px;
+        padding: 5px 12px;
       }
 
       .interactive-tabs-bar {
@@ -968,7 +1022,13 @@
       }
 
       .tab-btn {
-        padding: 8px 14px;
+        padding: 9px 16px;
+        font-size: 13.5px;
+      }
+
+      .tab-icon-badge {
+        width: 22px;
+        height: 22px;
         font-size: 12px;
       }
 
@@ -980,7 +1040,6 @@
         margin-bottom: 38px;
       }
 
-      /* section-title در موبایل */
       .section-title {
         gap: 10px;
         margin-bottom: 20px;
@@ -996,16 +1055,16 @@
       }
 
       .section-title-headings h2 {
-        font-size: 17px;
+        font-size: 19px;
       }
 
       .section-title-en {
-        font-size: 10.5px;
+        font-size: 12px;
       }
 
       .section-desc {
-        font-size: 11.5px;
-        padding: 5px 10px;
+        font-size: 13px;
+        padding: 6px 12px;
       }
 
       .news-featured-card,
@@ -1021,25 +1080,25 @@
       }
 
       .media-badge {
-        font-size: 10px;
-        padding: 4px 10px;
+        font-size: 11.5px;
+        padding: 5px 12px;
         bottom: 8px;
         right: 8px;
       }
 
       .news-content-box h3 {
-        font-size: 16px;
+        font-size: 18.5px;
       }
 
       .news-lead-text {
-        font-size: 12.5px;
-        line-height: 1.9;
+        font-size: 14.5px;
+        line-height: 2;
         text-align: right;
       }
 
       .news-chip {
-        font-size: 11px;
-        padding: 5px 10px;
+        font-size: 12.5px;
+        padding: 6px 12px;
       }
 
       .pillars-grid {
@@ -1053,11 +1112,15 @@
       }
 
       .pillar-card h4 {
-        font-size: 14.5px;
+        font-size: 16.5px;
       }
 
       .pillar-card p {
-        font-size: 12px;
+        font-size: 14px;
+      }
+
+      .pillar-features-list li {
+        font-size: 13px;
       }
 
       .ewano-card {
@@ -1065,12 +1128,16 @@
         border-radius: 16px;
       }
 
+      .ewano-badge {
+        font-size: 12px;
+      }
+
       .ewano-card h4 {
-        font-size: 15px;
+        font-size: 17px;
       }
 
       .ewano-card p {
-        font-size: 12px;
+        font-size: 14px;
       }
 
       .matrix-container {
@@ -1079,18 +1146,22 @@
       }
 
       .matrix-table {
-        font-size: 12px;
-        min-width: 560px;
+        font-size: 13.5px;
+        min-width: 620px;
       }
 
       .matrix-table th,
       .matrix-table td {
-        padding: 10px 12px;
+        padding: 12px 14px;
       }
 
       .infographic-footer {
         padding: 20px 16px;
         gap: 14px;
+      }
+
+      .footer-info {
+        font-size: 13.5px;
       }
 
       .footer-actions {
@@ -1100,26 +1171,39 @@
       .btn-action {
         flex: 1;
         justify-content: center;
-        font-size: 11.5px;
-        padding: 8px 12px;
+        font-size: 13px;
+        padding: 10px 14px;
       }
     }
 
     @media (max-width: 380px) {
       .hero-text-block h1 {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       .hero-stat-title {
-        font-size: 15px;
+        font-size: 17px;
       }
 
       .section-title-headings h2 {
-        font-size: 15px;
+        font-size: 17px;
       }
 
       .news-content-box h3 {
-        font-size: 14.5px;
+        font-size: 16.5px;
+      }
+
+      .news-lead-text {
+        font-size: 13.5px;
+      }
+
+      .pillar-card p,
+      .ewano-card p {
+        font-size: 13px;
+      }
+
+      .tab-btn {
+        font-size: 12.5px;
       }
     }
 
@@ -1161,8 +1245,8 @@
           </div>
           <div class="co-divider"></div>
           <div class="partner-logos">
-            <div class="partner-pill">هم‌پیمان استراتژیک: <strong class="green">همراه اول</strong></div>
-            <div class="partner-pill">محصولات کلیدی: <strong class="cyan">اوانو (Ewano)</strong> و <strong class="green">ردا (RADA)</strong></div>
+            <div class="partner-pill partner-strategic">هم‌پیمان استراتژیک: <strong class="green">همراه اول</strong></div>
+            <div class="partner-pill partner-products">محصولات کلیدی: <strong class="cyan">اوانو (Ewano)</strong> و <strong class="green">ردا (RADA)</strong></div>
           </div>
         </div>
         <div class="header-badge">بولتن رسمی اخبار و دستاوردهای ایبیکام</div>
@@ -1429,8 +1513,8 @@
 
       const sections = document.querySelectorAll('.news-section');
       if (sectionId === 'all') {
+        // نمایش همه بدون اسکرول به بالا
         sections.forEach(s => s.style.display = 'block');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         sections.forEach(s => {
           if (s.id === sectionId) {
