@@ -82,6 +82,7 @@
       display: flex;
       align-items: center;
       gap: 22px;
+      flex-wrap: wrap;
     }
 
     .ebcom-logo-container {
@@ -110,6 +111,7 @@
       font-size: 12.5px;
       font-weight: 600;
       color: #D1D5DB;
+      flex-wrap: wrap;
     }
 
     .partner-pill {
@@ -135,6 +137,7 @@
       border-radius: 30px;
       letter-spacing: 0.5px;
       box-shadow: 0 4px 15px rgba(153, 204, 0, 0.3);
+      white-space: nowrap;
     }
 
     .hero-title-area {
@@ -152,7 +155,7 @@
     }
 
     .hero-text-block h1 {
-      font-size: 33px;
+      font-size: 32px;
       font-weight: 900;
       color: #FFFFFF;
       margin-bottom: 14px;
@@ -171,7 +174,7 @@
       box-sizing: border-box;
     }
 
-    /* 3 Main Stat Boxes: Focused strictly on Rial & realization rates */
+    /* 3 Main Stat Boxes */
     .hero-stats-banner {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -291,7 +294,7 @@
     }
 
     .nav-tab-icon {
-      font-size: 28px; /* ۲ برابر اندازه معمولی و متناسب با ارتفاع ۲ سطر متن */
+      font-size: 28px;
       line-height: 1;
       display: flex;
       align-items: center;
@@ -392,6 +395,7 @@
       align-items: flex-start;
       gap: 14px;
       margin-bottom: 24px;
+      flex-wrap: wrap;
     }
 
     .section-title .bar {
@@ -815,6 +819,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .highlight-badge-title {
@@ -877,6 +883,8 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .inst-title {
@@ -1037,9 +1045,7 @@
       border-radius: 3px;
     }
 
-    /* ==========================================================
-       SECTION 4: TIMELINE ANALYTICS (EXCEL DATA INTEGRATION)
-       ========================================================== */
+    /* SECTION 4: TIMELINE ANALYTICS */
     .timeline-analytics-box {
       background: #FFFFFF;
       border: 1px solid var(--border-color);
@@ -1093,10 +1099,10 @@
       color: var(--eerie-black);
     }
 
-        .tl-stat-unit {
-      font-size: 0.5em; /* دقیقا ۵۰ درصد اندازه عدد */
-      font-family: inherit; /* با همان فونت عدد */
-      color: inherit; /* با همان رنگ عدد */
+    .tl-stat-unit {
+      font-size: 0.5em;
+      font-family: inherit;
+      color: inherit;
       font-weight: 700;
       display: inline-block;
       margin-right: 5px;
@@ -1187,7 +1193,6 @@
       border-radius: 4px;
     }
 
-    /* Timeline Stream Grid (2 equal columns on desktop, 1 on mobile) */
     .tl-stream-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1305,6 +1310,8 @@
       justify-content: space-between;
       align-items: baseline;
       font-size: 12px;
+      flex-wrap: wrap;
+      gap: 4px;
     }
 
     .tl-metric-label {
@@ -1435,20 +1442,68 @@
       background: var(--sheen-green);
     }
 
+    /* ========== RESPONSIVE FIXES ========== */
+
+    /* Tablet (max-width: 1024px) */
     @media (max-width: 1024px) {
-      .dual-scheme-grid {
-        grid-template-columns: 1fr !important;
+      .header {
+        padding: 32px 32px 24px 32px;
       }
-      .scheme-dashboard-panel {
-        width: 100% !important;
+      .hero-text-block h1 {
+        font-size: 28px;
+      }
+      .hero-text-block p {
+        font-size: 14.5px;
+        line-height: 1.95;
       }
       .hero-stats-banner {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+      }
+      .hero-stat-num {
+        font-size: 32px;
       }
       .interactive-tabs-bar {
         grid-template-columns: repeat(3, 1fr);
         padding: 20px 32px;
         gap: 12px;
+      }
+      .pillars-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px 32px;
+        gap: 12px;
+      }
+      .pillars-container > :nth-child(4),
+      .pillars-container > :nth-child(5) {
+        grid-column: span 1;
+      }
+      .pillars-container > :nth-child(5) {
+        grid-column: 1 / -1;
+      }
+      .content-body {
+        padding: 32px 32px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .products-grid > :nth-child(1),
+      .products-grid > :nth-child(2),
+      .products-grid > :nth-child(3) {
+        grid-column: span 1;
+      }
+      .products-grid > :nth-child(4),
+      .products-grid > :nth-child(5) {
+        grid-column: span 1;
+      }
+      .products-grid > :nth-child(4) {
+        grid-column: span 2;
+      }
+      .dual-scheme-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .scheme-dashboard-panel {
+        width: 100% !important;
       }
       .tl-stream-container {
         grid-template-columns: 1fr;
@@ -1456,61 +1511,164 @@
       .tl-kpi-summary-strip {
         grid-template-columns: 1fr;
       }
-    }
-
-    @media (max-width: 768px) {
-      .header, .content-body, .pillars-container, .footer {
+      .installment-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer {
+        padding: 28px 32px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-meta {
+        text-align: right;
+      }
+      .dual-scheme-grid.single-panel .speedometers-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
         padding: 20px 16px;
       }
-      .hero-title-area {
-        gap: 20px;
+      .dual-scheme-grid.single-panel .speedometer-svg-wrap {
+        width: 200px;
+        height: 125px;
+      }
+    }
+
+    /* Mobile (max-width: 768px) */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px 8px;
+      }
+      .infographic-wrapper {
+        border-radius: 18px;
+      }
+      .header {
+        padding: 20px 16px 18px 16px;
+      }
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding-bottom: 16px;
+        margin-bottom: 18px;
+      }
+      .brand-lockup {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .ebcom-logo-img {
+        height: 36px;
+        max-width: 160px;
+      }
+      .co-divider {
+        height: 28px;
+      }
+      .partner-logos {
+        font-size: 11px;
+        gap: 8px;
+      }
+      .partner-pill {
+        padding: 4px 10px;
+        font-size: 10.5px;
+      }
+      .header-badge {
+        font-size: 10px;
+        padding: 5px 14px;
+        white-space: normal;
+      }
+      .hero-text-block h1 {
+        font-size: 22px;
+      }
+      .hero-text-block p {
+        font-size: 13px;
+        line-height: 1.9;
+        text-align: right;
       }
       .hero-stats-banner {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
       }
       .hero-stat-card {
-        padding: 20px 16px;
+        padding: 18px 14px;
+        border-radius: 16px;
       }
       .hero-stat-num {
-        font-size: 32px;
+        font-size: 28px;
+      }
+      .hero-stat-label {
+        font-size: 13px;
+      }
+      .hero-stat-subtitle {
+        font-size: 10.5px;
       }
       .interactive-tabs-bar {
-        grid-template-columns: 1fr !important;
         display: flex !important;
         flex-direction: column !important;
-        padding: 16px !important;
-        gap: 10px !important;
-        overflow-x: visible !important;
-        width: 100% !important;
+        padding: 14px 12px !important;
+        gap: 8px !important;
+        grid-template-columns: 1fr !important;
       }
       .nav-tab-btn {
         width: 100% !important;
-        padding: 14px 16px !important;
+        padding: 12px 14px !important;
         font-size: 13px !important;
+        justify-content: flex-start;
+        border-radius: 12px;
       }
-      .dual-scheme-grid,
-      .dual-scheme-grid.single-panel,
-      .installment-cards-grid {
-        grid-template-columns: 1fr !important;
+      .nav-tab-icon {
+        font-size: 24px;
+      }
+      .nav-tab-main {
+        font-size: 13px;
+      }
+      .nav-tab-sub {
+        font-size: 10px;
       }
       .pillars-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-        padding: 18px 16px !important;
-      }
-      .pillars-container > :nth-child(1),
-      .pillars-container > :nth-child(2),
-      .pillars-container > :nth-child(3),
-      .pillars-container > :nth-child(4) {
-        grid-column: span 1 !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        padding: 14px 12px !important;
       }
       .pillars-container > :nth-child(5) {
         grid-column: 1 / -1 !important;
       }
+      .pillar-card {
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+      .pillar-num {
+        font-size: 10.5px;
+      }
+      .pillar-text {
+        font-size: 12px;
+      }
+      .content-body {
+        padding: 18px 12px;
+      }
+      .section-title {
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .section-title .bar {
+        width: 4px;
+        height: 38px;
+      }
+      .section-title h2 {
+        font-size: 17px;
+      }
+      .section-title-en {
+        font-size: 11px;
+      }
+      .section-title .section-desc {
+        font-size: 11px;
+        width: 100%;
+        margin-right: 0;
+        align-self: flex-start;
+        padding-right: 14px;
+      }
       .products-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        margin-bottom: 28px;
       }
       .products-grid > :nth-child(1),
       .products-grid > :nth-child(2),
@@ -1522,60 +1680,329 @@
         grid-column: 1 / -1 !important;
       }
       .prod-card {
-        padding: 16px 14px;
+        padding: 14px 12px;
+        border-radius: 14px;
+      }
+      .prod-status {
+        font-size: 9px;
+        padding: 3px 10px;
+        margin-bottom: 10px;
       }
       .prod-name {
-        font-size: 15.5px;
+        font-size: 13.5px;
       }
       .prod-cap {
-        font-size: 16.5px;
+        font-size: 14.5px;
+        margin-bottom: 10px;
       }
       .prod-meta {
-        font-size: 11.5px;
+        font-size: 10.5px;
+        padding-top: 10px;
         line-height: 1.6;
       }
-      .pillar-card {
+      .dashboard-showcase-box {
         padding: 14px 12px;
+        border-radius: 18px;
+        margin-bottom: 28px;
       }
-      .pillar-num {
-        font-size: 11px;
+      .dual-scheme-grid,
+      .dual-scheme-grid.single-panel {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
       }
-      .pillar-text {
-        font-size: 12px;
+      .dual-scheme-grid.single-panel .scheme-dashboard-panel {
+        padding: 16px 12px;
+      }
+      .scheme-dashboard-panel {
+        padding: 16px 12px;
+        border-radius: 16px;
+      }
+      .panel-header-banner {
+        padding: 10px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .panel-header-title {
+        font-size: 14px;
+      }
+      .panel-header-badge {
+        font-size: 10px;
+        padding: 3px 10px;
       }
       .speedometers-row,
       .dual-scheme-grid.single-panel .speedometers-row {
         grid-template-columns: 1fr !important;
         justify-items: center;
-        padding: 16px 12px;
-        gap: 20px;
+        padding: 14px 10px;
+        gap: 18px;
+        border-radius: 12px;
       }
-      .dashboard-showcase-box,
-      .installments-analytics-box,
-      .timeline-analytics-box {
-        padding: 18px 14px;
+      .gauge-title-badge {
+        font-size: 12px;
       }
-      .scheme-dashboard-panel,
-      .dual-scheme-grid.single-panel .scheme-dashboard-panel {
-        padding: 18px 14px;
-      }
-      .phase-metrics-table,
-      .dual-scheme-grid.single-panel .phase-metrics-table {
-        font-size: 11px;
-      }
-      .phase-metrics-table th,
-      .phase-metrics-table td,
-      .dual-scheme-grid.single-panel .phase-metrics-table th,
-      .dual-scheme-grid.single-panel .phase-metrics-table td {
-        padding: 6px 8px;
+      .gauge-sub-badge {
+        font-size: 9px;
       }
       .speedometer-svg-wrap,
       .dual-scheme-grid.single-panel .speedometer-svg-wrap {
         width: 160px;
         height: 105px;
       }
+      .gauge-digital-val,
+      .dual-scheme-grid.single-panel .gauge-digital-val {
+        font-size: 22px;
+      }
+      .gauge-limits {
+        width: 110px;
+        font-size: 8.5px;
+      }
+      .phase-metrics-table,
+      .dual-scheme-grid.single-panel .phase-metrics-table {
+        font-size: 10px;
+      }
+      .phase-metrics-table th,
+      .phase-metrics-table td,
+      .dual-scheme-grid.single-panel .phase-metrics-table th,
+      .dual-scheme-grid.single-panel .phase-metrics-table td {
+        padding: 5px 6px;
+        font-size: 10px;
+      }
+      .highlight-card-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 12px;
+        gap: 6px;
+      }
+      .highlight-badge-title {
+        font-size: 11px;
+        flex-wrap: wrap;
+      }
+      .highlight-badge-num {
+        font-size: 17px;
+        align-self: flex-end;
+      }
+      .installments-analytics-box {
+        padding: 16px 12px;
+        border-radius: 18px;
+        margin-bottom: 28px;
+      }
+      .installment-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+      }
+      .inst-card {
+        padding: 16px 14px;
+        border-radius: 14px;
+      }
+      .inst-title {
+        font-size: 15px;
+      }
+      .inst-tag {
+        font-size: 10px;
+        padding: 3px 8px;
+      }
+      .inst-stat-val {
+        font-size: 19px;
+      }
+      .inst-stat-label {
+        font-size: 10.5px;
+      }
+      .inst-stat-sub {
+        font-size: 10px;
+      }
+      .inst-visualizer-container {
+        padding: 16px 12px;
+        border-radius: 14px;
+      }
+      .viz-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .viz-header h3 {
+        font-size: 14px;
+      }
+      .viz-toggle-group {
+        width: 100%;
+      }
+      .viz-btn {
+        flex: 1;
+        font-size: 11px;
+        padding: 6px 10px;
+        text-align: center;
+      }
+      .stacked-bar {
+        height: 32px;
+        border-radius: 8px;
+      }
+      /* ===== HIDE TEXT INSIDE STACK SEGMENTS ON MOBILE ===== */
+      .stack-segment span {
+        display: none;
+      }
+      .stacked-legend {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+        font-size: 11px;
+      }
+      .timeline-analytics-box {
+        padding: 16px 12px;
+        border-radius: 18px;
+        margin-bottom: 28px;
+      }
+      .tl-kpi-summary-strip {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+      }
+      .tl-kpi-card {
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+      .tl-kpi-title {
+        font-size: 11px;
+      }
+      .tl-kpi-val {
+        font-size: 18px;
+      }
+      .tl-kpi-sub {
+        font-size: 10px;
+      }
+      .tl-header-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .tl-filters-group {
+        width: 100%;
+      }
+      .tl-filter-btn {
+        flex: 1;
+        font-size: 10.5px;
+        padding: 6px 8px;
+        text-align: center;
+      }
+      .tl-action-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 12px;
+      }
+      .tl-legend-strip {
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 12px;
+        font-size: 10.5px;
+      }
+      .tl-stream-container {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+      }
+      .tl-card-item {
+        padding: 14px 12px;
+        border-radius: 14px;
+        gap: 10px;
+      }
+      .tl-month-title h4 {
+        font-size: 14px;
+      }
+      .tl-badge {
+        font-size: 9px;
+        padding: 2px 6px;
+      }
+      .tl-ratio-pill {
+        font-size: 10px;
+        padding: 2px 8px;
+      }
+      .tl-metric-meta {
+        font-size: 10.5px;
+      }
+      .tl-metric-val {
+        font-size: 10.5px;
+      }
+      .tl-metric-val small {
+        font-size: 9px;
+      }
+      .tl-bar-bg {
+        height: 7px;
+      }
+      .footer {
+        padding: 20px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .footer-slogan {
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .slogan-highlight {
+        font-size: 16px;
+      }
+      .footer-meta {
+        font-size: 10px;
+        text-align: right;
+        width: 100%;
+      }
       .floating-nav {
         display: none;
+      }
+    }
+
+    /* Small Mobile (max-width: 480px) */
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .products-grid > :nth-child(5) {
+        grid-column: span 1 !important;
+      }
+      .hero-stat-num {
+        font-size: 24px;
+      }
+      .interactive-tabs-bar {
+        padding: 10px 8px !important;
+      }
+      .nav-tab-btn {
+        padding: 10px 12px !important;
+      }
+      .nav-tab-icon {
+        font-size: 20px;
+      }
+      .nav-tab-main {
+        font-size: 12px;
+      }
+      .nav-tab-sub {
+        font-size: 9px;
+      }
+      .section-title h2 {
+        font-size: 15px;
+      }
+      .prod-name {
+        font-size: 13px;
+      }
+      .prod-cap {
+        font-size: 14px;
+      }
+      .phase-metrics-table th,
+      .phase-metrics-table td {
+        font-size: 9px;
+        padding: 4px 4px;
+      }
+      .val-cell {
+        font-size: 9px;
+      }
+      .target-cell {
+        font-size: 8.5px;
+      }
+      .gauge-digital-val {
+        font-size: 20px;
+      }
+      .stack-segment {
+        font-size: 8px;
+      }
+      .tl-kpi-val {
+        font-size: 16px;
       }
     }
 
@@ -1622,7 +2049,7 @@
           </p>
         </div>
 
-        <!-- 3 MAIN STAT BOXES: Focused purely on Rial & realization rates -->
+        <!-- 3 MAIN STAT BOXES -->
         <div class="hero-stats-banner">
           <div class="hero-stat-card">
             <div class="hero-stat-num" data-count="49.28" data-suffix="٪">۰٪</div>
@@ -2246,8 +2673,6 @@
               <button class="tl-filter-btn" onclick="filterTimelineYear('1404', this)">سال ۱۴۰۴ (شتاب‌گیری)</button>
               <button class="tl-filter-btn" onclick="filterTimelineYear('1403', this)">سال ۱۴۰۳ (راه‌اندازی)</button>
             </div>
-
-
           </div>
 
           <!-- Legend Bar -->
@@ -2281,7 +2706,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2292,7 +2716,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2303,7 +2726,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2328,7 +2750,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2339,7 +2760,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2350,7 +2770,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2375,7 +2794,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2386,7 +2804,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2397,7 +2814,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2422,7 +2838,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2433,7 +2848,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2444,7 +2858,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2469,7 +2882,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2480,7 +2892,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2491,7 +2902,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2516,7 +2926,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2527,7 +2936,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2538,7 +2946,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2563,7 +2970,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2574,7 +2980,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2585,7 +2990,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2610,7 +3014,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2621,7 +3024,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2632,7 +3034,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2657,7 +3058,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2668,7 +3068,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2679,7 +3078,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2704,7 +3102,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2715,7 +3112,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2726,7 +3122,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2751,7 +3146,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2762,7 +3156,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2773,7 +3166,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2798,7 +3190,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2809,7 +3200,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2820,7 +3210,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2845,7 +3234,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2856,7 +3244,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2867,7 +3254,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2892,7 +3278,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2903,7 +3288,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2914,7 +3298,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2939,7 +3322,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2950,7 +3332,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -2961,7 +3342,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -2986,7 +3366,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -2997,7 +3376,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3008,7 +3386,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3033,7 +3410,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3044,7 +3420,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3055,7 +3430,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3080,7 +3454,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3091,7 +3464,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3102,7 +3474,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3127,7 +3498,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3138,7 +3508,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3149,7 +3518,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3174,7 +3542,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3185,7 +3552,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3196,7 +3562,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3221,7 +3586,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3232,7 +3596,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3243,7 +3606,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3268,7 +3630,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3279,7 +3640,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3290,7 +3650,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3315,7 +3674,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3326,7 +3684,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3337,7 +3694,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3362,7 +3718,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3373,7 +3728,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3384,7 +3738,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3409,7 +3762,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3420,7 +3772,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3431,7 +3782,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3456,7 +3806,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3467,7 +3816,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3478,7 +3826,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3503,7 +3850,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3514,7 +3860,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3525,7 +3870,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3550,7 +3894,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3561,7 +3904,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3572,7 +3914,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3597,7 +3938,6 @@
               </div>
 
               <div class="tl-metrics-container">
-                <!-- Metric 1: Allocation -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot alloc-dot"></span> میزان تخصیص:</span>
@@ -3608,7 +3948,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 2: Consumption -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot cons-dot"></span> میزان مصرف:</span>
@@ -3619,7 +3958,6 @@
                   </div>
                 </div>
 
-                <!-- Metric 3: User Acquisition -->
                 <div class="tl-metric-row">
                   <div class="tl-metric-meta">
                     <span class="tl-metric-label"><span class="tl-icon-dot users-dot"></span> جذب کاربران:</span>
@@ -3683,7 +4021,7 @@
         const target = parseFloat(counter.getAttribute('data-count'));
         const suffix = counter.getAttribute('data-suffix') || '';
         const isDecimal = target % 1 !== 0;
-        const duration = 1800; // ms
+        const duration = 1800;
         const startTime = performance.now();
 
         function renderWithSuffix(val, isDec) {
@@ -3717,7 +4055,6 @@
       });
     }
 
-    // Interactive View Switcher Tabs
     function switchView(view, btnElem) {
       const buttons = document.querySelectorAll('.nav-tab-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -3778,7 +4115,6 @@
       }
     }
 
-    // Toggle Visualization between Count (Volume) and Amount (Rials)
     function setVizMode(mode) {
       const btnCount = document.getElementById('btn-viz-count');
       const btnAmount = document.getElementById('btn-viz-amount');
@@ -3807,7 +4143,6 @@
       }
     }
 
-    // Filter Timeline Cards by Year
     function filterTimelineYear(year, btn) {
       const filterBtns = document.querySelectorAll('.tl-filter-btn');
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -3824,7 +4159,6 @@
       animateTimelineBars();
     }
 
-    // Timeline Bars Animation with Filling Effect
     function animateTimelineBars() {
       const bars = document.querySelectorAll('.tl-bar-fill');
       bars.forEach((bar, index) => {
@@ -3846,7 +4180,6 @@
       }, 100);
     }
 
-    // Function to trigger animations for Speedometer Gauges and Progress Bars
     function triggerGaugesAndProgress() {
       const needles = document.querySelectorAll('.gauge-needle');
       needles.forEach(needle => {
@@ -3880,7 +4213,6 @@
       animateCounters();
     }
 
-    // Scroll-triggered animations via IntersectionObserver
     document.addEventListener('DOMContentLoaded', () => {
       let dashAnimated = false;
       let headerAnimated = false;
