@@ -10,14 +10,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
     <style>
+      /* ====== FONT FACE FROM ASSETS ====== */
+      @font-face {
+        font-family: "IranYekanX";
+        src: url("../../assets/fonts/IRANYekanXVFaNumVF.woff2") format("woff2-variations"),
+             url("../../assets/fonts/IRANYekanXVFaNumVF.woff2") format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
       :root {
         --persian-green: #00d4b4;
         --persian-green-dark: #00a88e;
@@ -47,7 +53,7 @@
         --sky-blue: #0093dd;
         --sky-blue-light: rgba(0, 147, 221, 0.12);
 
-        --font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        --font-family: "IranYekanX", -apple-system, BlinkMacSystemFont, "Segoe UI",
           Tahoma, sans-serif;
       }
 
@@ -1098,10 +1104,9 @@
 
       .categories-filter-bar {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        align-items: stretch;
         margin-bottom: 22px;
-        flex-wrap: wrap;
         gap: 12px;
       }
 
@@ -1109,6 +1114,7 @@
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
+        justify-content: flex-start;
       }
 
       .filter-tab {
@@ -1137,14 +1143,15 @@
       }
 
       .category-search-input {
-        padding: 9px 16px;
+        width: 100%;
+        padding: 11px 16px;
         border-radius: 12px;
         border: 1.5px solid var(--border-color);
         font-family: inherit;
-        font-size: 12.5px;
-        min-width: 250px;
+        font-size: 13px;
         outline: none;
         transition: border-color 0.2s;
+        box-sizing: border-box;
       }
 
       .category-search-input:focus {
@@ -1825,11 +1832,6 @@
           font-size: 10px;
           margin-bottom: 8px;
         }
-        .categories-filter-bar {
-          flex-direction: column;
-          align-items: stretch;
-          gap: 10px;
-        }
         .filter-tabs-group {
           gap: 6px;
         }
@@ -1838,8 +1840,6 @@
           padding: 5px 10px;
         }
         .category-search-input {
-          width: 100%;
-          min-width: unset;
           font-size: 12px;
           padding: 8px 12px;
         }
@@ -3161,7 +3161,7 @@
       // -------------------------------------------------------------
       // 7. CHART CREATION FUNCTIONS
       // -------------------------------------------------------------
-      Chart.defaults.font.family = "'Vazirmatn', 'IRANYekanX', sans-serif";
+      Chart.defaults.font.family = "'IranYekanX', sans-serif";
       Chart.defaults.font.size = 11.5;
       Chart.defaults.color = "#444444";
 
